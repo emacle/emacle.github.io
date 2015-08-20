@@ -1,0 +1,21 @@
+HTML {
+	FONT-SIZE: 10pt; MARGIN-LEFT: 40pt; MARGIN-RIGHT: 45pt; FONT-FAMILY: Verdana, Times, serif
+}
+PRE {
+	BORDER-RIGHT: #aebdcc 1pt solid; PADDING-RIGHT: 5pt; BORDER-TOP: #aebdcc 1pt solid; PADDING-LEFT: 5pt; FONT-SIZE: 9pt; PADDING-BOTTOM: 5pt; MARGIN-LEFT: 36pt; BORDER-LEFT: #aebdcc 1pt solid; MARGIN-RIGHT: 36pt; PADDING-TOP: 5pt; BORDER-BOTTOM: #aebdcc 1pt solid; FONT-FAMILY: courier, monospace; BACKGROUND-COLOR: #f3f5f7
+}
+P {
+	
+}
+LI {
+	
+}
+.author {
+	FONT-SIZE: 8pt; MARGIN-LEFT: 0pt
+}
+.date {
+	FONT-SIZE: 8pt; MARGIN-LEFT: 0pt
+}
+H1 {
+	COLOR: darkblue
+}

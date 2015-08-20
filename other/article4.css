@@ -1,0 +1,83 @@
+body {
+  FONT: 14px/1.4 'Trebuchet MS',Verdana, Arial, Helvetica, sans-serif;
+ background:#fff;
+ width: 60em;
+ margin: 0 auto 0;
+ padding: 2em 0 6em 0;
+ text-align: left;
+}
+a {
+  font-family: Verdana;
+ text-decoration:none;
+ font-weight:bold;
+ color:#c00;
+}
+a:hover {
+ background:#000000;
+ color:#FFFFFF;
+}
+h1 a { color:#666;}
+h2 a { color:#666;}
+h3 a { color:#666;}
+h4 a { color:#666;}
+h1 {  font-size: 40px;
+ color:#666;
+ border-bottom: 5px solid #000;
+ padding: 2px;
+ margin: 0px;
+ margin-bottom: 8px;
+}
+h2 { 
+ color:#666;
+ font-size: 22px;
+ padding: 2px;
+ margin-top: 15px;
+ border-bottom: 2px solid #000000;
+}
+h3 { 
+ color:#666;
+ font-size: 18px;
+ padding: 2px;
+ margin-top: 5px;
+}
+h4 { 
+ color:#666;
+ font-size: 18px;
+ padding: 2px;
+ margin-top: 5px;
+}
+img {
+    float: right;
+    margin: 10px;
+    border-style:solid; border-width:2px;
+}
+#im {     clear: right;}
+pre {
+    border: #777777 1px solid;
+    padding: 0.5em;
+    margin-left: 1em;
+    margin-right: 2em;
+    white-space: pre;
+    background-color: #e6e6e6;
+    color: black;
+}
+.pass {  color:Green;  }
+.fail {  color:Red;  font-weight: bold; }
+.attempt {  color:Maroon;  font-weight: bold; }
+.nattempt {  color:Silver;   }
+.verse {
+    white-space: pre;
+    margin-left: 1em;
+}
+dt {      font-weight: bold;}
+li {     margin-bottom: 0.9ex;}
+blockquote {
+     margin-left: 2em;
+     color: #4444ff;
+}
+td {  font-size: 13px;}
+th {
+  background: #d6d6d6;
+  font-size: 14px;
+} 
+</style>

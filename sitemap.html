@@ -6,18 +6,6 @@
 <title>Sitemap for project orgfiles</title>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-  <script type="text/javascript">
-    var gitalk = new Gitalk({
-	clientID: 'bead3df2199fe5ec763e',
-	clientSecret: '2fa88ec78bd3b5a90c0abe8e68f0d31e4088ab1e',
-	repo: 'gitalk',
-	owner: 'emacoyo',
-	admin: ['emacoyo'],
-	id: location.pathname,      // Ensure uniqueness and length less than 50
-	distractionFreeMode: true  // Facebook-like distraction free mode
-    })
-    gitalk.render('gitalk-container');
-  </script>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
   <meta name="title" content="Sitemap for project orgfiles"/>
   <meta name="generator" content="Org-mode"/>
@@ -149,7 +137,18 @@
 </div>
 
 <div id="gitalk-container"></div>
-
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+	clientID: 'bead3df2199fe5ec763e',
+	clientSecret: '2fa88ec78bd3b5a90c0abe8e68f0d31e4088ab1e',
+	repo: 'gitalk',
+	owner: 'emacoyo',
+	admin: ['emacoyo'],
+	id: location.pathname,      // Ensure uniqueness and length less than 50
+	distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container'); // 脚本必须放在 gitalk-container div下面,否则出现  Container not found, window.document.getElementById: gitalk-container
+  </script>
 <div id="postamble">
 <p class="date">Date: 2013-01-21 20:58:41 CST</p>
 <p class="author">Author: 小桥流水人家</p>

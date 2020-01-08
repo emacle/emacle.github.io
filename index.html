@@ -1,29 +1,16 @@
 <!DOCTYPE html>
 <html>
   <title>你好</title>
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
-<h3>title meta标题必须设置 否则gitalk出现Error Error: Validation Failed, 422</h3>
-"当你用 github 帐号登录（管理员），并且第一次加载该会比较慢，因为第一次加载会自动在你 repo 的仓库下创建对应 issue。
-"
-这句话太有用了... 初始化必须是 管理员先登录,其他用户登录 会显示 Issue was deleted
-<p>gitalk 测试</p>
-<div id="gitalk-container"></div>
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-      clientID: 'bead3df2199fe5ec763e',
-      clientSecret: '2fa88ec78bd3b5a90c0abe8e68f0d31e4088ab1e',
-      repo: 'gitalk',
-      owner: 'emacoyo',
-      admin: ['emacoyo'],
-      id: location.pathname,      // Ensure uniqueness and length less than 50
-      distractionFreeMode: true  // Facebook-like distraction free mode
-  })
-  gitalk.render('gitalk-container');
+<script src="https://utteranc.es/client.js"
+        repo="emacle/utterances"
+        issue-term="pathname"
+        label="emacs"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
 </script>
-
 </body>
 </html>

@@ -267,7 +267,8 @@ ul, ol {
 }
 
 ul{
-  list-style-image: url(./images/ul.gif);
+    list-style-image: url(./images/ul.gif);
+    font-family: auto;
 }
 
 ul ol{

@@ -969,7 +969,7 @@ content: "*** "
 	margin-left: 20px;
 	margin-top: 10px;
 	padding: .2em;
-	border: 1px solid gray;
+	border-top: 1px solid gray;
 	background-color: #ffffff;
 	z-index: -1000;
     }

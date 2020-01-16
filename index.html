@@ -185,6 +185,47 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
 </article>
 
 
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/posts/raspberry-pi-4/'> raspberry pi 4</a> </h2>
+    <div class="meta">
+      <div class="date">
+	Sep 16, 2019 - 2 minutes
+      </div>
+      
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/pi">#pi</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/raspberry">#raspberry</a>
+      </div>
+    
+  
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    DONE配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况
+https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本差异 Debian &lsquo;Jessie&rsquo; in place of Debian &lsquo;Wheezy&rsquo;. 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。
+#!/bin/sh# /etc/dhcpcd.exit-hook - runs as last dhcpcd hook# man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etcif [ &#34;$interface&#34; = eth0 ] &amp;&amp; [ &#34;$if_up&#34; = true ] ; then# 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt, if_up interface等 测试完成需要关闭防止文件变巨大# echo &#34;================&#34; &gt;&gt; /tmp/variables.
+  </div>
+
+  <div class="rmore">
+    <a href='/posts/raspberry-pi-4/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
 
 
 <div class="page-nav">

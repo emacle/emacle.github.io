@@ -47,5 +47,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>pi</title>
+      <link>/tags/pi/</link>
+      <pubDate>Mon, 16 Sep 2019 09:34:00 +0800</pubDate>
+      
+      <guid>/tags/pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raspberry</title>
+      <link>/tags/raspberry/</link>
+      <pubDate>Mon, 16 Sep 2019 09:34:00 +0800</pubDate>
+      
+      <guid>/tags/raspberry/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -10,7 +10,7 @@
 <meta name="generator" content="Hugo 0.62.2" />
 
 <link rel="canonical" href="/tags/hugo/">
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="https://emacle.github.io/favicon.ico">
 <meta property="og:title" content="hugo" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -125,10 +125,10 @@
 
   <div class="summary">
     Hugo 以 theme 中的静态模板文件来生成静态css文件
-ie. 页面底部 &ldquo;Powered by&rdquo; 没有参数可配置取消, 可grep定位文件位置 注释掉
-cat ~/hugo/themes/hugo-dusk/layouts/partials/footer.html其中 copyright 部分可以 config.toml里配置后启用
-copyright = &#34;Copyright (c) 2020, all rights reserved.&#34;  启用 github utterances 评论, 修改.Type 变量, ox-hugo默认导出目录为 &lt;HUGO_BASE_DIR&gt;/content/posts/ 因此 .Type = &ldquo;posts&rdquo;
-cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html&lt;footer class=&#34;post-footer&#34;&gt;&lt;div class=&#34;post-footer-data&#34;&gt;{{ partial &#34;tags.html&#34; . }}&lt;!--修改默认日期显示格式 --&gt;&lt;!--&lt;div class=&#34;date&#34;&gt; {{ .Date.Format &#34;2006-01-01&#34; }} &lt;/div&gt; --&gt;&lt;div class=&#34;date&#34;&gt; {{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 MST&#34; }} &lt;/div&gt;{{if or .
+  favicon 图标
+[params]# 自定义 favicon 变量 ~/hugo/static/favicon.ico -&gt; /public/favicon.ico# ~/hugo/static/ 目录下的东西会自动发布到时 /public 根目录 i.e. ox-hugo/ orgmode 导出的静态图片# 使用绝对路径 防止 /posts/ 页面404 faviconfavicon = &#34;https://emacle.github.io/favicon.ico&#34;head.html 模板头部加入
+&lt;link rel=&#34;icon&#34; href=&#34;{{ .Site.Params.favicon }}&#34;&gt;  启用 github utterances 评论, 修改.Type 变量, ox-hugo默认导出目录为 &lt;HUGO_BASE_DIR&gt;/content/posts/ 因此 .Type = &ldquo;posts&rdquo;
+cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html&lt;footer class=&#34;post-footer&#34;&gt;&lt;div class=&#34;post-footer-data&#34;&gt;{{ partial &#34;tags.html&#34; . }}&lt;!--修改默认日期显示格式 --&gt;&lt;!--&lt;div class=&#34;date&#34;&gt; {{ .
   </div>
 
   <div class="rmore">

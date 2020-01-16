@@ -11,7 +11,7 @@
 <meta name="generator" content="Hugo 0.62.2" />
 
 <link rel="canonical" href="/">
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="/favicon.ico">
 <meta property="og:title" content="~振鹭于飞~" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
@@ -126,9 +126,18 @@
   <div class="summary">
     Hugo 以 theme 中的静态模板文件来生成静态css文件
 ie. 页面底部 &ldquo;Powered by&rdquo; 没有参数可配置取消, 可grep定位文件位置 注释掉
-cat ~/hugo/themes/hugo-dusk/layouts/partials/footer.html其中 copyright 部分可以 config.toml里配置后启用
-copyright = &#34;Copyright (c) 2020, all rights reserved.&#34;  启用 github utterances 评论, 修改.Type 变量, ox-hugo默认导出目录为 &lt;HUGO_BASE_DIR&gt;/content/posts/ 因此 .Type = &ldquo;posts&rdquo;
-cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html&lt;footer class=&#34;post-footer&#34;&gt;&lt;div class=&#34;post-footer-data&#34;&gt;{{ partial &#34;tags.html&#34; . }}&lt;!--修改默认日期显示格式 --&gt;&lt;!--&lt;div class=&#34;date&#34;&gt; {{ .Date.Format &#34;2006-01-01&#34; }} &lt;/div&gt; --&gt;&lt;div class=&#34;date&#34;&gt; {{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 MST&#34; }} &lt;/div&gt;{{if or .
+cat ~/hugo/themes/hugo-dusk/layouts/partials/footer.html
+其中 copyright 部分可以 config.toml里配置后启用
+copyright = &#34;Copyright (c) 2020, all rights reserved.&#34;
+  启用 github utterances 评论, 修改.Type 变量, ox-hugo默认导出目录为 &lt;HUGO_BASE_DIR&gt;/content/posts/ 因此 .Type = &ldquo;posts&rdquo;
+cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html
+&lt;footer class=&#34;post-footer&#34;&gt;
+&lt;div class=&#34;post-footer-data&#34;&gt;
+{{ partial &#34;tags.html&#34; . }}
+&lt;!--修改默认日期显示格式 --&gt;
+&lt;!--&lt;div class=&#34;date&#34;&gt; {{ .Date.Format &#34;2006-01-01&#34; }} &lt;/div&gt; --&gt;
+&lt;div class=&#34;date&#34;&gt; {{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 MST&#34; }} &lt;/div&gt;
+{{if or .
   </div>
 
   <div class="rmore">
@@ -170,11 +179,16 @@ cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html&lt;footer class=&#
     elpa 安装 ox-hugo
   优先使用基于子树模式 两个必填 &lt;hugo_base_dir&gt; 与 EXPORT_FILE_NAME
   org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录
-#+hugo_base_dir: ../hugo  subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名
-:EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
-C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
+#+hugo_base_dir: ../hugo
+  subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名
+:EXPORT_FILE_NAME: hugo-with-orgmode
+  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
+C-c e H H 或 C-c e H O
+子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
     Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
- 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式
+ 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha
+:EXPORT_HUGO_CATEGORIES: orgmode emacs
+可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式
   </div>
 
   <div class="rmore">

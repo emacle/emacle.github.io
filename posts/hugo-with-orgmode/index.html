@@ -19,7 +19,7 @@
 :EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
 C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
     Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
- 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式" />
+ 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/hugo-with-orgmode/" />
 <meta property="article:published_time" content="2020-01-15T17:04:00+08:00" />
@@ -34,7 +34,7 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
 :EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
 C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
     Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
- 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式"/>
+ 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式"/>
 
 
 <meta itemprop="name" content="Hugo with OrgMode">
@@ -45,14 +45,14 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
 :EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
 C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
     Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
- 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式">
+ 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式">
 <meta itemprop="datePublished" content="2020-01-15T17:04:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-15T17:04:00&#43;08:00" />
-<meta itemprop="wordCount" content="130">
+<meta itemprop="wordCount" content="136">
 
 
 
-<meta itemprop="keywords" content="orgmode,hugo," />
+<meta itemprop="keywords" content="hugo,orgmode," />
 
 <link rel="stylesheet" href="/css/layout.css" />
 
@@ -150,9 +150,10 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
 <!-- raw HTML omitted -->
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">:EXPORT_HUGO_TAGS: hugo haha
 :EXPORT_HUGO_CATEGORIES: orgmode emacs
-</code></pre></div><p>可编写 <!-- raw HTML omitted -->yasnippet<!-- raw HTML omitted --> 方便插入属性段,
-可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接
+</code></pre></div><p>可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接
 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式</p>
+<p>属性插入可编写 <strong>yasnippet</strong> , 利用自定义函数 hugoslug-to-pinyin, 插入时自动将
+head title里的中文转换成拼音</p>
 </li>
 <li>
 <p>org本地图片可以无命名插入可直接导出正确的url格式</p>
@@ -185,11 +186,11 @@ hugo
   
     
       <div class="tag">
-        <a href="/tags/orgmode">#orgmode</a>
+        <a href="/tags/hugo">#hugo</a>
       </div>
     
       <div class="tag">
-        <a href="/tags/hugo">#hugo</a>
+        <a href="/tags/orgmode">#orgmode</a>
       </div>
     
   

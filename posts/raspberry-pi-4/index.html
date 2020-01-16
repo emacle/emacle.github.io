@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="pocoyo" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.2" />
+
+<link rel="canonical" href="/posts/raspberry-pi-4/">
+<link rel="icon" href="https://emacle.github.io/favicon.ico">
+<meta property="og:title" content="raspberry pi 4" />
+<meta property="og:description" content="DONE配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况
+https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本差异 Debian &lsquo;Jessie&rsquo; in place of Debian &lsquo;Wheezy&rsquo;. 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。
+#!/bin/sh# /etc/dhcpcd.exit-hook - runs as last dhcpcd hook# man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etcif [ &#34;$interface&#34; = eth0 ] &amp;&amp; [ &#34;$if_up&#34; = true ] ; then# 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt, if_up interface等 测试完成需要关闭防止文件变巨大# echo &#34;================&#34; &gt;&gt; /tmp/variables." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/raspberry-pi-4/" />
+<meta property="article:published_time" content="2019-09-16T09:34:00+08:00" />
+<meta property="article:modified_time" content="2019-09-16T09:34:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="raspberry pi 4"/>
+<meta name="twitter:description" content="DONE配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况
+https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本差异 Debian &lsquo;Jessie&rsquo; in place of Debian &lsquo;Wheezy&rsquo;. 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。
+#!/bin/sh# /etc/dhcpcd.exit-hook - runs as last dhcpcd hook# man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etcif [ &#34;$interface&#34; = eth0 ] &amp;&amp; [ &#34;$if_up&#34; = true ] ; then# 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt, if_up interface等 测试完成需要关闭防止文件变巨大# echo &#34;================&#34; &gt;&gt; /tmp/variables."/>
+
+
+<meta itemprop="name" content="raspberry pi 4">
+<meta itemprop="description" content="DONE配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况
+https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本差异 Debian &lsquo;Jessie&rsquo; in place of Debian &lsquo;Wheezy&rsquo;. 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。
+#!/bin/sh# /etc/dhcpcd.exit-hook - runs as last dhcpcd hook# man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etcif [ &#34;$interface&#34; = eth0 ] &amp;&amp; [ &#34;$if_up&#34; = true ] ; then# 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt, if_up interface等 测试完成需要关闭防止文件变巨大# echo &#34;================&#34; &gt;&gt; /tmp/variables.">
+<meta itemprop="datePublished" content="2019-09-16T09:34:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-16T09:34:00&#43;08:00" />
+<meta itemprop="wordCount" content="393">
+
+
+
+<meta itemprop="keywords" content="pi,raspberry," />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     raspberry pi 4 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">~振鹭于飞~</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/posts/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> raspberry pi 4 </h1>
+    <div class="content"> <h2 id="配置-dhcpcd-run-hook-dhcpcd-vs-etc-network-interfaces"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> 配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces</h2>
+<p>pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置
+必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况</p>
+<p><a href="https://blog.csdn.net/yjbaobo/article/details/75146840">https://blog.csdn.net/yjbaobo/article/details/75146840</a>
+这主要是由于版本差异 Debian &lsquo;Jessie&rsquo; in place of Debian &lsquo;Wheezy&rsquo;.
+我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/sh
+</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span><span style="color:#080;background-color:#0f140f;font-style:italic"># /etc/dhcpcd.exit-hook - runs as last dhcpcd hook</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etc</span>
+<span style="color:#fb660a;font-weight:bold">if</span> [ <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$interface</span><span style="color:#0086d2">&#34;</span> = eth0 ] &amp;&amp; [ <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$if_up</span><span style="color:#0086d2">&#34;</span> = true ] ; <span style="color:#fb660a;font-weight:bold">then</span>
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt,  if_up interface等 测试完成需要关闭防止文件变巨大</span>
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># echo &#34;================&#34; &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># echo &#34;Environment Variables&#34; &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># printenv &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># echo &#34;===============&#34; &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># echo &#34;Shell Variables&#34; &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># set &gt;&gt; /tmp/variables.txt</span>
+
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># dhcpcd 每一次dhcp信息发生变化时 都会调用该脚本 $reason 每次不太相同 通过上面变量观察使用dhcp时 BOUND 只在第一次分配ip时出现</span>
+    <span style="color:#080;background-color:#0f140f;font-style:italic"># $reason为 BOUND 时 执行一次 frp 命令 防止重复添加/也可以判断 frp 进程存在与否来做判断</span>
+    <span style="color:#fb660a;font-weight:bold">case</span> <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$reason</span><span style="color:#0086d2">&#34;</span> in
+      BOUND)
+  	  <span style="color:#080;background-color:#0f140f;font-style:italic"># logger信息 写入syslog</span>
+  	  logger <span style="color:#0086d2">&#39;Running frp/DYNDNS update...&#39;</span>
+  	  <span style="color:#080;background-color:#0f140f;font-style:italic"># curl --stderr - -v &#34;https://dynv6.com/api/update(blah)&#34;</span>
+  	  nohup /opt/frp_0.29.0_linux_arm/frpc -c /opt/frp_0.29.0_linux_arm/frpc.ini &gt;/dev/null 2&gt;&amp;<span style="color:#0086f7;font-weight:bold">1</span> &amp;
+  	  ;;
+    <span style="color:#fb660a;font-weight:bold">esac</span>
+<span style="color:#fb660a;font-weight:bold">fi</span>
+</code></pre></div><p>ip route add 10.11.12.0/24 via 192.168.192.5</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># man dhcpcd-run-hooks
+
+BOUND | BOUND6    dhcpcd obtained a new lease from a DHCP server.
+RENEW | RENEW6    dhcpcd renewed it&#39;s lease.
+REBIND | REBIND6  dhcpcd has rebound to a new DHCP server.
+ROUTERADVERT      dhcpcd has received an IPv6 Router Advertisement, or
+		    one has expired.
+
+$interface                   _the name of the interface._
+$protocol                    the protocol that triggered the event.
+$reason                      _as described above._
+$pid                         the pid of dhcpcd.
+$if_up                       true if the interface is up, otherwise
+			       false.
+</code></pre></div><p>/etc/dhcp/dhclient-enter-hooks.d 是 isc-dhcp-client 包的内容 也是一个dhcp 客户端, 可做为 dhcpcd 的备选
+isc-dhcp-client 与 dhcpcd一样 都可作为 dhcp client busty 默认使用 dhcpcd</p>
+<h2 id="开启ssh"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> 开启SSH</h2>
+<p>sd卡 /boot 目录 默认不开启SSH，需要在SD卡根目录（boot中）新建 &ldquo;SSH&rdquo; 文件（无后缀）
+ssh 进入系统后 /boot/SSH 文件应该被系统删除,但是ssh 服务是永远开启了</p>
+<h2 id="mdadm-raid"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> mdadm raid</h2>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt install mdadm
+<span style="color:#080;background-color:#0f140f;font-style:italic"># 装配原有的磁盘阵列 组合成新的磁盘阵列 md0 此操作在里而且会自动更新 /etc/mdadm/mdadm.conf 文件</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># 同时也更新了内核映象 (update-initramfs -u) 启动时内核会自动装配md0 ，如果 sd[a-c]存在的话</span>
+mdadm -A /dev/md0  /dev/sd[a-c]<span style="color:#0086f7;font-weight:bold">1</span>  或 mdadm -A /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1
+
+<span style="color:#080;background-color:#0f140f;font-style:italic"># definitions of existing MD arrays cat /etc/mdadm/mdadm.conf</span>
+ARRAY /dev/md/0  <span style="color:#fb660a">metadata</span>=1.2 <span style="color:#fb660a">UUID</span>=fabd24e6:e0160fe0:a0af4d3c:4498ec65 <span style="color:#fb660a">name</span>=debian:0
+</code></pre></div><h2 id="fstab-nofail"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> fstab nofail</h2>
+<p>外部设备(/dev/md0)在插入时挂载，在未插入时忽略。
+这需要 nofail 选项，可以在启动时若设备不存在直接忽略它而不报错进入recovery mode Contrl + D
+<!-- raw HTML omitted -->Mount an external drive at boot time only if it is plugged in<!-- raw HTML omitted --></p>
+<p>cat /etc/fstab</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/dev/md0 /mnt/raid5 ext4 defaults,nofail 0 0
+</code></pre></div><h2 id="hdmi"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> hdmi</h2>
+<p>hdmi: 对于chuangwei_TV , pi 的/boot/config里默认参数即可，不需要做额外配置</p>
+<h2 id="pi未连接显示器时如果使用vnc连接出现cannot-currently-show-the-dekstop"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> pi未连接显示器时如果使用vnc连接出现Cannot currently show the dekstop</h2>
+<p><code>Do not use default resolution</code></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">The RPi must be set to boot to desktop (service mode).
+If a HDMI monitor is not attached <span style="color:#fb660a;font-weight:bold">then</span> you need to specify a screen resolution
+sudo raspi-config
+Advanced Options &gt; Resolution &gt; DMT Mode <span style="color:#0086f7;font-weight:bold">85</span> 1280x720
+
+raspi-config 命令 相当于： 修改 /boot/config.txt 内容
+<span style="color:#fb660a">hdmi_force_hotplug</span>=1
+<span style="color:#fb660a">hdmi_group</span>=2
+<span style="color:#fb660a">hdmi_mode</span>=85
+</code></pre></div> </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/pi">#pi</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/raspberry">#raspberry</a>
+      </div>
+    
+  
+</div>
+
+	    
+	    
+	    <div class="date"> Mon, 16 Sep 2019 09:34:00 CST </div>
+    
+  </div>
+</footer>
+    
+    
+    
+    
+
+  
+  
+
+<script src="https://utteranc.es/client.js"
+        repo="emacle/utterances"
+        issue-term="pathname"
+        theme="github-dark"
+	label="hugo"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  
+  
+  
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

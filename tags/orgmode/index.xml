@@ -24,7 +24,7 @@
 :EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &amp;lt;HUGO_BASE_DIR&amp;gt;/content/posts/
 C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
     Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
- 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式</description>
+ 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式</description>
     </item>
     
   </channel>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/hugo-theme/</loc>
+    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/theme/</loc>
+    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/utterances/</loc>
+    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-01-15T17:04:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/emacs/</loc>
+    <lastmod>2020-01-15T17:04:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/hugo-with-orgmode/</loc>
+    <lastmod>2020-01-15T17:04:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/orgmode/</loc>
+    <lastmod>2020-01-15T17:04:00+08:00</lastmod>
+  </url>
+  
+</urlset>

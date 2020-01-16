@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>theme on ~振鹭于飞~</title>
+    <link>/tags/theme/</link>
+    <description>Recent content in theme on ~振鹭于飞~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 16 Jan 2020 09:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hugo-dusk theme 模板,utterances评论修改</title>
+      <link>/posts/hugo-theme/</link>
+      <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
+      
+      <guid>/posts/hugo-theme/</guid>
+      <description>Hugo 以 theme 中的静态模板文件来生成静态css文件
+ie. 页面底部 &amp;ldquo;Powered by&amp;rdquo; 没有参数可配置取消, 可grep定位文件位置 注释掉
+cat ~/hugo/themes/hugo-dusk/layouts/partials/footer.html其中 copyright 部分可以 config.toml里配置后启用
+copyright = &amp;#34;Copyright (c) 2020, all rights reserved.&amp;#34;  启用 github utterances 评论, 修改.Type 变量, ox-hugo默认导出目录为 &amp;lt;HUGO_BASE_DIR&amp;gt;/content/posts/ 因此 .Type = &amp;ldquo;posts&amp;rdquo;
+cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html&amp;lt;footer class=&amp;#34;post-footer&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;post-footer-data&amp;#34;&amp;gt;{{ partial &amp;#34;tags.html&amp;#34; . }}&amp;lt;!--修改默认日期显示格式 --&amp;gt;&amp;lt;!--&amp;lt;div class=&amp;#34;date&amp;#34;&amp;gt; {{ .Date.Format &amp;#34;2006-01-01&amp;#34; }} &amp;lt;/div&amp;gt; --&amp;gt;&amp;lt;div class=&amp;#34;date&amp;#34;&amp;gt; {{ .Date.Format &amp;#34;Mon, 02 Jan 2006 15:04:05 MST&amp;#34; }} &amp;lt;/div&amp;gt;{{if or .</description>
+    </item>
+    
+  </channel>
+</rss>

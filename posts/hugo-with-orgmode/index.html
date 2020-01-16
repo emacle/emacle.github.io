@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.2" />
+
+<link rel="canonical" href="/posts/hugo-with-orgmode/">
+<meta property="og:title" content="Hugo with OrgMode" />
+<meta property="og:description" content="elpa 安装 ox-hugo
+  优先使用基于子树模式 两个必填 &lt;hugo_base_dir&gt; 与 EXPORT_FILE_NAME
+  org 文件头 设置配置 #&#43;hugo_base_dir 参数指向 hugo 工程目录
+#&#43;hugo_base_dir: ../hugo  subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名
+:EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
+C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
+    Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
+ 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/hugo-with-orgmode/" />
+<meta property="article:published_time" content="2020-01-15T17:04:00+08:00" />
+<meta property="article:modified_time" content="2020-01-15T17:04:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo with OrgMode"/>
+<meta name="twitter:description" content="elpa 安装 ox-hugo
+  优先使用基于子树模式 两个必填 &lt;hugo_base_dir&gt; 与 EXPORT_FILE_NAME
+  org 文件头 设置配置 #&#43;hugo_base_dir 参数指向 hugo 工程目录
+#&#43;hugo_base_dir: ../hugo  subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名
+:EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
+C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
+    Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
+ 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式"/>
+
+
+<meta itemprop="name" content="Hugo with OrgMode">
+<meta itemprop="description" content="elpa 安装 ox-hugo
+  优先使用基于子树模式 两个必填 &lt;hugo_base_dir&gt; 与 EXPORT_FILE_NAME
+  org 文件头 设置配置 #&#43;hugo_base_dir 参数指向 hugo 工程目录
+#&#43;hugo_base_dir: ../hugo  subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名
+:EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
+C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
+    Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
+ 多个参数以 空格 分隔 会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags 以 @ 开头的 orgmode tags 可表示 CATEGORIES  :EXPORT_HUGO_TAGS: hugo haha:EXPORT_HUGO_CATEGORIES: orgmode emacs可编写 yasnippet方便插入属性段, 可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式">
+<meta itemprop="datePublished" content="2020-01-15T17:04:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-15T17:04:00&#43;08:00" />
+<meta itemprop="wordCount" content="130">
+
+
+
+<meta itemprop="keywords" content="orgmode,hugo," />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Hugo with OrgMode 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">~振鹭于飞~</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/posts/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Hugo with OrgMode </h1>
+    <div class="content"> <ol>
+<li>
+<p>elpa 安装 ox-hugo</p>
+</li>
+<li>
+<p>优先使用基于子树模式 两个必填 &lt;hugo_base_dir&gt; 与 EXPORT_FILE_NAME</p>
+<ul>
+<li>
+<p>org 文件头 设置配置 <code>#+hugo_base_dir</code> 参数指向 <code>hugo</code> 工程目录</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#+hugo_base_dir: ../hugo
+</code></pre></div></li>
+<li>
+<p>subtree 属性必须要设置 EXPORT_FILE_NAME 即slug <!-- raw HTML omitted -->不可重复<!-- raw HTML omitted -->, 作为导出的 .md 文件名</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">:EXPORT_FILE_NAME: hugo-with-orgmode
+</code></pre></div></li>
+<li>
+<p>导出sub-tree到 <code>&lt;HUGO_BASE_DIR&gt;/content/posts/</code></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C-c e H H 或 C-c e H O
+</code></pre></div><p>子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES</p>
+<ul>
+<li>多个参数以 <code>空格</code> 分隔</li>
+<li>会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags</li>
+<li>以 <code>@</code> 开头的 orgmode tags 可表示 CATEGORIES</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">:EXPORT_HUGO_TAGS: hugo haha
+:EXPORT_HUGO_CATEGORIES: orgmode emacs
+</code></pre></div><p>可编写 <!-- raw HTML omitted -->yasnippet<!-- raw HTML omitted --> 方便插入属性段,
+可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接
+EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式</p>
+</li>
+<li>
+<p>org本地图片可以无命名插入可直接导出正确的url格式</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[file:images/80px-Heckert_GNU_white.svg.png]]
+</code></pre></div><figure>
+    <img src="/ox-hugo/80px-Heckert_GNU_white.svg.png"/> 
+</figure>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[https://raw.githubusercontent.com/emacle/picgo/master/img/icon_a.png]]  远程 image url
+</code></pre></div><figure>
+    <img src="https://raw.githubusercontent.com/emacle/picgo/master/img/icon%5Fa.png"/> 
+</figure>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;background-color:#0f140f;font-style:italic"># 1.初始化一个hugo工程目录</span>
+hugo new site mysite
+<span style="color:#080;background-color:#0f140f;font-style:italic"># 2. 必须在 mysite/themes 里 git 下载主题 如无mysite/themes目录 则手动创建</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># 3. cd mysite 测试</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic"># &gt; hugo.exe new posts/my-first.md 生成 .md -&gt; 编辑</span>
+hugo.exe serve
+<span style="color:#080;background-color:#0f140f;font-style:italic"># 4. 发布, 在hugo文件夹下自动生成一个public文件夹 将public托管</span>
+hugo
+</code></pre></div></li>
+</ol>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/orgmode">#orgmode</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/hugo">#hugo</a>
+      </div>
+    
+  
+</div>
+
+	    
+	    
+	    <div class="date"> Wed, 15 Jan 2020 17:04:00 CST </div>
+    
+    <hr>
+            
+<div class="categories">
+  
+  Published in:
+    
+      <div class="category">
+        <a href="/categories/emacs">emacs</a>
+      </div>
+    
+  
+</div>
+
+            
+<div class="series">
+  
+</div>
+
+    
+  </div>
+</footer>
+    
+    
+    
+    
+
+  
+  
+
+<script src="https://utteranc.es/client.js"
+        repo="emacle/utterances"
+        issue-term="pathname"
+        theme="github-dark"
+	label="hugo"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  
+  
+  
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

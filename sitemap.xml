@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/jwt/</loc>
+    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/token/</loc>
+    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/vue/</loc>
+    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/vue-token-guo-qi-wu-feng-shua-xin/</loc>
+    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/hugo/</loc>
     <lastmod>2020-01-16T09:30:00+08:00</lastmod>
   </url>
@@ -13,27 +48,12 @@
   </url>
   
   <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/theme/</loc>
     <lastmod>2020-01-16T09:30:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/utterances/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2020-01-16T09:30:00+08:00</lastmod>
   </url>
   

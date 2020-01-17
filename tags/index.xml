@@ -6,10 +6,37 @@
     <description>Recent content in Tags on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Thu, 16 Jan 2020 09:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jan 2020 10:39:00 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jwt</title>
+      <link>/tags/jwt/</link>
+      <pubDate>Fri, 17 Jan 2020 10:39:00 +0800</pubDate>
+      
+      <guid>/tags/jwt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>token</title>
+      <link>/tags/token/</link>
+      <pubDate>Fri, 17 Jan 2020 10:39:00 +0800</pubDate>
+      
+      <guid>/tags/token/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue</title>
+      <link>/tags/vue/</link>
+      <pubDate>Fri, 17 Jan 2020 10:39:00 +0800</pubDate>
+      
+      <guid>/tags/vue/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>

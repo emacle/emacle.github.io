@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="pocoyo" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.2" />
+
+<link rel="canonical" href="/tags/token/">
+<link rel="icon" href="https://emacle.github.io/favicon.ico">
+<meta property="og:title" content="token" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/token/" />
+<meta property="og:updated_time" content="2020-01-17T10:39:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="token"/>
+<meta name="twitter:description" content=""/>
+
+
+<meta itemprop="name" content="token">
+<meta itemprop="description" content="">
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     token 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">~振鹭于飞~</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/posts/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<h2 class="term-list-title">
+    <a href="/tags/token/" class="linktopost">tag: token</a>
+</h2>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/posts/vue-token-guo-qi-wu-feng-shua-xin/'> vue token过期无缝刷新</a> </h2>
+    <div class="meta">
+      <div class="date">
+	Jan 17, 2020 - 2 minutes
+      </div>
+      
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/vue">#vue</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/jwt">#jwt</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/token">#token</a>
+      </div>
+    
+  
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    思路:
+  登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
+  当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
+ 判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
+ 如果正常获得 access_token, 则再次以新 access_token 发送原请求, 即可实现无缝刷新 如果 refresh_token 也过期, 则服务器也返回 401, 但是加上了自定义响应数据 code= 50015, 前端的响应拦截器 再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录  // response interceptorservice.
+  </div>
+
+  <div class="rmore">
+    <a href='/posts/vue-token-guo-qi-wu-feng-shua-xin/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  
+  
+  
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

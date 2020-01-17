@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="pocoyo" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.2" />
+
+<link rel="canonical" href="/posts/vue-token-guo-qi-wu-feng-shua-xin/">
+<link rel="icon" href="https://emacle.github.io/favicon.ico">
+<meta property="og:title" content="vue token过期无缝刷新" />
+<meta property="og:description" content="思路:
+  登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
+  当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
+ 判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
+ 如果正常获得 access_token, 则再次以新 access_token 发送原请求, 即可实现无缝刷新 如果 refresh_token 也过期, 则服务器也返回 401, 但是加上了自定义响应数据 code= 50015, 前端的响应拦截器 再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录  // response interceptorservice." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/vue-token-guo-qi-wu-feng-shua-xin/" />
+<meta property="article:published_time" content="2020-01-17T10:39:00+08:00" />
+<meta property="article:modified_time" content="2020-01-17T10:39:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="vue token过期无缝刷新"/>
+<meta name="twitter:description" content="思路:
+  登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
+  当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
+ 判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
+ 如果正常获得 access_token, 则再次以新 access_token 发送原请求, 即可实现无缝刷新 如果 refresh_token 也过期, 则服务器也返回 401, 但是加上了自定义响应数据 code= 50015, 前端的响应拦截器 再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录  // response interceptorservice."/>
+
+
+<meta itemprop="name" content="vue token过期无缝刷新">
+<meta itemprop="description" content="思路:
+  登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
+  当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
+ 判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
+ 如果正常获得 access_token, 则再次以新 access_token 发送原请求, 即可实现无缝刷新 如果 refresh_token 也过期, 则服务器也返回 401, 但是加上了自定义响应数据 code= 50015, 前端的响应拦截器 再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录  // response interceptorservice.">
+<meta itemprop="datePublished" content="2020-01-17T10:39:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-17T10:39:00&#43;08:00" />
+<meta itemprop="wordCount" content="316">
+
+
+
+<meta itemprop="keywords" content="vue,jwt,token," />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     vue token过期无缝刷新 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">~振鹭于飞~</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/posts/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> vue token过期无缝刷新 </h1>
+    <div class="content"> <p>思路:</p>
+<ol>
+<li>
+<p>登录时, 后端生成 <em>access_token, refresh_token</em> 返回前端, 前端保存两个token在 cookie或localstorge中</p>
+</li>
+<li>
+<p>当前端发送正常请求时,请求头字段携带 <em>access_token</em> , 后端提取该 <em>access_token</em></p>
+<ul>
+<li>判断是否过期, 不过期则返回 HTTP 200 OK</li>
+<li>过期返回 <em>HTTP_UNAUTHORIZED</em> 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期</li>
+</ul>
+</li>
+<li>
+<p>VUE前端使用 <strong>响应拦截器</strong> , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 <em>refresh_token</em>
+去获取新 <em>access_token</em></p>
+<ul>
+<li>如果正常获得 access_token, 则再次以新 access_token 发送原请求, 即可实现无缝刷新</li>
+<li>如果 <em>refresh_token</em> 也过期, 则服务器也返回 401, 但是加上了自定义响应数据 code= 50015, 前端的响应拦截器
+再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;background-color:#0f140f;font-style:italic">// response interceptor
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>service.interceptors.response.use(
+    response =&gt; {
+   <span style="color:#fb660a;font-weight:bold">const</span> res = response.data
+   <span style="color:#080;background-color:#0f140f;font-style:italic">// 一些处理...
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">return</span> response.data
+    },
+    error =&gt; {
+   <span style="color:#080;background-color:#0f140f;font-style:italic">// http 401 只能在 error 里被截获
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#080;background-color:#0f140f;font-style:italic">// console.log(error) *** 控制台不能输出返回的响应数据 ***
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#080;background-color:#0f140f;font-style:italic">// console.log(error.response) *** 可使用此命令进行调试 ***
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">if</span> (error.response.status === <span style="color:#0086f7;font-weight:bold">401</span> &amp;&amp; error.response.data.code === <span style="color:#0086f7;font-weight:bold">50014</span>) {
+       <span style="color:#080;background-color:#0f140f;font-style:italic">// message: &#39;access_token过期,自动续期&#39;, code = 50014 access_token 过期
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>       <span style="color:#fb660a;font-weight:bold">return</span> againRequest(error) <span style="color:#080;background-color:#0f140f;font-style:italic">// 此函数先以refresh_token 去获取新access_token, 然后再次以新 access_token 发送原请求
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   }
+
+   <span style="color:#080;background-color:#0f140f;font-style:italic">// 这里是 code = 50015 refresh_token 也过期的情况
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">if</span> (error.response.status === <span style="color:#0086f7;font-weight:bold">401</span> &amp;&amp; error.response.data.code === <span style="color:#0086f7;font-weight:bold">50015</span>) {
+       <span style="color:#080;background-color:#0f140f;font-style:italic">// message: &#39;refresh_token过期,重定向登录&#39;, code = 50015 refresh_token 过期
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>       console.log(<span style="color:#0086d2">&#39;refresh_token过期 超时......&#39;</span>)
+       MessageBox.confirm(<span style="color:#0086d2">&#39;你已被登出，可以取消继续留在该页面，或者重新登录&#39;</span>, <span style="color:#0086d2">&#39;确定登出&#39;</span>, {
+           confirmButtonText: <span style="color:#0086d2">&#39;重新登录&#39;</span>,
+           cancelButtonText: <span style="color:#0086d2">&#39;取消&#39;</span>,
+           type: <span style="color:#0086d2">&#39;warning&#39;</span>
+       }).then(() =&gt; {
+           store.dispatch(<span style="color:#0086d2">&#39;FedLogOut&#39;</span>).then(() =&gt; {
+               location.reload() <span style="color:#080;background-color:#0f140f;font-style:italic">// 为了重新实例化vue-router对象 避免bug
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>           })
+       })
+   }
+
+   <span style="color:#fb660a;font-weight:bold">return</span> Promise.reject(error)
+    }
+) <span style="color:#080;background-color:#0f140f;font-style:italic">// response 拦截结束
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>
+async <span style="color:#fb660a;font-weight:bold">function</span> againRequest(error) {
+    await store.dispatch(<span style="color:#0086d2">&#39;handleCheckRefreshToken&#39;</span>) <span style="color:#080;background-color:#0f140f;font-style:italic">// 同步以获取刷新 access_token 并且保存在 cookie/localstorage
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">const</span> config = error.response.config
+    config.headers[<span style="color:#0086d2">&#39;X-Token&#39;</span>] = getToken()  <span style="color:#080;background-color:#0f140f;font-style:italic">// 以新的 access_token
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">const</span> res = await axios.request(config) <span style="color:#080;background-color:#0f140f;font-style:italic">// 重新进行原请求
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">return</span> res.data <span style="color:#080;background-color:#0f140f;font-style:italic">// 以error.response.config重新请求返回的数据包是在函数内是 被封装在data里面
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>}
+</code></pre></div></li>
+<li>
+<p>第3步以 refresh_token 去获取 access_token 时, 必须在 <strong>请求拦截器</strong> 里重新配置请求头, 以 refresh_token 作为新的 token 头
+否则后端token认证判断还是原过期的 access_token</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;background-color:#0f140f;font-style:italic">// request interceptor
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>service.interceptors.request.use(
+    config =&gt; {
+   <span style="color:#080;background-color:#0f140f;font-style:italic">// Do something before request is sent
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">if</span> (store.getters.token) {
+       <span style="color:#080;background-color:#0f140f;font-style:italic">// 让每个请求携带token-- [&#39;X-Token&#39;]为自定义key 请根据实际情况自行修改
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>       config.headers[<span style="color:#0086d2">&#39;X-Token&#39;</span>] = getToken()
+   }
+
+   <span style="color:#080;background-color:#0f140f;font-style:italic">// 监听是否 /sys/user/refreshtoken 是则重置token为 refresh_token
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">const</span> url = config.url
+   <span style="color:#fb660a;font-weight:bold">if</span> (url.split(<span style="color:#0086d2">&#39;/&#39;</span>).pop() === <span style="color:#0086d2">&#39;refreshtoken&#39;</span>) {
+       <span style="color:#080;background-color:#0f140f;font-style:italic">// console.log(&#39;config.url&#39;, config.url, getRefreshToken())
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>       config.headers[<span style="color:#0086d2">&#39;X-Token&#39;</span>] = getRefreshToken() <span style="color:#080;background-color:#0f140f;font-style:italic">// 登录时本地 cookie/localstorage 存储的
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   }
+   <span style="color:#fb660a;font-weight:bold">return</span> config
+    },
+    error =&gt; {
+   <span style="color:#080;background-color:#0f140f;font-style:italic">// Do something with request error
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   console.log(error) <span style="color:#080;background-color:#0f140f;font-style:italic">// for debug
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   Promise.reject(error)
+    }
+)
+</code></pre></div><p><img src="https://raw.githubusercontent.com/emacle/vue-php-admin/master/vue-element-admin/static/screenshot/view%5Fjwt.gif" alt="">
+<img src="https://raw.githubusercontent.com/emacle/vue-php-admin/master/vue-element-admin/static/screenshot/edit%5Fjwt.gif" alt="">
+<img src="https://raw.githubusercontent.com/emacle/vue-php-admin/master/vue-element-admin/static/screenshot/del%5Fjwt.gif" alt=""></p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">用户编辑时比较有用, 防止长时间编辑后提交时 access_token 过期, 导致编辑内容丢失
+</code></pre></div></li>
+<li>
+<p>完整代码 <a href="https://github.com/emacle/vue-php-admin">https://github.com/emacle/vue-php-admin</a></p>
+</li>
+<li>
+<p>VUE 请求拦截器与响应拦截器代码修改自 <a href="https://github.com/PanJiaChen/vue-element-admin/">vue-element-admin</a> 中的 <a href="https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js">request.js</a></p>
+</li>
+</ol>
+<p>参考: <a href="https://blog.csdn.net/cjs5202001/article/details/80228937">php firebase/php-jwt token验证</a></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/vue">#vue</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/jwt">#jwt</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/token">#token</a>
+      </div>
+    
+  
+</div>
+
+	    
+	    
+	    <div class="date"> Fri, 17 Jan 2020 10:39:00 CST </div>
+    
+  </div>
+</footer>
+    
+    
+    
+    
+
+  
+  
+
+<script src="https://utteranc.es/client.js"
+        repo="emacle/utterances"
+        issue-term="pathname"
+        theme="github-dark"
+	label="hugo"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  
+  
+  
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

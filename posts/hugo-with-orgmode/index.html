@@ -52,7 +52,7 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
   会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags">
 <meta itemprop="datePublished" content="2020-01-15T17:04:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-15T17:04:00&#43;08:00" />
-<meta itemprop="wordCount" content="144">
+<meta itemprop="wordCount" content="150">
 
 
 
@@ -111,8 +111,6 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
 
   
 
-  </footer>
-
 </div>
 
 
@@ -168,10 +166,15 @@ EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式</p>
 head title里的中文转换成拼音</p>
 </li>
 <li>
-<p>org本地图片可以无命名插入可直接导出正确的url格式</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[file:images/80px-Heckert_GNU_white.svg.png]]
+<p>org本地图片可以无描述插入可直接导出正确的url格式</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[file:images/80px-Heckert_GNU_white.svg.png]] 描述为空不能单击图片链接
 </code></pre></div><figure>
     <img src="/ox-hugo/80px-Heckert_GNU_white.svg.png"/> 
+</figure>
+
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[desc][link]] 描述不为空 图片可单击打开，i.e. (org-store-link) 保存的链接
+</code></pre></div><figure><a href="/ox-hugo/ditaa-wlan-eth0-internet.png">
+    <img src="/ox-hugo/ditaa-wlan-eth0-internet.png"/> </a>
 </figure>
 
 <div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[https://raw.githubusercontent.com/emacle/picgo/master/img/icon_a.png]]  远程 image url
@@ -216,8 +219,6 @@ hugo
 	    
 	    
 	    <div class="date"> Wed, 15 Jan 2020 17:04:00 CST </div>
-
-	    
 
     
     <hr>

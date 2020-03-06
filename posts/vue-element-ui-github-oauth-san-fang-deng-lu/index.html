@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="pocoyo" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="google-site-verification" content="k8WIOcecDRQPeZ2x500693x2f2W85xDEm87gV1_lWl0" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.2" />
+
+<link rel="canonical" href="/posts/vue-element-ui-github-oauth-san-fang-deng-lu/">
+<link rel="icon" href="https://emacle.github.io/favicon.ico">
+<meta property="og:title" content="Vue Element-ui Github oAuth 三方登录" />
+<meta property="og:description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值 
+  socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
+githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL// 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址// 为了无歧义尽量指定redirect_uriconst url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39;// 2. 弹出子窗口进行授权, 子窗口完成授权后, 子窗口地址栏URL 会是 redirect_uri 并带上 ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/vue-element-ui-github-oauth-san-fang-deng-lu/" />
+<meta property="article:published_time" content="2020-03-06T11:42:00+08:00" />
+<meta property="article:modified_time" content="2020-03-06T11:42:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue Element-ui Github oAuth 三方登录"/>
+<meta name="twitter:description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值 
+  socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
+githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL// 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址// 为了无歧义尽量指定redirect_uriconst url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39;// 2. 弹出子窗口进行授权, 子窗口完成授权后, 子窗口地址栏URL 会是 redirect_uri 并带上 ?"/>
+
+
+<meta itemprop="name" content="Vue Element-ui Github oAuth 三方登录">
+<meta itemprop="description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值 
+  socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
+githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL// 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址// 为了无歧义尽量指定redirect_uriconst url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39;// 2. 弹出子窗口进行授权, 子窗口完成授权后, 子窗口地址栏URL 会是 redirect_uri 并带上 ?">
+<meta itemprop="datePublished" content="2020-03-06T11:42:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-06T11:42:00&#43;08:00" />
+<meta itemprop="wordCount" content="501">
+
+
+
+<meta itemprop="keywords" content="vue,element,github,oauth," />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Vue Element-ui Github oAuth 三方登录 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">~振鹭于飞~</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/posts/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Vue Element-ui Github oAuth 三方登录 </h1>
+    <div class="content"> <figure><a href="/ox-hugo/github_login.gif">
+    <img src="/ox-hugo/github_login.gif"/> </a>
+</figure>
+
+<ol>
+<li>
+<p>Github 网站创建 OAuth Apps 记录 <code>Client ID</code> / <code>Client Secret</code> / <code>Authorization Callback URL</code> 3个参数
+此处 <code>Authorization Callback URL</code> 为默认回调网址，程序代码里没有明确指定的话，以此为默认值
+<a href="/ox-hugo/github-oauth.png"><img src="/ox-hugo/github-oauth.png" alt=""></a></p>
+</li>
+<li>
+<p>socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">githubHandleClick(thirdpart) {
+<span style="color:#080;background-color:#0f140f;font-style:italic">// 1. 指定授权 client_id 及 redirect_uri 的 URL
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#080;background-color:#0f140f;font-style:italic">//    如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt;  OAuth Apps 里 Authorization callback URL 配置的地址
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#080;background-color:#0f140f;font-style:italic">//    为了无歧义尽量指定redirect_uri
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">const</span> url = <span style="color:#0086d2">&#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39;</span>
+<span style="color:#080;background-color:#0f140f;font-style:italic">// 2. 弹出子窗口进行授权, 子窗口完成授权后, 子窗口地址栏URL 会是 redirect_uri 并带上 ?code= 参数
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>openWindow(url, thirdpart, <span style="color:#0086f7;font-weight:bold">540</span>, <span style="color:#0086f7;font-weight:bold">540</span>)
+}
+</code></pre></div></li>
+<li>
+<p>authredirect.vue 里，即第2步url参数 redirect_uri 指定的回调地址对应的路由组件(/auth-redirect)，在此弹出的子窗口里进行授权，授权完成后，调用js 的 window.opener 方法 给 父窗口 的 location.href 赋值，父窗口地址栏变为 会带有 github 返回的 ?code 参数，同时关闭子窗口，代码逻辑转至父窗口进行后续处理</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">      name: <span style="color:#0086d2">&#39;AuthRedirect&#39;</span>,
+created() {
+  <span style="color:#fb660a;font-weight:bold">this</span>.githubLogin()
+},
+methods: {
+  githubLogin() {
+    <span style="color:#080;background-color:#0f140f;font-style:italic">// 1.  授权成功后, github 会返回给 AuthRedirect子窗口的浏览器 回调地址 并带上 ?code=8789d613d1fa9a19732a 参数
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//     地址栏URL如 http://localhost:9527/auth-redirect?code=8789d613d1fa9a19732a
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//     其中 http://localhost:9527/auth-redirect 是定义 githubHandleClick() 里定义的回调地址
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//     const url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39;
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//     此时 window.location.href   =&gt; http://localhost:9527/auth-redirect?code=8789d613d1fa9a19732a
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">//         window.location.search  =&gt; ?code=8789d613d1fa9a19732a
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// 2. 调用 window.opener 方法 给 父窗口 的 location.href 赋值 =&gt; http://localhost:9527/?code=8789d613d1fa9a19732a
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    window.opener.location.href = window.location.origin + <span style="color:#0086d2">&#39;/&#39;</span> + window.location.search
+    <span style="color:#080;background-color:#0f140f;font-style:italic">//    可在此 使用未定义的变量 来 debug  // Error in created hook: &#34;ReferenceError: hash is not defined&#34; found in window.opener.location.href = window.location.origin + &#39;?&#39; + hash
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// 3. 关闭 AuthRedirect 子窗口。同时代码逻辑至父窗口 在 permission.js =&gt; router.beforeEach 进行 code 处理
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    window.close()
+  }
+}
+</code></pre></div></li>
+<li>
+<p>permission.js 里面 router.beforeEach 执行路由前由vue router to 对象来获取进行 code 并存储进入store(也可以在 login/index.vue 里使用windows.location进行截取)</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">router.beforeEach((to, from, next) =&gt; {
+  NProgress.start() <span style="color:#080;background-color:#0f140f;font-style:italic">// start progress bar
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>  <span style="color:#080;background-color:#0f140f;font-style:italic">// 获取三方登录 code
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>  <span style="color:#080;background-color:#0f140f;font-style:italic">// 更可靠稳定的获取code方法 使用 vue router to 对象来获取
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>  console.log(<span style="color:#0086d2">&#39;router.beforeEach&#39;</span>, to, from)
+  <span style="color:#fb660a;font-weight:bold">if</span> (to.query.hasOwnProperty(<span style="color:#0086d2">&#39;code&#39;</span>)) { <span style="color:#080;background-color:#0f140f;font-style:italic">// to.query 如果存在 code 则为三方登录则写入store 变量
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// &amp;&amp; to.fullPath.includes(&#39;\?code=&#39;)
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#080;background-color:#0f140f;font-style:italic">// const code = location.search.replace(&#39;\?code=&#39;, &#39;&#39;)
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">const</span> code = to.query.code
+    console.log(<span style="color:#0086d2">&#39;github code: &#39;</span>, code)
+    store.state.user.code = code
+    <span style="color:#080;background-color:#0f140f;font-style:italic">// console.log(store.state.user)  // 该code 在store/modules/user.js 里定义有 作为第三方登录使用 参见其中 LoginByThirdparty
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>  }
+  <span style="color:#080;background-color:#0f140f;font-style:italic">// 获取 code 结束
+</span></code></pre></div></li>
+<li>
+<p>login/index.vue 代码逻辑转至此处，此时code已经在 store, 在 created 生命周期里 判断code 是否存在，如果存在则为github三方登录,前端调用githubAuth 函数带code参数向后台进行认证正确后会返回给前面 token/refresh_token，前面配置token正确后却可正常登录 (与后端交互时可加入三方登录loading动画效果提示)</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"> created() {
+   <span style="color:#fb660a;font-weight:bold">this</span>.githubLogin()
+ },
+methods: {
+   githubLogin() {
+     <span style="color:#080;background-color:#0f140f;font-style:italic">// permission.js 里根据 AuthRedirect 返回的 http://localhost:9527/?code=8789d613d1fa9a19732a URL 获取code 并写入 store.state.user.code
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>     <span style="color:#080;background-color:#0f140f;font-style:italic">// 如果设置了github code, 说明是三方登录, 则执行 GET githubAuth 根据 code 获取 github userinfo 结合业务逻辑生成 token / refreshtoken (jwt)
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>     <span style="color:#fb660a;font-weight:bold">if</span> (<span style="color:#fb660a;font-weight:bold">this</span>.$store.state.user.code) {
+       <span style="color:#fb660a;font-weight:bold">this</span>.thirdLogin = <span style="color:#fb660a;font-weight:bold">true</span>
+
+       <span style="color:#fb660a;font-weight:bold">const</span> loading = <span style="color:#fb660a;font-weight:bold">this</span>.$loading({
+    lock: <span style="color:#fb660a;font-weight:bold">true</span>,
+    text: <span style="color:#0086d2">&#39;github 认证登录中...&#39;</span>,
+    spinner: <span style="color:#0086d2">&#39;el-icon-loading&#39;</span>,
+    background: <span style="color:#0086d2">&#39;rgba(0, 0, 0, 0.7)&#39;</span>
+       })
+
+       <span style="color:#fb660a;font-weight:bold">this</span>.$store.dispatch(<span style="color:#0086d2">&#39;githubAuth&#39;</span>, <span style="color:#fb660a;font-weight:bold">this</span>.$store.state.user.code).then(() =&gt; {
+    console.log(<span style="color:#0086d2">&#39;this.$store.dispatchgithubAuth....&#39;</span>, window.location.origin + <span style="color:#0086d2">&#39;/&#39;</span> + window.location.hash, window.location.hash)
+    <span style="color:#fb660a;font-weight:bold">this</span>.$router.push({ path: <span style="color:#0086d2">&#39;/&#39;</span> })
+    loading.close()
+       }).<span style="color:#fb660a;font-weight:bold">catch</span>((err) =&gt; {
+    console.log(<span style="color:#0086d2">&#39;this.$store.dispatchgithubAuth catch....&#39;</span>, err)
+    <span style="color:#fb660a;font-weight:bold">this</span>.thirdLogin = <span style="color:#fb660a;font-weight:bold">false</span>
+    loading.close()
+       }).<span style="color:#fb660a;font-weight:bold">finally</span>((e) =&gt; {
+    console.log(<span style="color:#0086d2">&#39;this.$store.dispatchgithubAuth finally....&#39;</span>, e)
+    <span style="color:#fb660a;font-weight:bold">this</span>.thirdLogin = <span style="color:#fb660a;font-weight:bold">false</span>
+    loading.close()
+       })
+     }
+   }
+</code></pre></div><div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">   <span style="color:#080;background-color:#0f140f;font-style:italic">// github认证正确后会返回给前面 token/refresh_token，前面配置token正确后却可正常登录
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   githubAuth({ commit }, code) {
+     <span style="color:#fb660a;font-weight:bold">return</span> <span style="color:#fb660a;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
+       githubAuth(code).then(response =&gt; {
+         console.log(<span style="color:#0086d2">&#39;githubAuth response...&#39;</span>, response)
+         <span style="color:#fb660a;font-weight:bold">const</span> data = response.data
+         <span style="color:#fb660a;font-weight:bold">if</span> (data.status === <span style="color:#0086d2">&#39;ok&#39;</span>) {
+           commit(<span style="color:#0086d2">&#39;SET_TOKEN&#39;</span>, data.token)
+           commit(<span style="color:#0086d2">&#39;SET_REFRESH_TOKEN&#39;</span>, data.refresh_token)
+           setToken(data.token)
+           setRefreshToken(data.refresh_token)
+           resolve()
+         }
+       }).<span style="color:#fb660a;font-weight:bold">catch</span>(error =&gt; {
+         reject(error)
+       })
+     })
+   },
+
+<span style="color:#080;background-color:#0f140f;font-style:italic">// github 认证api
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span><span style="color:#fb660a;font-weight:bold">export</span> <span style="color:#fb660a;font-weight:bold">function</span> githubAuth(code) {
+  <span style="color:#fb660a;font-weight:bold">return</span> request({
+    url: <span style="color:#0086d2">&#39;/sys/user/githubauth&#39;</span>,
+    method: <span style="color:#0086d2">&#39;get&#39;</span>,
+    params: { code }
+  })
+}
+</code></pre></div></li>
+<li>
+<p>后端 /sys/user/githubauth 接口 根据code与github进行交互，主要有获取github access_token与 获取github 用户信息，后端可以封装函数来获取github交互信息 (如果是php可利用composer安装一些三方登录插件错误校验比较完善，一般需要php开启 开启php.ini中的session.auto_start配置 使用session)</p>
+</li>
+<li>
+<p>vue路由模式最好使用history, hash模式的话url中的#字符认证中转时不太好处理，history模式在 <code>生产环境</code> 中需要配置后端服务器支持(此后端为vue编译生成的静态网页面代码部署的服务器，如 <a href="https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/deploy.html#%25E5%258F%2591%25E5%25B8%2583">apache route history mode配置参考</a> ， <code>并不是后端接口的服务器</code> )</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">@router/index.js
+<span style="color:#fb660a;font-weight:bold">export</span> <span style="color:#fb660a;font-weight:bold">default</span> <span style="color:#fb660a;font-weight:bold">new</span> Router({
+mode: <span style="color:#0086d2">&#39;history&#39;</span>, <span style="color:#080;background-color:#0f140f;font-style:italic">// require service support 前端部署的时候 apache 需要配置文件 .htaccess
+</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>scrollBehavior: () =&gt; ({ y: <span style="color:#0086f7;font-weight:bold">0</span> }),
+routes: constantRouterMap
+})
+</code></pre></div></li>
+<li>
+<p>完整代码 <a href="https://github.com/emacle/vue-php-admin">https://github.com/emacle/vue-php-admin</a></p>
+</li>
+</ol>
+<p>github 登录报错 <a href="http://localhost:9527/auth-redirect?error=redirect%5Furi%5Fmismatch&amp;error%5Fdescription=The">http://localhost:9527/auth-redirect?error=redirect%5Furi%5Fmismatch&amp;error%5Fdescription=The</a> redirect_uri MUST match the registered callback URL for this application.&amp;error_uri=<a href="https://developer.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch%23/auth-redirect">https://developer.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch%23/auth-redirect</a></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/vue">#vue</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/element">#element</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/github">#github</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/oauth">#oauth</a>
+      </div>
+    
+  
+</div>
+
+	    
+	    
+	    <div class="date"> Fri, 06 Mar 2020 11:42:00 CST </div>
+
+    
+  </div>
+</footer>
+    
+    
+    
+    
+
+  
+  
+
+<script src="https://utteranc.es/client.js"
+        repo="emacle/utterances"
+        issue-term="pathname"
+        theme="github-dark"
+	label="hugo"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_value_site_uv"></span>
+  </span>
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_value_site_pv"></span> | <span id="busuanzi_value_page_pv"></span>
+  </span>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  
+  
+  
+
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div> 
+
+</body>
+</html>
+

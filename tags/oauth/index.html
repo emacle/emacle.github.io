@@ -16,7 +16,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/tags/oauth/" />
-<meta property="og:updated_time" content="2020-03-06T11:42:00+08:00" />
+<meta property="og:updated_time" content="2020-03-09T10:37:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="oauth"/>
@@ -91,6 +91,44 @@
 <h2 class="term-list-title">
     <a href="/tags/oauth/" class="linktopost">tag: oauth</a>
 </h2>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/posts/oauth-2-authorization-code-grant-flow/'> OAuth 2 Authorization Code Grant Flow</a> </h2>
+    <div class="meta">
+      <div class="date">
+	Mar 9, 2020 - 1 minutes
+      </div>
+      
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/oauth">#oauth</a>
+      </div>
+    
+  
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節
+在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去 Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code) 。 在轉址回去之前， Authorization Server 會先認證 Resource Owner 並取得授權。因為 Resource Owner 只跟 Authorization Server 認證，所以 Client 絕對不會拿到 Resource Owner 的帳號密碼。
+    註: (A), (B), (C) 這三步的線拆成兩段，因為會經過 user-agent 其 Client 指自己的应用程序（包括前端及后端api） User-Agent 一般指流览器
+ (D) 步 客户端向 authorization server 发送 auth_code 时(手工封装时) 未带有redirect_uri貌似也能成功最好还是按标准带上该参数？  使用 oauth2-client 包时应该是封装好的 authorization_code 与 前面定义的 redirect_uri 一同发向 authorization server
+  </div>
+
+  <div class="rmore">
+    <a href='/posts/oauth-2-authorization-code-grant-flow/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
 
 
     <article class="post-preview">

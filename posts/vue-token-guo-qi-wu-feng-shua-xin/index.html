@@ -13,7 +13,8 @@
 <link rel="canonical" href="/posts/vue-token-guo-qi-wu-feng-shua-xin/">
 <link rel="icon" href="https://emacle.github.io/favicon.ico">
 <meta property="og:title" content="vue token过期无缝刷新" />
-<meta property="og:description" content="思路:
+<meta property="og:description" content="过期刷新流程图: 
+思路:
   登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
   当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
  判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
@@ -25,7 +26,8 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="vue token过期无缝刷新"/>
-<meta name="twitter:description" content="思路:
+<meta name="twitter:description" content="过期刷新流程图: 
+思路:
   登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
   当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
  判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
@@ -33,14 +35,15 @@
 
 
 <meta itemprop="name" content="vue token过期无缝刷新">
-<meta itemprop="description" content="思路:
+<meta itemprop="description" content="过期刷新流程图: 
+思路:
   登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
   当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
  判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
  如果正常获得 access_token, 则再次以新 access_token 发送原请求, 即可实现无缝刷新 如果 refresh_token 也过期, 则服务器也返回 401, 但是加上了自定义响应数据 code= 50015, 前端的响应拦截器 再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录  // response interceptorservice.">
 <meta itemprop="datePublished" content="2020-01-17T10:39:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-17T10:39:00&#43;08:00" />
-<meta itemprop="wordCount" content="316">
+<meta itemprop="wordCount" content="317">
 
 
 
@@ -110,7 +113,9 @@
 
 <article class="post">
     <h1 class="title"> vue token过期无缝刷新 </h1>
-    <div class="content"> <p>思路:</p>
+    <div class="content"> <p><em>过期刷新流程图:</em>
+<a href="/ox-hugo/ditaa-refresh-token.png"><img src="/ox-hugo/ditaa-refresh-token.png" alt=""></a></p>
+<p>思路:</p>
 <ol>
 <li>
 <p>登录时, 后端生成 <em>access_token, refresh_token</em> 返回前端, 前端保存两个token在 cookie或localstorge中</p>

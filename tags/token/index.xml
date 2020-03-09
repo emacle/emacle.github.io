@@ -17,7 +17,8 @@
       <pubDate>Fri, 17 Jan 2020 10:39:00 +0800</pubDate>
       
       <guid>/posts/vue-token-guo-qi-wu-feng-shua-xin/</guid>
-      <description>思路:
+      <description>过期刷新流程图: 
+思路:
   登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
   当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
  判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token

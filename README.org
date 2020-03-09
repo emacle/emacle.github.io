@@ -1,2 +1,2 @@
-* Hugo / Emacs / OrgMode Blog
+* Huxo / Emacs / OrgMode Blog
   [[https://emacle.github.io/]]

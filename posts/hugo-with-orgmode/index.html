@@ -131,15 +131,15 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
 <ul>
 <li>
 <p>org 文件头 设置配置 <code>#+hugo_base_dir</code> 参数指向 <code>hugo</code> 工程目录</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#+hugo_base_dir: ../hugo
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#+hugo_base_dir: ../hugo
 </code></pre></div></li>
 <li>
 <p>subtree 属性必须要设置 EXPORT_FILE_NAME 即slug <!-- raw HTML omitted -->不可重复<!-- raw HTML omitted -->, 作为导出的 .md 文件名</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">:EXPORT_FILE_NAME: hugo-with-orgmode
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">:EXPORT_FILE_NAME: hugo-with-orgmode
 </code></pre></div></li>
 <li>
 <p>导出sub-tree到 <code>&lt;HUGO_BASE_DIR&gt;/content/posts/</code></p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C-c e H H 或 C-c e H O
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C-c e H H 或 C-c e H O
 </code></pre></div><p>子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿</p>
 </li>
 </ul>
@@ -158,7 +158,7 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
 </li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">:EXPORT_HUGO_TAGS: hugo haha
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">:EXPORT_HUGO_TAGS: hugo haha
 :EXPORT_HUGO_CATEGORIES: orgmode emacs
 </code></pre></div><p>可不用使用 CATEGORIES 能与 orgmode 保持一致, 前端配置可去除该链接
 EXPORT_HUGO_TAGS 也可以留空, 只使用org tags 方式</p>
@@ -167,33 +167,33 @@ head title里的中文转换成拼音</p>
 </li>
 <li>
 <p>org本地图片可以无描述插入可直接导出正确的url格式</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[file:images/80px-Heckert_GNU_white.svg.png]] 描述为空不能单击图片链接
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[file:images/80px-Heckert_GNU_white.svg.png]] 描述为空不能单击图片链接
 </code></pre></div><figure>
     <img src="/ox-hugo/80px-Heckert_GNU_white.svg.png"/> 
 </figure>
 
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[desc][link]] 描述不为空 图片可单击打开，i.e. (org-store-link) 保存的链接
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[desc][link]] 描述不为空 图片可单击打开，i.e. (org-store-link) 保存的链接
 </code></pre></div><figure><a href="/ox-hugo/ditaa-wlan-eth0-internet.png">
     <img src="/ox-hugo/ditaa-wlan-eth0-internet.png"/> </a>
 </figure>
 
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[https://raw.githubusercontent.com/emacle/picgo/master/img/icon_a.png]]  远程 image url
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[[https://raw.githubusercontent.com/emacle/picgo/master/img/icon_a.png]]  远程 image url
 </code></pre></div><figure>
     <img src="https://raw.githubusercontent.com/emacle/picgo/master/img/icon%5Fa.png"/> 
 </figure>
 
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">MiniCap.exe 截图 / FastStone 简单特效/标注/绘画马赛克/文字放大镜/中心聚光模糊效果 / picpick.exe 卡
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">MiniCap.exe 截图 / FastStone 简单特效/标注/绘画马赛克/文字放大镜/中心聚光模糊效果 / picpick.exe 卡
 </code></pre></div><figure><a href="/ox-hugo/computer.org_20200119_220125.png">
     <img src="/ox-hugo/computer.org_20200119_220125.png"/> </a>
 </figure>
 
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;background-color:#0f140f;font-style:italic"># 1.初始化一个hugo工程目录</span>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#776e71"># 1.初始化一个hugo工程目录</span>
 hugo new site mysite
-<span style="color:#080;background-color:#0f140f;font-style:italic"># 2. 必须在 mysite/themes 里 git 下载主题 如无mysite/themes目录 则手动创建</span>
-<span style="color:#080;background-color:#0f140f;font-style:italic"># 3. cd mysite 测试</span>
-<span style="color:#080;background-color:#0f140f;font-style:italic"># &gt; hugo.exe new posts/my-first.md 生成 .md -&gt; 编辑</span>
+<span style="color:#776e71"># 2. 必须在 mysite/themes 里 git 下载主题 如无mysite/themes目录 则手动创建</span>
+<span style="color:#776e71"># 3. cd mysite 测试</span>
+<span style="color:#776e71"># &gt; hugo.exe new posts/my-first.md 生成 .md -&gt; 编辑</span>
 hugo.exe serve
-<span style="color:#080;background-color:#0f140f;font-style:italic"># 4. 发布, 在hugo文件夹下自动生成一个public文件夹 将public托管</span>
+<span style="color:#776e71"># 4. 发布, 在hugo文件夹下自动生成一个public文件夹 将public托管</span>
 hugo
 </code></pre></div></li>
 </ol>

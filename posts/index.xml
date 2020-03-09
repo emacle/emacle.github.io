@@ -6,10 +6,22 @@
     <description>Recent content in Posts on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 06 Mar 2020 11:42:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 10:37:00 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OAuth 2 Authorization Code Grant Flow</title>
+      <link>/posts/oauth-2-authorization-code-grant-flow/</link>
+      <pubDate>Mon, 09 Mar 2020 10:37:00 +0800</pubDate>
+      
+      <guid>/posts/oauth-2-authorization-code-grant-flow/</guid>
+      <description>OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節
+在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去 Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code) 。 在轉址回去之前， Authorization Server 會先認證 Resource Owner 並取得授權。因為 Resource Owner 只跟 Authorization Server 認證，所以 Client 絕對不會拿到 Resource Owner 的帳號密碼。
+    註: (A), (B), (C) 這三步的線拆成兩段，因為會經過 user-agent 其 Client 指自己的应用程序（包括前端及后端api） User-Agent 一般指流览器
+ (D) 步 客户端向 authorization server 发送 auth_code 时(手工封装时) 未带有redirect_uri貌似也能成功最好还是按标准带上该参数？  使用 oauth2-client 包时应该是封装好的 authorization_code 与 前面定义的 redirect_uri 一同发向 authorization server</description>
+    </item>
     
     <item>
       <title>Vue Element-ui Github oAuth 三方登录</title>

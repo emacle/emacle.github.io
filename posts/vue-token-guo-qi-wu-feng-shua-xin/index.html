@@ -136,79 +136,79 @@
 再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;background-color:#0f140f;font-style:italic">// response interceptor
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>service.interceptors.response.use(
-    response =&gt; {
-   <span style="color:#fb660a;font-weight:bold">const</span> res = response.data
-   <span style="color:#080;background-color:#0f140f;font-style:italic">// 一些处理...
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">return</span> response.data
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#776e71">// response interceptor
+</span><span style="color:#776e71"></span><span style="color:#06b6ef">service</span>.<span style="color:#06b6ef">interceptors</span>.<span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">use</span>(
+    <span style="color:#06b6ef">response</span> =&gt; {
+   <span style="color:#815ba4">const</span> <span style="color:#06b6ef">res</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">data</span>
+   <span style="color:#776e71">// 一些处理...
+</span><span style="color:#776e71"></span>   <span style="color:#815ba4">return</span> <span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">data</span>
     },
-    error =&gt; {
-   <span style="color:#080;background-color:#0f140f;font-style:italic">// http 401 只能在 error 里被截获
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#080;background-color:#0f140f;font-style:italic">// console.log(error) *** 控制台不能输出返回的响应数据 ***
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#080;background-color:#0f140f;font-style:italic">// console.log(error.response) *** 可使用此命令进行调试 ***
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">if</span> (error.response.status === <span style="color:#0086f7;font-weight:bold">401</span> &amp;&amp; error.response.data.code === <span style="color:#0086f7;font-weight:bold">50014</span>) {
-       <span style="color:#080;background-color:#0f140f;font-style:italic">// message: &#39;access_token过期,自动续期&#39;, code = 50014 access_token 过期
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>       <span style="color:#fb660a;font-weight:bold">return</span> againRequest(error) <span style="color:#080;background-color:#0f140f;font-style:italic">// 此函数先以refresh_token 去获取新access_token, 然后再次以新 access_token 发送原请求
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   }
+    <span style="color:#06b6ef">error</span> =&gt; {
+   <span style="color:#776e71">// http 401 只能在 error 里被截获
+</span><span style="color:#776e71"></span>   <span style="color:#776e71">// console.log(error) *** 控制台不能输出返回的响应数据 ***
+</span><span style="color:#776e71"></span>   <span style="color:#776e71">// console.log(error.response) *** 可使用此命令进行调试 ***
+</span><span style="color:#776e71"></span>   <span style="color:#815ba4">if</span> (<span style="color:#06b6ef">error</span>.<span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">status</span> <span style="color:#5bc4bf">===</span> <span style="color:#f99b15">401</span> <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#06b6ef">error</span>.<span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">data</span>.<span style="color:#06b6ef">code</span> <span style="color:#5bc4bf">===</span> <span style="color:#f99b15">50014</span>) {
+       <span style="color:#776e71">// message: &#39;access_token过期,自动续期&#39;, code = 50014 access_token 过期
+</span><span style="color:#776e71"></span>       <span style="color:#815ba4">return</span> <span style="color:#06b6ef">againRequest</span>(<span style="color:#06b6ef">error</span>) <span style="color:#776e71">// 此函数先以refresh_token 去获取新access_token, 然后再次以新 access_token 发送原请求
+</span><span style="color:#776e71"></span>   }
 
-   <span style="color:#080;background-color:#0f140f;font-style:italic">// 这里是 code = 50015 refresh_token 也过期的情况
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">if</span> (error.response.status === <span style="color:#0086f7;font-weight:bold">401</span> &amp;&amp; error.response.data.code === <span style="color:#0086f7;font-weight:bold">50015</span>) {
-       <span style="color:#080;background-color:#0f140f;font-style:italic">// message: &#39;refresh_token过期,重定向登录&#39;, code = 50015 refresh_token 过期
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>       console.log(<span style="color:#0086d2">&#39;refresh_token过期 超时......&#39;</span>)
-       MessageBox.confirm(<span style="color:#0086d2">&#39;你已被登出，可以取消继续留在该页面，或者重新登录&#39;</span>, <span style="color:#0086d2">&#39;确定登出&#39;</span>, {
-           confirmButtonText: <span style="color:#0086d2">&#39;重新登录&#39;</span>,
-           cancelButtonText: <span style="color:#0086d2">&#39;取消&#39;</span>,
-           type: <span style="color:#0086d2">&#39;warning&#39;</span>
-       }).then(() =&gt; {
-           store.dispatch(<span style="color:#0086d2">&#39;FedLogOut&#39;</span>).then(() =&gt; {
-               location.reload() <span style="color:#080;background-color:#0f140f;font-style:italic">// 为了重新实例化vue-router对象 避免bug
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>           })
+   <span style="color:#776e71">// 这里是 code = 50015 refresh_token 也过期的情况
+</span><span style="color:#776e71"></span>   <span style="color:#815ba4">if</span> (<span style="color:#06b6ef">error</span>.<span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">status</span> <span style="color:#5bc4bf">===</span> <span style="color:#f99b15">401</span> <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#06b6ef">error</span>.<span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">data</span>.<span style="color:#06b6ef">code</span> <span style="color:#5bc4bf">===</span> <span style="color:#f99b15">50015</span>) {
+       <span style="color:#776e71">// message: &#39;refresh_token过期,重定向登录&#39;, code = 50015 refresh_token 过期
+</span><span style="color:#776e71"></span>       <span style="color:#06b6ef">console</span>.<span style="color:#06b6ef">log</span>(<span style="color:#48b685">&#39;refresh_token过期 超时......&#39;</span>)
+       <span style="color:#06b6ef">MessageBox</span>.<span style="color:#06b6ef">confirm</span>(<span style="color:#48b685">&#39;你已被登出，可以取消继续留在该页面，或者重新登录&#39;</span>, <span style="color:#48b685">&#39;确定登出&#39;</span>, {
+           <span style="color:#06b6ef">confirmButtonText</span><span style="color:#5bc4bf">:</span> <span style="color:#48b685">&#39;重新登录&#39;</span>,
+           <span style="color:#06b6ef">cancelButtonText</span><span style="color:#5bc4bf">:</span> <span style="color:#48b685">&#39;取消&#39;</span>,
+           <span style="color:#06b6ef">type</span><span style="color:#5bc4bf">:</span> <span style="color:#48b685">&#39;warning&#39;</span>
+       }).<span style="color:#06b6ef">then</span>(() =&gt; {
+           <span style="color:#06b6ef">store</span>.<span style="color:#06b6ef">dispatch</span>(<span style="color:#48b685">&#39;FedLogOut&#39;</span>).<span style="color:#06b6ef">then</span>(() =&gt; {
+               <span style="color:#06b6ef">location</span>.<span style="color:#06b6ef">reload</span>() <span style="color:#776e71">// 为了重新实例化vue-router对象 避免bug
+</span><span style="color:#776e71"></span>           })
        })
    }
 
-   <span style="color:#fb660a;font-weight:bold">return</span> Promise.reject(error)
+   <span style="color:#815ba4">return</span> Promise.<span style="color:#06b6ef">reject</span>(<span style="color:#06b6ef">error</span>)
     }
-) <span style="color:#080;background-color:#0f140f;font-style:italic">// response 拦截结束
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>
-async <span style="color:#fb660a;font-weight:bold">function</span> againRequest(error) {
-    await store.dispatch(<span style="color:#0086d2">&#39;handleCheckRefreshToken&#39;</span>) <span style="color:#080;background-color:#0f140f;font-style:italic">// 同步以获取刷新 access_token 并且保存在 cookie/localstorage
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">const</span> config = error.response.config
-    config.headers[<span style="color:#0086d2">&#39;X-Token&#39;</span>] = getToken()  <span style="color:#080;background-color:#0f140f;font-style:italic">// 以新的 access_token
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">const</span> res = await axios.request(config) <span style="color:#080;background-color:#0f140f;font-style:italic">// 重新进行原请求
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>    <span style="color:#fb660a;font-weight:bold">return</span> res.data <span style="color:#080;background-color:#0f140f;font-style:italic">// 以error.response.config重新请求返回的数据包是在函数内是 被封装在data里面
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>}
+) <span style="color:#776e71">// response 拦截结束
+</span><span style="color:#776e71"></span>
+<span style="color:#06b6ef">async</span> <span style="color:#815ba4">function</span> <span style="color:#06b6ef">againRequest</span>(<span style="color:#06b6ef">error</span>) {
+    <span style="color:#06b6ef">await</span> <span style="color:#06b6ef">store</span>.<span style="color:#06b6ef">dispatch</span>(<span style="color:#48b685">&#39;handleCheckRefreshToken&#39;</span>) <span style="color:#776e71">// 同步以获取刷新 access_token 并且保存在 cookie/localstorage
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">const</span> <span style="color:#06b6ef">config</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">error</span>.<span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">config</span>
+    <span style="color:#06b6ef">config</span>.<span style="color:#06b6ef">headers</span>[<span style="color:#48b685">&#39;X-Token&#39;</span>] <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">getToken</span>()  <span style="color:#776e71">// 以新的 access_token
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">const</span> <span style="color:#06b6ef">res</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">await</span> <span style="color:#06b6ef">axios</span>.<span style="color:#06b6ef">request</span>(<span style="color:#06b6ef">config</span>) <span style="color:#776e71">// 重新进行原请求
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">return</span> <span style="color:#06b6ef">res</span>.<span style="color:#06b6ef">data</span> <span style="color:#776e71">// 以error.response.config重新请求返回的数据包是在函数内是 被封装在data里面
+</span><span style="color:#776e71"></span>}
 </code></pre></div></li>
 <li>
 <p>第3步以 refresh_token 去获取 access_token 时, 必须在 <strong>请求拦截器</strong> 里重新配置请求头, 以 refresh_token 作为新的 token 头
 否则后端token认证判断还是原过期的 access_token</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#080;background-color:#0f140f;font-style:italic">// request interceptor
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>service.interceptors.request.use(
-    config =&gt; {
-   <span style="color:#080;background-color:#0f140f;font-style:italic">// Do something before request is sent
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">if</span> (store.getters.token) {
-       <span style="color:#080;background-color:#0f140f;font-style:italic">// 让每个请求携带token-- [&#39;X-Token&#39;]为自定义key 请根据实际情况自行修改
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>       config.headers[<span style="color:#0086d2">&#39;X-Token&#39;</span>] = getToken()
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#776e71">// request interceptor
+</span><span style="color:#776e71"></span><span style="color:#06b6ef">service</span>.<span style="color:#06b6ef">interceptors</span>.<span style="color:#06b6ef">request</span>.<span style="color:#06b6ef">use</span>(
+    <span style="color:#06b6ef">config</span> =&gt; {
+   <span style="color:#776e71">// Do something before request is sent
+</span><span style="color:#776e71"></span>   <span style="color:#815ba4">if</span> (<span style="color:#06b6ef">store</span>.<span style="color:#06b6ef">getters</span>.<span style="color:#06b6ef">token</span>) {
+       <span style="color:#776e71">// 让每个请求携带token-- [&#39;X-Token&#39;]为自定义key 请根据实际情况自行修改
+</span><span style="color:#776e71"></span>       <span style="color:#06b6ef">config</span>.<span style="color:#06b6ef">headers</span>[<span style="color:#48b685">&#39;X-Token&#39;</span>] <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">getToken</span>()
    }
 
-   <span style="color:#080;background-color:#0f140f;font-style:italic">// 监听是否 /sys/user/refreshtoken 是则重置token为 refresh_token
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   <span style="color:#fb660a;font-weight:bold">const</span> url = config.url
-   <span style="color:#fb660a;font-weight:bold">if</span> (url.split(<span style="color:#0086d2">&#39;/&#39;</span>).pop() === <span style="color:#0086d2">&#39;refreshtoken&#39;</span>) {
-       <span style="color:#080;background-color:#0f140f;font-style:italic">// console.log(&#39;config.url&#39;, config.url, getRefreshToken())
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>       config.headers[<span style="color:#0086d2">&#39;X-Token&#39;</span>] = getRefreshToken() <span style="color:#080;background-color:#0f140f;font-style:italic">// 登录时本地 cookie/localstorage 存储的
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   }
-   <span style="color:#fb660a;font-weight:bold">return</span> config
+   <span style="color:#776e71">// 监听是否 /sys/user/refreshtoken 是则重置token为 refresh_token
+</span><span style="color:#776e71"></span>   <span style="color:#815ba4">const</span> <span style="color:#06b6ef">url</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">config</span>.<span style="color:#06b6ef">url</span>
+   <span style="color:#815ba4">if</span> (<span style="color:#06b6ef">url</span>.<span style="color:#06b6ef">split</span>(<span style="color:#48b685">&#39;/&#39;</span>).<span style="color:#06b6ef">pop</span>() <span style="color:#5bc4bf">===</span> <span style="color:#48b685">&#39;refreshtoken&#39;</span>) {
+       <span style="color:#776e71">// console.log(&#39;config.url&#39;, config.url, getRefreshToken())
+</span><span style="color:#776e71"></span>       <span style="color:#06b6ef">config</span>.<span style="color:#06b6ef">headers</span>[<span style="color:#48b685">&#39;X-Token&#39;</span>] <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">getRefreshToken</span>() <span style="color:#776e71">// 登录时本地 cookie/localstorage 存储的
+</span><span style="color:#776e71"></span>   }
+   <span style="color:#815ba4">return</span> <span style="color:#06b6ef">config</span>
     },
-    error =&gt; {
-   <span style="color:#080;background-color:#0f140f;font-style:italic">// Do something with request error
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   console.log(error) <span style="color:#080;background-color:#0f140f;font-style:italic">// for debug
-</span><span style="color:#080;background-color:#0f140f;font-style:italic"></span>   Promise.reject(error)
+    <span style="color:#06b6ef">error</span> =&gt; {
+   <span style="color:#776e71">// Do something with request error
+</span><span style="color:#776e71"></span>   <span style="color:#06b6ef">console</span>.<span style="color:#06b6ef">log</span>(<span style="color:#06b6ef">error</span>) <span style="color:#776e71">// for debug
+</span><span style="color:#776e71"></span>   Promise.<span style="color:#06b6ef">reject</span>(<span style="color:#06b6ef">error</span>)
     }
 )
 </code></pre></div><p><img src="https://raw.githubusercontent.com/emacle/vue-php-admin/master/vue-element-admin/static/screenshot/view%5Fjwt.gif" alt="">
 <img src="https://raw.githubusercontent.com/emacle/vue-php-admin/master/vue-element-admin/static/screenshot/edit%5Fjwt.gif" alt="">
 <img src="https://raw.githubusercontent.com/emacle/vue-php-admin/master/vue-element-admin/static/screenshot/del%5Fjwt.gif" alt=""></p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">用户编辑时比较有用, 防止长时间编辑后提交时 access_token 过期, 导致编辑内容丢失
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">用户编辑时比较有用, 防止长时间编辑后提交时 access_token 过期, 导致编辑内容丢失
 </code></pre></div></li>
 <li>
 <p>完整代码 <a href="https://github.com/emacle/vue-php-admin">https://github.com/emacle/vue-php-admin</a></p>

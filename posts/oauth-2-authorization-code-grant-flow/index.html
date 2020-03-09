@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="pocoyo" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="google-site-verification" content="k8WIOcecDRQPeZ2x500693x2f2W85xDEm87gV1_lWl0" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.2" />
+
+<link rel="canonical" href="/posts/oauth-2-authorization-code-grant-flow/">
+<link rel="icon" href="https://emacle.github.io/favicon.ico">
+<meta property="og:title" content="OAuth 2 Authorization Code Grant Flow" />
+<meta property="og:description" content="OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節
+在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去 Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code) 。 在轉址回去之前， Authorization Server 會先認證 Resource Owner 並取得授權。因為 Resource Owner 只跟 Authorization Server 認證，所以 Client 絕對不會拿到 Resource Owner 的帳號密碼。
+    註: (A), (B), (C) 這三步的線拆成兩段，因為會經過 user-agent 其 Client 指自己的应用程序（包括前端及后端api） User-Agent 一般指流览器
+ (D) 步 客户端向 authorization server 发送 auth_code 时(手工封装时) 未带有redirect_uri貌似也能成功最好还是按标准带上该参数？  使用 oauth2-client 包时应该是封装好的 authorization_code 与 前面定义的 redirect_uri 一同发向 authorization server" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/oauth-2-authorization-code-grant-flow/" />
+<meta property="article:published_time" content="2020-03-09T10:37:00+08:00" />
+<meta property="article:modified_time" content="2020-03-09T10:37:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OAuth 2 Authorization Code Grant Flow"/>
+<meta name="twitter:description" content="OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節
+在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去 Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code) 。 在轉址回去之前， Authorization Server 會先認證 Resource Owner 並取得授權。因為 Resource Owner 只跟 Authorization Server 認證，所以 Client 絕對不會拿到 Resource Owner 的帳號密碼。
+    註: (A), (B), (C) 這三步的線拆成兩段，因為會經過 user-agent 其 Client 指自己的应用程序（包括前端及后端api） User-Agent 一般指流览器
+ (D) 步 客户端向 authorization server 发送 auth_code 时(手工封装时) 未带有redirect_uri貌似也能成功最好还是按标准带上该参数？  使用 oauth2-client 包时应该是封装好的 authorization_code 与 前面定义的 redirect_uri 一同发向 authorization server"/>
+
+
+<meta itemprop="name" content="OAuth 2 Authorization Code Grant Flow">
+<meta itemprop="description" content="OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節
+在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去 Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code) 。 在轉址回去之前， Authorization Server 會先認證 Resource Owner 並取得授權。因為 Resource Owner 只跟 Authorization Server 認證，所以 Client 絕對不會拿到 Resource Owner 的帳號密碼。
+    註: (A), (B), (C) 這三步的線拆成兩段，因為會經過 user-agent 其 Client 指自己的应用程序（包括前端及后端api） User-Agent 一般指流览器
+ (D) 步 客户端向 authorization server 发送 auth_code 时(手工封装时) 未带有redirect_uri貌似也能成功最好还是按标准带上该参数？  使用 oauth2-client 包时应该是封装好的 authorization_code 与 前面定义的 redirect_uri 一同发向 authorization server">
+<meta itemprop="datePublished" content="2020-03-09T10:37:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-09T10:37:00&#43;08:00" />
+<meta itemprop="wordCount" content="145">
+
+
+
+<meta itemprop="keywords" content="oauth," />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     OAuth 2 Authorization Code Grant Flow 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">~振鹭于飞~</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/posts/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> OAuth 2 Authorization Code Grant Flow </h1>
+    <div class="content"> <ul>
+<li>
+<p><a href="https://blog.yorkxin.org/2013/09/30/oauth2-4-1-auth-code-grant-flow.html">OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節</a></p>
+<p>在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去
+Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code) 。
+在轉址回去之前， Authorization Server 會先認證 Resource Owner 並取得授權。因為 Resource Owner 只跟
+Authorization Server 認證，所以 Client 絕對不會拿到 Resource Owner 的帳號密碼。</p>
+</li>
+</ul>
+<figure><a href="/ox-hugo/ditaa-auth-code.png">
+    <img src="/ox-hugo/ditaa-auth-code.png"/> </a>
+</figure>
+
+<p>註: (A), (B), (C) 這三步的線拆成兩段，因為會經過 user-agent
+<em>其 Client 指自己的应用程序（包括前端及后端api） User-Agent 一般指流览器</em></p>
+<ul>
+<li>(D) 步 客户端向 authorization server 发送 auth_code 时(手工封装时) 未带有redirect_uri貌似也能成功最好还是按标准带上该参数？</li>
+</ul>
+<p>使用 oauth2-client 包时应该是封装好的 authorization_code 与 前面定义的 redirect_uri 一同发向 authorization server</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#776e71">&lt;?php</span>
+<span style="color:#776e71">// composer require league/oauth2-client
+</span><span style="color:#776e71"></span><span style="color:#ef6155">$provider</span> <span style="color:#5bc4bf">=</span> <span style="color:#815ba4">new</span> <span style="color:#06b6ef">\League\OAuth2\Client\Provider\GenericProvider</span>([
+    <span style="color:#48b685">&#39;clientId&#39;</span> <span style="color:#5bc4bf">=&gt;</span> <span style="color:#ef6155">$client_id</span>,    <span style="color:#776e71">// The client ID assigned to you by the provider
+</span><span style="color:#776e71"></span>    <span style="color:#48b685">&#39;clientSecret&#39;</span> <span style="color:#5bc4bf">=&gt;</span> <span style="color:#ef6155">$client_secret</span>,   <span style="color:#776e71">// The client password assigned to you by the provider
+</span><span style="color:#776e71"></span>    <span style="color:#48b685">&#39;redirectUri&#39;</span> <span style="color:#5bc4bf">=&gt;</span> <span style="color:#48b685">&#39;http://localhost:9527/auth-redirect&#39;</span>,
+    <span style="color:#48b685">&#39;urlAuthorize&#39;</span> <span style="color:#5bc4bf">=&gt;</span> <span style="color:#48b685">&#39;https://github.com/login/oauth/authorize&#39;</span>,
+    <span style="color:#48b685">&#39;urlAccessToken&#39;</span> <span style="color:#5bc4bf">=&gt;</span> <span style="color:#48b685">&#39;https://github.com/login/oauth/access_token&#39;</span>,
+    <span style="color:#48b685">&#39;urlResourceOwnerDetails&#39;</span> <span style="color:#5bc4bf">=&gt;</span> <span style="color:#48b685">&#39;https://api.github.com/user&#39;</span>
+]);
+<span style="color:#776e71">// getAccessToken 时应该带有 redirect_uri?
+</span><span style="color:#776e71">// http://localhost:9527/auth-redirect?code=8789d613d1fa9a19732a&amp;state=xyz
+</span><span style="color:#776e71"></span><span style="color:#ef6155">$accessToken</span> <span style="color:#5bc4bf">=</span> <span style="color:#ef6155">$provider</span><span style="color:#5bc4bf">-&gt;</span><span style="color:#06b6ef">getAccessToken</span>(<span style="color:#48b685">&#39;authorization_code&#39;</span>, [
+    <span style="color:#48b685">&#39;code&#39;</span> <span style="color:#5bc4bf">=&gt;</span> <span style="color:#ef6155">$code</span>
+]);
+</code></pre></div><ul>
+<li><a href="https://segmentfault.com/a/1190000018372841">github 授权登录教程与如何设计第三方授权登录的用户表</a> 流程图</li>
+</ul>
+<figure>
+    <img src="/ox-hugo/work.org_20200309_103003.png"/> 
+</figure>
+
+<figure>
+    <img src="/ox-hugo/work.org_20200309_103130.png"/> 
+</figure>
+
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/oauth">#oauth</a>
+      </div>
+    
+  
+</div>
+
+	    
+	    
+	    <div class="date"> Mon, 09 Mar 2020 10:37:00 CST </div>
+
+    
+  </div>
+</footer>
+    
+    
+    
+    
+
+  
+  
+
+<script src="https://utteranc.es/client.js"
+        repo="emacle/utterances"
+        issue-term="pathname"
+        theme="github-dark"
+	label="hugo"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_value_site_uv"></span>
+  </span>
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_value_site_pv"></span> | <span id="busuanzi_value_page_pv"></span>
+  </span>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  
+  
+  
+
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div> 
+
+</body>
+</html>
+

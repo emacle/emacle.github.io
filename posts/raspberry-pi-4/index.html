@@ -110,31 +110,31 @@ https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本�
 <p><a href="https://blog.csdn.net/yjbaobo/article/details/75146840">https://blog.csdn.net/yjbaobo/article/details/75146840</a>
 这主要是由于版本差异 Debian &lsquo;Jessie&rsquo; in place of Debian &lsquo;Wheezy&rsquo;.
 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/sh
-</span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span><span style="color:#080;background-color:#0f140f;font-style:italic"># /etc/dhcpcd.exit-hook - runs as last dhcpcd hook</span>
-<span style="color:#080;background-color:#0f140f;font-style:italic"># man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etc</span>
-<span style="color:#fb660a;font-weight:bold">if</span> [ <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$interface</span><span style="color:#0086d2">&#34;</span> = eth0 ] &amp;&amp; [ <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$if_up</span><span style="color:#0086d2">&#34;</span> = true ] ; <span style="color:#fb660a;font-weight:bold">then</span>
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt,  if_up interface等 测试完成需要关闭防止文件变巨大</span>
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># echo &#34;================&#34; &gt;&gt; /tmp/variables.txt</span>
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># echo &#34;Environment Variables&#34; &gt;&gt; /tmp/variables.txt</span>
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># printenv &gt;&gt; /tmp/variables.txt</span>
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># echo &#34;===============&#34; &gt;&gt; /tmp/variables.txt</span>
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># echo &#34;Shell Variables&#34; &gt;&gt; /tmp/variables.txt</span>
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># set &gt;&gt; /tmp/variables.txt</span>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#776e71">#!/bin/sh
+</span><span style="color:#776e71"></span><span style="color:#776e71"># /etc/dhcpcd.exit-hook - runs as last dhcpcd hook</span>
+<span style="color:#776e71"># man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etc</span>
+<span style="color:#815ba4">if</span> <span style="color:#5bc4bf">[</span> <span style="color:#48b685">&#34;</span><span style="color:#ef6155">$interface</span><span style="color:#48b685">&#34;</span> <span style="color:#5bc4bf">=</span> eth0 <span style="color:#5bc4bf">]</span> <span style="color:#5bc4bf">&amp;&amp;</span> <span style="color:#5bc4bf">[</span> <span style="color:#48b685">&#34;</span><span style="color:#ef6155">$if_up</span><span style="color:#48b685">&#34;</span> <span style="color:#5bc4bf">=</span> true <span style="color:#5bc4bf">]</span> ; <span style="color:#815ba4">then</span>
+    <span style="color:#776e71"># 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt,  if_up interface等 测试完成需要关闭防止文件变巨大</span>
+    <span style="color:#776e71"># echo &#34;================&#34; &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#776e71"># echo &#34;Environment Variables&#34; &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#776e71"># printenv &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#776e71"># echo &#34;===============&#34; &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#776e71"># echo &#34;Shell Variables&#34; &gt;&gt; /tmp/variables.txt</span>
+    <span style="color:#776e71"># set &gt;&gt; /tmp/variables.txt</span>
 
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># dhcpcd 每一次dhcp信息发生变化时 都会调用该脚本 $reason 每次不太相同 通过上面变量观察使用dhcp时 BOUND 只在第一次分配ip时出现</span>
-    <span style="color:#080;background-color:#0f140f;font-style:italic"># $reason为 BOUND 时 执行一次 frp 命令 防止重复添加/也可以判断 frp 进程存在与否来做判断</span>
-    <span style="color:#fb660a;font-weight:bold">case</span> <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$reason</span><span style="color:#0086d2">&#34;</span> in
-      BOUND)
-  	  <span style="color:#080;background-color:#0f140f;font-style:italic"># logger信息 写入syslog</span>
-  	  logger <span style="color:#0086d2">&#39;Running frp/DYNDNS update...&#39;</span>
-  	  <span style="color:#080;background-color:#0f140f;font-style:italic"># curl --stderr - -v &#34;https://dynv6.com/api/update(blah)&#34;</span>
-  	  nohup /opt/frp_0.29.0_linux_arm/frpc -c /opt/frp_0.29.0_linux_arm/frpc.ini &gt;/dev/null 2&gt;&amp;<span style="color:#0086f7;font-weight:bold">1</span> &amp;
+    <span style="color:#776e71"># dhcpcd 每一次dhcp信息发生变化时 都会调用该脚本 $reason 每次不太相同 通过上面变量观察使用dhcp时 BOUND 只在第一次分配ip时出现</span>
+    <span style="color:#776e71"># $reason为 BOUND 时 执行一次 frp 命令 防止重复添加/也可以判断 frp 进程存在与否来做判断</span>
+    <span style="color:#815ba4">case</span> <span style="color:#48b685">&#34;</span><span style="color:#ef6155">$reason</span><span style="color:#48b685">&#34;</span> in
+      BOUND<span style="color:#5bc4bf">)</span>
+  	  <span style="color:#776e71"># logger信息 写入syslog</span>
+  	  logger <span style="color:#48b685">&#39;Running frp/DYNDNS update...&#39;</span>
+  	  <span style="color:#776e71"># curl --stderr - -v &#34;https://dynv6.com/api/update(blah)&#34;</span>
+  	  nohup /opt/frp_0.29.0_linux_arm/frpc -c /opt/frp_0.29.0_linux_arm/frpc.ini &gt;/dev/null 2&gt;&amp;<span style="color:#f99b15">1</span> &amp;
   	  ;;
-    <span style="color:#fb660a;font-weight:bold">esac</span>
-<span style="color:#fb660a;font-weight:bold">fi</span>
+    <span style="color:#815ba4">esac</span>
+<span style="color:#815ba4">fi</span>
 </code></pre></div><p>ip route add 10.11.12.0/24 via 192.168.192.5</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># man dhcpcd-run-hooks
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># man dhcpcd-run-hooks
 
 BOUND | BOUND6    dhcpcd obtained a new lease from a DHCP server.
 RENEW | RENEW6    dhcpcd renewed it&#39;s lease.
@@ -154,32 +154,32 @@ isc-dhcp-client 与 dhcpcd一样 都可作为 dhcp client busty 默认使用 dhc
 <p>sd卡 /boot 目录 默认不开启SSH，需要在SD卡根目录（boot中）新建 &ldquo;SSH&rdquo; 文件（无后缀）
 ssh 进入系统后 /boot/SSH 文件应该被系统删除,但是ssh 服务是永远开启了</p>
 <h2 id="mdadm-raid"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> mdadm raid</h2>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt install mdadm
-<span style="color:#080;background-color:#0f140f;font-style:italic"># 装配原有的磁盘阵列 组合成新的磁盘阵列 md0 此操作在里而且会自动更新 /etc/mdadm/mdadm.conf 文件</span>
-<span style="color:#080;background-color:#0f140f;font-style:italic"># 同时也更新了内核映象 (update-initramfs -u) 启动时内核会自动装配md0 ，如果 sd[a-c]存在的话</span>
-mdadm -A /dev/md0  /dev/sd[a-c]<span style="color:#0086f7;font-weight:bold">1</span>  或 mdadm -A /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">apt install mdadm
+<span style="color:#776e71"># 装配原有的磁盘阵列 组合成新的磁盘阵列 md0 此操作在里而且会自动更新 /etc/mdadm/mdadm.conf 文件</span>
+<span style="color:#776e71"># 同时也更新了内核映象 (update-initramfs -u) 启动时内核会自动装配md0 ，如果 sd[a-c]存在的话</span>
+mdadm -A /dev/md0  /dev/sd<span style="color:#5bc4bf">[</span>a-c<span style="color:#5bc4bf">]</span><span style="color:#f99b15">1</span>  或 mdadm -A /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1
 
-<span style="color:#080;background-color:#0f140f;font-style:italic"># definitions of existing MD arrays cat /etc/mdadm/mdadm.conf</span>
-ARRAY /dev/md/0  <span style="color:#fb660a">metadata</span>=1.2 <span style="color:#fb660a">UUID</span>=fabd24e6:e0160fe0:a0af4d3c:4498ec65 <span style="color:#fb660a">name</span>=debian:0
+<span style="color:#776e71"># definitions of existing MD arrays cat /etc/mdadm/mdadm.conf</span>
+ARRAY /dev/md/0  <span style="color:#ef6155">metadata</span><span style="color:#5bc4bf">=</span>1.2 <span style="color:#ef6155">UUID</span><span style="color:#5bc4bf">=</span>fabd24e6:e0160fe0:a0af4d3c:4498ec65 <span style="color:#ef6155">name</span><span style="color:#5bc4bf">=</span>debian:0
 </code></pre></div><h2 id="fstab-nofail"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> fstab nofail</h2>
 <p>外部设备(/dev/md0)在插入时挂载，在未插入时忽略。
 这需要 nofail 选项，可以在启动时若设备不存在直接忽略它而不报错进入recovery mode Contrl + D
 <!-- raw HTML omitted -->Mount an external drive at boot time only if it is plugged in<!-- raw HTML omitted --></p>
 <p>cat /etc/fstab</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/dev/md0 /mnt/raid5 ext4 defaults,nofail 0 0
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/dev/md0 /mnt/raid5 ext4 defaults,nofail 0 0
 </code></pre></div><h2 id="hdmi"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> hdmi</h2>
 <p>hdmi: 对于chuangwei_TV , pi 的/boot/config里默认参数即可，不需要做额外配置</p>
 <h2 id="pi未连接显示器时如果使用vnc连接出现cannot-currently-show-the-dekstop"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> pi未连接显示器时如果使用vnc连接出现Cannot currently show the dekstop</h2>
 <p><code>Do not use default resolution</code></p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">The RPi must be set to boot to desktop (service mode).
-If a HDMI monitor is not attached <span style="color:#fb660a;font-weight:bold">then</span> you need to specify a screen resolution
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">The RPi must be set to boot to desktop <span style="color:#5bc4bf">(</span>service mode<span style="color:#5bc4bf">)</span>.
+If a HDMI monitor is not attached <span style="color:#815ba4">then</span> you need to specify a screen resolution
 sudo raspi-config
-Advanced Options &gt; Resolution &gt; DMT Mode <span style="color:#0086f7;font-weight:bold">85</span> 1280x720
+Advanced Options &gt; Resolution &gt; DMT Mode <span style="color:#f99b15">85</span> 1280x720
 
 raspi-config 命令 相当于： 修改 /boot/config.txt 内容
-<span style="color:#fb660a">hdmi_force_hotplug</span>=1
-<span style="color:#fb660a">hdmi_group</span>=2
-<span style="color:#fb660a">hdmi_mode</span>=85
+<span style="color:#ef6155">hdmi_force_hotplug</span><span style="color:#5bc4bf">=</span>1
+<span style="color:#ef6155">hdmi_group</span><span style="color:#5bc4bf">=</span>2
+<span style="color:#ef6155">hdmi_mode</span><span style="color:#5bc4bf">=</span>85
 </code></pre></div> </div>
     <footer class="post-footer">
 

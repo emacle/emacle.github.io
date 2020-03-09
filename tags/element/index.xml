@@ -19,7 +19,7 @@
       <guid>/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</guid>
       <description>Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值 
   socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
-githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL// 如果不指定 redirect_uri, 则默认使用 gihtub =&amp;gt; Settings =&amp;gt; Developer settings =&amp;gt; OAuth Apps 里 Authorization callback URL 配置的地址// 为了无歧义尽量指定redirect_uriconst url = &amp;#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;amp;redirect_uri=http://localhost:9527/auth-redirect&amp;#39;// 2. 弹出子窗口进行授权, 子窗口完成授权后, 子窗口地址栏URL 会是 redirect_uri 并带上 ?</description>
+githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&amp;gt; Settings =&amp;gt; Developer settings =&amp;gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &amp;#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;amp;redirect_uri=http://localhost:9527/auth-redirect&amp;#39; githubAuth().</description>
     </item>
     
   </channel>

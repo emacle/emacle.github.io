@@ -34,7 +34,7 @@ githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的
 githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39; githubAuth().">
 <meta itemprop="datePublished" content="2020-03-06T11:42:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-06T11:42:00&#43;08:00" />
-<meta itemprop="wordCount" content="660">
+<meta itemprop="wordCount" content="664">
 
 
 
@@ -243,9 +243,10 @@ composer require oakhope/oauth2-wechat <span style="color:#776e71"># 未测试</
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">GuzzleHttp\Exception\ConnectException  Message: cURL error 35: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to api.github.com:443
 </code></pre></div><div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#776e71">&lt;?php</span>
 <span style="color:#815ba4">try</span>{
-    <span style="color:#776e71">#
+    <span style="color:#776e71"># getaccessToken...
+</span><span style="color:#776e71"></span>    <span style="color:#776e71"># get userinfo...
 </span><span style="color:#776e71"></span>    <span style="color:#776e71">//} catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
-</span><span style="color:#776e71"></span>    } <span style="color:#815ba4">catch</span> (<span style="color:#06b6ef">Exception</span> <span style="color:#ef6155">$e</span>) {
+</span><span style="color:#776e71"></span>} <span style="color:#815ba4">catch</span> (<span style="color:#06b6ef">Exception</span> <span style="color:#ef6155">$e</span>) {
     <span style="color:#776e71">// Failed to get the access token or user details.
 </span><span style="color:#776e71"></span>    <span style="color:#815ba4">exit</span>(<span style="color:#ef6155">$e</span><span style="color:#5bc4bf">-&gt;</span><span style="color:#06b6ef">getMessage</span>());
 }

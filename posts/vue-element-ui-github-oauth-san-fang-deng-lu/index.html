@@ -34,7 +34,7 @@ githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的
 githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39; githubAuth().">
 <meta itemprop="datePublished" content="2020-03-06T11:42:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-06T11:42:00&#43;08:00" />
-<meta itemprop="wordCount" content="557">
+<meta itemprop="wordCount" content="660">
 
 
 
@@ -232,8 +232,24 @@ githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的
 <li>
 <p>后端php /sys/user/githubauth 接口, 引用 <code>league/oauth2-client</code> 包生成 <code>授权链接</code>  根据code与github进行交互，主要有获取github <code>access_token</code> 与 获取github <code>userinfo</code>
 后端也可以自动封装函数来获取github交互信息 (如果是php可利用composer安装一些三方登录插件错误校验比较完善，一般需要php开启 开启php.ini中的session.auto_start配置 使用session，
-测试 league/oauth2-client 包没有开启 php session 也可以使用 <code>$_SESSION['oauth2state']</code> 变量，也可以 <code>redis</code> 替换)</p>
-</li>
+测试 league/oauth2-client 包没有开启 php session <code>也可以使用 $_SESSION['oauth2state']</code> 变量，也可以 <code>redis</code> 替换)</p>
+<p><a href="https://oauth2-client.thephpleague.com/providers/league/">https://oauth2-client.thephpleague.com/providers/league/</a> 可在此网站查找部分官方包及第三方封装的 leageue php 登录包</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#776e71"># league/oauth2-client 是通用客户端 github,gitee ok!!!</span>
+<span style="color:#776e71"># In most cases, you&#39;ll want to use a specific provider client library rather than this base library.</span>
+composer require league/oauth2-github  <span style="color:#776e71"># github ok!!!</span>
+composer require spoonwep/oauth2-qq    <span style="color:#776e71"># QQ OAuth 2.0 support for the PHP League&#39;s OAuth 2.0 Client</span>
+composer require oakhope/oauth2-wechat <span style="color:#776e71"># 未测试</span>
+</code></pre></div><p>oauth2-client 包官方 demo 捕获异常时 指定IdentityProviderException 不能捕获其依赖包 guzzlehttp 里的错误异常 使用 Exception $e 替换</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">GuzzleHttp\Exception\ConnectException  Message: cURL error 35: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to api.github.com:443
+</code></pre></div><div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#776e71">&lt;?php</span>
+<span style="color:#815ba4">try</span>{
+    <span style="color:#776e71">#
+</span><span style="color:#776e71"></span>    <span style="color:#776e71">//} catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
+</span><span style="color:#776e71"></span>    } <span style="color:#815ba4">catch</span> (<span style="color:#06b6ef">Exception</span> <span style="color:#ef6155">$e</span>) {
+    <span style="color:#776e71">// Failed to get the access token or user details.
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">exit</span>(<span style="color:#ef6155">$e</span><span style="color:#5bc4bf">-&gt;</span><span style="color:#06b6ef">getMessage</span>());
+}
+</code></pre></div></li>
 <li>
 <p>vue路由模式最好使用history, hash模式的话url中的#字符认证中转时不太好处理，history模式在 <code>生产环境</code> 中需要配置后端服务器支持(此后端为vue编译生成的静态网页面代码部署的服务器，如 <a href="https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/deploy.html#%25E5%258F%2591%25E5%25B8%2583">apache route history mode配置参考</a> ， <code>并不是后端接口的服务器</code> )</p>
 <div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ef6155">@</span><span style="color:#06b6ef">router</span><span style="color:#5bc4bf">/</span><span style="color:#06b6ef">index</span>.<span style="color:#06b6ef">js</span>

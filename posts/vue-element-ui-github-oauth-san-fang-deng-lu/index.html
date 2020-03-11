@@ -13,9 +13,9 @@
 <link rel="canonical" href="/posts/vue-element-ui-github-oauth-san-fang-deng-lu/">
 <link rel="icon" href="https://emacle.github.io/favicon.ico">
 <meta property="og:title" content="Vue Element-ui Github oAuth 三方登录" />
-<meta property="og:description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值 
-  socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
-githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39; githubAuth()." />
+<meta property="og:description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redirect 一定要与此处一致防止提交时校验出错 ip/域名都可，在弹出子窗口进行授权确定时，三方服务器会校验 url里的redirect参数(程序里指定的)与创建三方应用里指定的 callback 地址，如果不一致会出错
+http://host:port/auth-redirect # 必须与创建应用时填入值一致http://localhost:9527/auth-redirecthttp://172.17.1.110:10000/auth-redirecthttp://www.vueauth.org:10000/auth-redirect # 浏览器的主机 hosts/dns 里需要解析 www.vueauth.org    socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
+githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &#39;https://github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/vue-element-ui-github-oauth-san-fang-deng-lu/" />
 <meta property="article:published_time" content="2020-03-06T11:42:00+08:00" />
@@ -23,18 +23,18 @@ githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vue Element-ui Github oAuth 三方登录"/>
-<meta name="twitter:description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值 
-  socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
-githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39; githubAuth()."/>
+<meta name="twitter:description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redirect 一定要与此处一致防止提交时校验出错 ip/域名都可，在弹出子窗口进行授权确定时，三方服务器会校验 url里的redirect参数(程序里指定的)与创建三方应用里指定的 callback 地址，如果不一致会出错
+http://host:port/auth-redirect # 必须与创建应用时填入值一致http://localhost:9527/auth-redirecthttp://172.17.1.110:10000/auth-redirecthttp://www.vueauth.org:10000/auth-redirect # 浏览器的主机 hosts/dns 里需要解析 www.vueauth.org    socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
+githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &#39;https://github."/>
 
 
 <meta itemprop="name" content="Vue Element-ui Github oAuth 三方登录">
-<meta itemprop="description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值 
-  socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
-githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39; githubAuth().">
+<meta itemprop="description" content="Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redirect 一定要与此处一致防止提交时校验出错 ip/域名都可，在弹出子窗口进行授权确定时，三方服务器会校验 url里的redirect参数(程序里指定的)与创建三方应用里指定的 callback 地址，如果不一致会出错
+http://host:port/auth-redirect # 必须与创建应用时填入值一致http://localhost:9527/auth-redirecthttp://172.17.1.110:10000/auth-redirecthttp://www.vueauth.org:10000/auth-redirect # 浏览器的主机 hosts/dns 里需要解析 www.vueauth.org    socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
+githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&gt; Settings =&gt; Developer settings =&gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &#39;https://github.">
 <meta itemprop="datePublished" content="2020-03-06T11:42:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-06T11:42:00&#43;08:00" />
-<meta itemprop="wordCount" content="664">
+<meta itemprop="wordCount" content="696">
 
 
 
@@ -111,8 +111,17 @@ githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的
 <ol>
 <li>
 <p>Github 网站创建 OAuth Apps 记录 <code>Client ID</code> / <code>Client Secret</code> / <code>Authorization Callback URL</code> 3个参数
-此处 <code>Authorization Callback URL</code> 为默认回调网址，程序代码里没有明确指定的话，以此为默认值
-<a href="/ox-hugo/github-oauth.png"><img src="/ox-hugo/github-oauth.png" alt=""></a></p>
+此处 <code>Authorization Callback URL</code> 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话
+指定的redirect <code>一定要与此处一致防止提交时校验出错</code> ip/域名都可，在弹出子窗口进行授权确定时，三方服务器会校验
+url里的redirect参数(程序里指定的)与创建三方应用里指定的 callback 地址，如果不一致会出错</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">http://host:port/auth-redirect <span style="color:#776e71"># 必须与创建应用时填入值一致</span>
+http://localhost:9527/auth-redirect
+http://172.17.1.110:10000/auth-redirect
+http://www.vueauth.org:10000/auth-redirect  <span style="color:#776e71"># 浏览器的主机 hosts/dns 里需要解析 www.vueauth.org</span>
+</code></pre></div><figure><a href="/ox-hugo/github-oauth.png">
+    <img src="/ox-hugo/github-oauth.png"/> </a>
+</figure>
+
 </li>
 <li>
 <p>socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url</p>
@@ -123,6 +132,7 @@ githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的
 </span><span style="color:#776e71"></span>    <span style="color:#776e71">// const url = &#39;https://github.com/login/oauth/authorize?client_id=94aae05609c96ffb7d3b&amp;redirect_uri=http://localhost:9527/auth-redirect&#39;
 </span><span style="color:#776e71"></span>    <span style="color:#06b6ef">githubAuth</span>().<span style="color:#06b6ef">then</span>(<span style="color:#06b6ef">response</span> =&gt; { <span style="color:#776e71">// githubAuth() 参数 code 为空，由后端返回 authorize_url
 </span><span style="color:#776e71"></span>   <span style="color:#776e71">// 2. 弹出子窗口进行授权, 子窗口完成授权后, 子窗口地址栏URL 会是 redirect_uri 并带上 ?code= 参数与&amp;state= 参数
+</span><span style="color:#776e71"></span>   <span style="color:#776e71">//    子窗口单击确定按钮授权时，会校验此时的redirect 与 创建三方应用时填写的 callback 不一致会出错
 </span><span style="color:#776e71"></span>   <span style="color:#815ba4">const</span> <span style="color:#06b6ef">url</span> <span style="color:#5bc4bf">=</span> <span style="color:#06b6ef">response</span>.<span style="color:#06b6ef">data</span>.<span style="color:#06b6ef">auth_url</span>
    <span style="color:#776e71">// console.log(&#39;auth url....&#39;, url)
 </span><span style="color:#776e71"></span>   <span style="color:#776e71">// =&gt;  https://github.com/login/oauth/authorize?state=137caabc2b409f0cccd14834fc848041&amp;response_type=code&amp;approval_prompt=auto&amp;redirect_uri=http://localhost:9527/auth-redirect&amp;client_id=94aae05609c96ffb7d3b
@@ -277,8 +287,11 @@ openssl.cafile=&#34;D:\phpstudy_pro\Extensions\php\php7.3.4nts\extras\ssl\cacert
 <p><a href="https://blog.yorkxin.org/2013/09/30/oauth2-4-1-auth-code-grant-flow.html">OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節</a></p>
 </li>
 <li>
-<p>github 登录报错 <a href="http://localhost:9527/auth-redirect?error=redirect%5Furi%5Fmismatch&amp;error%5Fdescription=The">http://localhost:9527/auth-redirect?error=redirect%5Furi%5Fmismatch&amp;error%5Fdescription=The</a> redirect_uri MUST match the registered callback URL for this application.&amp;error_uri=<a href="https://developer.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch%23/auth-redirect">https://developer.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch%23/auth-redirect</a></p>
-</li>
+<p>github 登录报错 回调地址不一致出错提示 github与gitee 不太一样</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">github 在地址栏提示
+</code></pre></div><p><a href="http://localhost:9527/auth-redirect?error=redirect%5Furi%5Fmismatch&amp;error%5Fdescription=The">http://localhost:9527/auth-redirect?error=redirect%5Furi%5Fmismatch&amp;error%5Fdescription=The</a> redirect_uri MUST match the registered callback URL for this application.&amp; error_uri=<a href="https://developer.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch%23/auth-redirect">https://developer.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch%23/auth-redirect</a></p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">gitee 提示子窗口显示 回调地址有误
+</code></pre></div></li>
 </ul>
 </li>
 </ol>

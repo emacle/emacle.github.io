@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/postman/</loc>
+    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/postman-preview-image/</loc>
+    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/activiti/</loc>
     <lastmod>2020-05-05T21:55:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</loc>
-    <lastmod>2020-05-05T21:55:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-05-05T21:55:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-05-05T21:55:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2020-05-05T21:55:00+08:00</lastmod>
   </url>
   

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="pocoyo" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="google-site-verification" content="k8WIOcecDRQPeZ2x500693x2f2W85xDEm87gV1_lWl0" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.62.2" />
+
+<link rel="canonical" href="/posts/postman-preview-image/">
+<link rel="icon" href="https://emacle.github.io/favicon.ico">
+<meta property="og:title" content="postman预览二进制图片" />
+<meta property="og:description" content="使用 base64 编码二进制图片数据，置入 &lt;img&gt; 标签
+&lt;?phptry {// getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&gt;createProcessInstanceService()-&gt;getDiagram($processInstanceId);$base64 = &#39;data:image/png&#39; . &#39;;base64,&#39; . base64_encode($diagramBinary); // base64加密二进制图片 echo &#39;&lt;img src=&#34;&#39; . $base64 . &#39;&#34; /&gt;&#39;; // binary image to base64 so postman can preview image} catch (ActivitiException\ActivitiException $e) {var_dump($e-&gt;getMessage());}效果图：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/postman-preview-image/" />
+<meta property="article:published_time" content="2020-05-06T09:30:00+08:00" />
+<meta property="article:modified_time" content="2020-05-06T09:30:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="postman预览二进制图片"/>
+<meta name="twitter:description" content="使用 base64 编码二进制图片数据，置入 &lt;img&gt; 标签
+&lt;?phptry {// getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&gt;createProcessInstanceService()-&gt;getDiagram($processInstanceId);$base64 = &#39;data:image/png&#39; . &#39;;base64,&#39; . base64_encode($diagramBinary); // base64加密二进制图片 echo &#39;&lt;img src=&#34;&#39; . $base64 . &#39;&#34; /&gt;&#39;; // binary image to base64 so postman can preview image} catch (ActivitiException\ActivitiException $e) {var_dump($e-&gt;getMessage());}效果图："/>
+
+
+<meta itemprop="name" content="postman预览二进制图片">
+<meta itemprop="description" content="使用 base64 编码二进制图片数据，置入 &lt;img&gt; 标签
+&lt;?phptry {// getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&gt;createProcessInstanceService()-&gt;getDiagram($processInstanceId);$base64 = &#39;data:image/png&#39; . &#39;;base64,&#39; . base64_encode($diagramBinary); // base64加密二进制图片 echo &#39;&lt;img src=&#34;&#39; . $base64 . &#39;&#34; /&gt;&#39;; // binary image to base64 so postman can preview image} catch (ActivitiException\ActivitiException $e) {var_dump($e-&gt;getMessage());}效果图：">
+<meta itemprop="datePublished" content="2020-05-06T09:30:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-06T09:30:00&#43;08:00" />
+<meta itemprop="wordCount" content="50">
+
+
+
+<meta itemprop="keywords" content="postman," />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     postman预览二进制图片 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">~振鹭于飞~</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/posts/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> postman预览二进制图片 </h1>
+    <div class="content"> <p>使用 base64 编码二进制图片数据，置入 <code>&lt;img&gt;</code> 标签</p>
+<div class="highlight"><pre style="color:#e7e9db;background-color:#2f1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#776e71">&lt;?php</span>
+<span style="color:#815ba4">try</span> {
+    <span style="color:#776e71">// getDiagram 获得二进制流图片 可显示流程进度
+</span><span style="color:#776e71"></span>    <span style="color:#ef6155">$diagramBinary</span> <span style="color:#5bc4bf">=</span> <span style="color:#ef6155">$serviceFactory</span><span style="color:#5bc4bf">-&gt;</span><span style="color:#06b6ef">createProcessInstanceService</span>()<span style="color:#5bc4bf">-&gt;</span><span style="color:#06b6ef">getDiagram</span>(<span style="color:#ef6155">$processInstanceId</span>);
+    <span style="color:#ef6155">$base64</span> <span style="color:#5bc4bf">=</span> <span style="color:#48b685">&#39;data:image/png&#39;</span> <span style="color:#5bc4bf">.</span> <span style="color:#48b685">&#39;;base64,&#39;</span> <span style="color:#5bc4bf">.</span> <span style="color:#06b6ef">base64_encode</span>(<span style="color:#ef6155">$diagramBinary</span>); <span style="color:#776e71">// base64加密二进制图片
+</span><span style="color:#776e71"></span>    <span style="color:#815ba4">echo</span> <span style="color:#48b685">&#39;&lt;img src=&#34;&#39;</span> <span style="color:#5bc4bf">.</span>  <span style="color:#ef6155">$base64</span> <span style="color:#5bc4bf">.</span> <span style="color:#48b685">&#39;&#34; /&gt;&#39;</span>; <span style="color:#776e71">// binary image to base64 so postman can preview image
+</span><span style="color:#776e71"></span>} <span style="color:#815ba4">catch</span> (<span style="color:#06b6ef">ActivitiException\ActivitiException</span> <span style="color:#ef6155">$e</span>) {
+    <span style="color:#06b6ef">var_dump</span>(<span style="color:#ef6155">$e</span><span style="color:#5bc4bf">-&gt;</span><span style="color:#06b6ef">getMessage</span>());
+}
+</code></pre></div><p>效果图：
+<a href="/ox-hugo/work.org_20200506_092753.png"><img src="/ox-hugo/work.org_20200506_092753.png" alt=""></a></p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/postman">#postman</a>
+      </div>
+    
+  
+</div>
+
+	    
+	    
+	    <div class="date"> Wed, 06 May 2020 09:30:00 CST </div>
+
+    
+  </div>
+</footer>
+    
+    
+    
+    
+
+  
+  
+
+<script src="https://utteranc.es/client.js"
+        repo="emacle/utterances"
+        issue-term="pathname"
+        theme="github-dark"
+	label="hugo"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/emacle" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  <span id="busuanzi_container_site_uv" style="display:none">
+    <span id="busuanzi_value_site_uv"></span>
+  </span>
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  <span id="busuanzi_container_site_pv" style="display:none">
+    <span id="busuanzi_value_site_pv"></span> | <span id="busuanzi_value_page_pv"></span>
+  </span>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  
+  
+  
+
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div> 
+
+</body>
+</html>
+

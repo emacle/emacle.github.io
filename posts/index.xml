@@ -6,10 +6,20 @@
     <description>Recent content in Posts on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 05 May 2020 21:55:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 09:30:00 +0800</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>postman预览二进制图片</title>
+      <link>/posts/postman-preview-image/</link>
+      <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>
+      
+      <guid>/posts/postman-preview-image/</guid>
+      <description>使用 base64 编码二进制图片数据，置入 &amp;lt;img&amp;gt; 标签
+&amp;lt;?phptry {// getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&amp;gt;createProcessInstanceService()-&amp;gt;getDiagram($processInstanceId);$base64 = &amp;#39;data:image/png&amp;#39; . &amp;#39;;base64,&amp;#39; . base64_encode($diagramBinary); // base64加密二进制图片 echo &amp;#39;&amp;lt;img src=&amp;#34;&amp;#39; . $base64 . &amp;#39;&amp;#34; /&amp;gt;&amp;#39;; // binary image to base64 so postman can preview image} catch (ActivitiException\ActivitiException $e) {var_dump($e-&amp;gt;getMessage());}效果图：</description>
+    </item>
     
     <item>
       <title>activiti使用mysql部署及中文不显示解决</title>

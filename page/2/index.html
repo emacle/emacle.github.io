@@ -17,7 +17,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-05-05T21:55:00+08:00" />
+<meta property="og:updated_time" content="2020-05-06T09:30:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="~振鹭于飞~"/>
@@ -93,6 +93,53 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/posts/hugo-with-orgmode/'> Hugo with OrgMode</a> </h2>
+    <div class="meta">
+      <div class="date">
+	Jan 15, 2020 - 1 minutes
+      </div>
+      
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/hugo">#hugo</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/orgmode">#orgmode</a>
+      </div>
+    
+  
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    elpa 安装 ox-hugo
+  优先使用基于子树模式 两个必填 &lt;hugo_base_dir&gt; 与 EXPORT_FILE_NAME
+  org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录
+#+hugo_base_dir: ../hugo  subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名
+:EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &lt;HUGO_BASE_DIR&gt;/content/posts/
+C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
+    Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
+  多个参数以 空格 分隔
+  会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags
+  </div>
+
+  <div class="rmore">
+    <a href='/posts/hugo-with-orgmode/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
     <article class="post-preview">
 
   <header>

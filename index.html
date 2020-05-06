@@ -17,7 +17,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-03-09T10:37:00+08:00" />
+<meta property="og:updated_time" content="2020-05-05T21:55:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="~振鹭于飞~"/>
@@ -93,6 +93,48 @@
 
 
   
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/'> activiti使用mysql部署及中文不显示解决</a> </h2>
+    <div class="meta">
+      <div class="date">
+	May 5, 2020 - 1 minutes
+      </div>
+      
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/activiti">#activiti</a>
+      </div>
+    
+  
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    官网下载 activiti-6.0.0.zip 包解压 将wars/目录下 activiti-app.war, activiti-rest.war 包放入apache-tomcat-9.0.30/webapps目录下  apache-tomcat-9.0.30/bin/catalina.bat start # 启动 tomcat，stop自动解压war包并布署，webapps/ 下生成两个目录 activiti-app/ , activity-rest/
+ activiti-app 会创建用户 admin 密码 test activiti-rest 会创建用户 fozzie gonzo kermit 密码同用户名 测试activiti-app http://localhost:8080/activiti-app/ admin:test 测试activiti-rest http://localhost:8080/activiti-rest/docs/ swagger文档 kermit:kermit http://kermit:kermit@localhost:8080/activiti-rest/service/management/engine 必须使用用户名密码进行 basic auth  默认使用H2内存数据库，数据不能持久化，mysql库替换，这里使用的mysql库是v8.0.12
+  新建数据库名 activiti6ui
+  下载相应mysql-connector-java-8.0.12.jar包放入apache-tomcat-9.0.30/lib/, 重命名mysql-connector-java.jar 可选
+  activiti-app修改mysql连接配置
+cat apache-tomcat-9.0.30\webapps\activiti-app\WEB-INF\classes\META-INF\activiti-app\activiti-app.properties
+datasource.driver=com.mysql.jdbc.Driverdatasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;failOverReadOnly=false&amp;serverTimezone=GMT%2B8&amp;nullCatalogMeansCurrent=truedatasource.username=rootdatasource.password=roothibernate.dialect=org.hibernate.dialect.MySQLDialect注意: &amp;nullCatalogMeansCurrent=true参数 必须是要带的，否则创建表时会出错 大坑
+  activiti-rest修改mysql连接配置
+  </div>
+
+  <div class="rmore">
+    <a href='/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
     <article class="post-preview">
 
   <header>
@@ -322,47 +364,6 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
 </article>
 
 
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='/posts/raspberry-pi-4/'> raspberry pi 4</a> </h2>
-    <div class="meta">
-      <div class="date">
-	Sep 16, 2019 - 2 minutes
-      </div>
-      
-<div class="tags">
-  
-    
-      <div class="tag">
-        <a href="/tags/pi">#pi</a>
-      </div>
-    
-      <div class="tag">
-        <a href="/tags/raspberry">#raspberry</a>
-      </div>
-    
-  
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    DONE配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况
-https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本差异 Debian &lsquo;Jessie&rsquo; in place of Debian &lsquo;Wheezy&rsquo;. 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。
-#!/bin/sh# /etc/dhcpcd.exit-hook - runs as last dhcpcd hook# man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etcif [ &#34;$interface&#34; = eth0 ] &amp;&amp; [ &#34;$if_up&#34; = true ] ; then# 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt, if_up interface等 测试完成需要关闭防止文件变巨大# echo &#34;================&#34; &gt;&gt; /tmp/variables.
-  </div>
-
-  <div class="rmore">
-    <a href='/posts/raspberry-pi-4/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
 
 
 <div class="page-nav">
@@ -371,10 +372,12 @@ https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本�
   </div> 
 
   <div class="page-num">
-    1/1
+    1/2
   </div> 
 
   <div class="page-next">
+    
+    <a href="/page/2/" title="Next page"> >> </a>
     
   </div> 
 </div> 

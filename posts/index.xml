@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ~振鹭于飞~</title>
-    <link>/posts/</link>
+    <link>https://emacle.github.io/posts/</link>
     <description>Recent content in Posts on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Wed, 06 May 2020 09:30:00 +0800</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://emacle.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>postman预览二进制图片</title>
-      <link>/posts/postman-preview-image/</link>
+      <link>https://emacle.github.io/posts/postman-preview-image/</link>
       <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>
       
-      <guid>/posts/postman-preview-image/</guid>
+      <guid>https://emacle.github.io/posts/postman-preview-image/</guid>
       <description>使用 base64 编码二进制图片数据，置入 &amp;lt;img&amp;gt; 标签
 &amp;lt;?phptry {// getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&amp;gt;createProcessInstanceService()-&amp;gt;getDiagram($processInstanceId);$base64 = &amp;#39;data:image/png&amp;#39; . &amp;#39;;base64,&amp;#39; . base64_encode($diagramBinary); // base64加密二进制图片 echo &amp;#39;&amp;lt;img src=&amp;#34;&amp;#39; . $base64 . &amp;#39;&amp;#34; /&amp;gt;&amp;#39;; // binary image to base64 so postman can preview image} catch (ActivitiException\ActivitiException $e) {var_dump($e-&amp;gt;getMessage());}效果图：</description>
     </item>
     
     <item>
       <title>activiti使用mysql部署及中文不显示解决</title>
-      <link>/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</link>
+      <link>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</link>
       <pubDate>Tue, 05 May 2020 21:55:00 +0800</pubDate>
       
-      <guid>/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</guid>
+      <guid>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</guid>
       <description>官网下载 activiti-6.0.0.zip 包解压 将wars/目录下 activiti-app.war, activiti-rest.war 包放入apache-tomcat-9.0.30/webapps目录下  apache-tomcat-9.0.30/bin/catalina.bat start # 启动 tomcat，stop自动解压war包并布署，webapps/ 下生成两个目录 activiti-app/ , activity-rest/
  activiti-app 会创建用户 admin 密码 test activiti-rest 会创建用户 fozzie gonzo kermit 密码同用户名 测试activiti-app http://localhost:8080/activiti-app/ admin:test 测试activiti-rest http://localhost:8080/activiti-rest/docs/ swagger文档 kermit:kermit http://kermit:kermit@localhost:8080/activiti-rest/service/management/engine 必须使用用户名密码进行 basic auth  默认使用H2内存数据库，数据不能持久化，mysql库替换，这里使用的mysql库是v8.0.12
   新建数据库名 activiti6ui
@@ -39,10 +39,10 @@ datasource.driver=com.mysql.jdbc.Driverdatasource.url=jdbc:mysql://127.0.0.1:33
     
     <item>
       <title>OAuth 2 Authorization Code Grant Flow</title>
-      <link>/posts/oauth-2-authorization-code-grant-flow/</link>
+      <link>https://emacle.github.io/posts/oauth-2-authorization-code-grant-flow/</link>
       <pubDate>Mon, 09 Mar 2020 10:37:00 +0800</pubDate>
       
-      <guid>/posts/oauth-2-authorization-code-grant-flow/</guid>
+      <guid>https://emacle.github.io/posts/oauth-2-authorization-code-grant-flow/</guid>
       <description>转自 OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節
 在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去 Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code) 。 在轉址回去之前， Authorization Server 會先認證 Resource Owner 並取得授權。因為 Resource Owner 只跟 Authorization Server 認證，所以 Client 絕對不會拿到 Resource Owner 的帳號密碼。
     註: (A), (B), (C) 這三步的線拆成兩段，因為會經過 user-agent 其 Client 指自己的应用程序（包括前端及后端api） User-Agent 一般指流览器
@@ -51,10 +51,10 @@ datasource.driver=com.mysql.jdbc.Driverdatasource.url=jdbc:mysql://127.0.0.1:33
     
     <item>
       <title>Vue Element-ui Github oAuth 三方登录</title>
-      <link>/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</link>
+      <link>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</link>
       <pubDate>Fri, 06 Mar 2020 11:42:00 +0800</pubDate>
       
-      <guid>/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</guid>
+      <guid>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</guid>
       <description>Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redirect 一定要与此处一致防止提交时校验出错 ip/域名都可，在弹出子窗口进行授权确定时，三方服务器会校验 url里的redirect参数(程序里指定的)与创建三方应用里指定的 callback 地址，如果不一致会出错
 http://host:port/auth-redirect # 必须与创建应用时填入值一致http://localhost:9527/auth-redirecthttp://172.17.1.110:10000/auth-redirecthttp://www.vueauth.org:10000/auth-redirect # 浏览器的主机 hosts/dns 里需要解析 www.vueauth.org    socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
 githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&amp;gt; Settings =&amp;gt; Developer settings =&amp;gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &amp;#39;https://github.</description>
@@ -62,10 +62,10 @@ githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的
     
     <item>
       <title>vue token过期无缝刷新</title>
-      <link>/posts/vue-token-guo-qi-wu-feng-shua-xin/</link>
+      <link>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</link>
       <pubDate>Fri, 17 Jan 2020 10:39:00 +0800</pubDate>
       
-      <guid>/posts/vue-token-guo-qi-wu-feng-shua-xin/</guid>
+      <guid>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</guid>
       <description>过期刷新流程图: 
 思路:
   登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
@@ -76,10 +76,10 @@ githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的
     
     <item>
       <title>hugo-dusk theme 模板,utterances评论修改</title>
-      <link>/posts/hugo-theme/</link>
+      <link>https://emacle.github.io/posts/hugo-theme/</link>
       <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
       
-      <guid>/posts/hugo-theme/</guid>
+      <guid>https://emacle.github.io/posts/hugo-theme/</guid>
       <description>Hugo 以 theme 中的静态模板文件来生成静态css文件
   favicon 图标
 [params]# 自定义 favicon 变量 ~/hugo/static/favicon.ico -&amp;gt; /public/favicon.ico# ~/hugo/static/ 目录下的东西会自动发布到时 /public 根目录 i.e. ox-hugo/ orgmode 导出的静态图片# 使用绝对路径 防止 /posts/ 页面404 faviconfavicon = &amp;#34;https://emacle.github.io/favicon.ico&amp;#34;head.html 模板头部加入
@@ -89,10 +89,10 @@ cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html&amp;lt;footer clas
     
     <item>
       <title>Hugo with OrgMode</title>
-      <link>/posts/hugo-with-orgmode/</link>
+      <link>https://emacle.github.io/posts/hugo-with-orgmode/</link>
       <pubDate>Wed, 15 Jan 2020 17:04:00 +0800</pubDate>
       
-      <guid>/posts/hugo-with-orgmode/</guid>
+      <guid>https://emacle.github.io/posts/hugo-with-orgmode/</guid>
       <description>elpa 安装 ox-hugo
   优先使用基于子树模式 两个必填 &amp;lt;hugo_base_dir&amp;gt; 与 EXPORT_FILE_NAME
   org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录
@@ -106,10 +106,10 @@ C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO
     
     <item>
       <title>raspberry pi 4</title>
-      <link>/posts/raspberry-pi-4/</link>
+      <link>https://emacle.github.io/posts/raspberry-pi-4/</link>
       <pubDate>Mon, 16 Sep 2019 09:34:00 +0800</pubDate>
       
-      <guid>/posts/raspberry-pi-4/</guid>
+      <guid>https://emacle.github.io/posts/raspberry-pi-4/</guid>
       <description>DONE配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况
 https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本差异 Debian &amp;lsquo;Jessie&amp;rsquo; in place of Debian &amp;lsquo;Wheezy&amp;rsquo;. 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。
 #!/bin/sh# /etc/dhcpcd.exit-hook - runs as last dhcpcd hook# man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etcif [ &amp;#34;$interface&amp;#34; = eth0 ] &amp;amp;&amp;amp; [ &amp;#34;$if_up&amp;#34; = true ] ; then# 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt, if_up interface等 测试完成需要关闭防止文件变巨大# echo &amp;#34;================&amp;#34; &amp;gt;&amp;gt; /tmp/variables.</description>

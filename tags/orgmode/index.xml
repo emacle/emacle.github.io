@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>orgmode on ~振鹭于飞~</title>
-    <link>/tags/orgmode/</link>
+    <link>https://emacle.github.io/tags/orgmode/</link>
     <description>Recent content in orgmode on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Wed, 15 Jan 2020 17:04:00 +0800</lastBuildDate>
     
-	<atom:link href="/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://emacle.github.io/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo with OrgMode</title>
-      <link>/posts/hugo-with-orgmode/</link>
+      <link>https://emacle.github.io/posts/hugo-with-orgmode/</link>
       <pubDate>Wed, 15 Jan 2020 17:04:00 +0800</pubDate>
       
-      <guid>/posts/hugo-with-orgmode/</guid>
+      <guid>https://emacle.github.io/posts/hugo-with-orgmode/</guid>
       <description>elpa 安装 ox-hugo
   优先使用基于子树模式 两个必填 &amp;lt;hugo_base_dir&amp;gt; 与 EXPORT_FILE_NAME
   org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录

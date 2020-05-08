@@ -10,14 +10,14 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="generator" content="Hugo 0.62.2" />
 
-<link rel="canonical" href="/posts/raspberry-pi-4/">
+<link rel="canonical" href="https://emacle.github.io/posts/raspberry-pi-4/">
 <link rel="icon" href="https://emacle.github.io/favicon.ico">
 <meta property="og:title" content="raspberry pi 4" />
 <meta property="og:description" content="DONE配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况
 https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本差异 Debian &lsquo;Jessie&rsquo; in place of Debian &lsquo;Wheezy&rsquo;. 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。
 #!/bin/sh# /etc/dhcpcd.exit-hook - runs as last dhcpcd hook# man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etcif [ &#34;$interface&#34; = eth0 ] &amp;&amp; [ &#34;$if_up&#34; = true ] ; then# 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt, if_up interface等 测试完成需要关闭防止文件变巨大# echo &#34;================&#34; &gt;&gt; /tmp/variables." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/raspberry-pi-4/" />
+<meta property="og:url" content="https://emacle.github.io/posts/raspberry-pi-4/" />
 <meta property="article:published_time" content="2019-09-16T09:34:00+08:00" />
 <meta property="article:modified_time" content="2019-09-16T09:34:00+08:00" />
 
@@ -66,7 +66,7 @@ https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本�
 
   <nav>
     <div class="siteTitle">
-      <a href="/">~振鹭于飞~</a>
+      <a href="https://emacle.github.io/">~振鹭于飞~</a>
     </div> 
 
     
@@ -249,7 +249,7 @@ raspi-config 命令 相当于： 修改 /boot/config.txt 内容
   
 
   <div class="social-link">
-  <a href="/index.xml" target="_blank">RSS</a>
+  <a href="https://emacle.github.io/index.xml" target="_blank">RSS</a>
   </div>
   <span id="busuanzi_container_site_pv" style="display:none">
     <span id="busuanzi_value_site_pv"></span> | <span id="busuanzi_value_page_pv"></span>

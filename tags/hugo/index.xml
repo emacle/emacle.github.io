@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on ~振鹭于飞~</title>
-    <link>/tags/hugo/</link>
+    <link>https://emacle.github.io/tags/hugo/</link>
     <description>Recent content in hugo on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Thu, 16 Jan 2020 09:30:00 +0800</lastBuildDate>
     
-	<atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://emacle.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hugo-dusk theme 模板,utterances评论修改</title>
-      <link>/posts/hugo-theme/</link>
+      <link>https://emacle.github.io/posts/hugo-theme/</link>
       <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
       
-      <guid>/posts/hugo-theme/</guid>
+      <guid>https://emacle.github.io/posts/hugo-theme/</guid>
       <description>Hugo 以 theme 中的静态模板文件来生成静态css文件
   favicon 图标
 [params]# 自定义 favicon 变量 ~/hugo/static/favicon.ico -&amp;gt; /public/favicon.ico# ~/hugo/static/ 目录下的东西会自动发布到时 /public 根目录 i.e. ox-hugo/ orgmode 导出的静态图片# 使用绝对路径 防止 /posts/ 页面404 faviconfavicon = &amp;#34;https://emacle.github.io/favicon.ico&amp;#34;head.html 模板头部加入
@@ -26,10 +26,10 @@ cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html&amp;lt;footer clas
     
     <item>
       <title>Hugo with OrgMode</title>
-      <link>/posts/hugo-with-orgmode/</link>
+      <link>https://emacle.github.io/posts/hugo-with-orgmode/</link>
       <pubDate>Wed, 15 Jan 2020 17:04:00 +0800</pubDate>
       
-      <guid>/posts/hugo-with-orgmode/</guid>
+      <guid>https://emacle.github.io/posts/hugo-with-orgmode/</guid>
       <description>elpa 安装 ox-hugo
   优先使用基于子树模式 两个必填 &amp;lt;hugo_base_dir&amp;gt; 与 EXPORT_FILE_NAME
   org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录

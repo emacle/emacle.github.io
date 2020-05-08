@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>postman on ~振鹭于飞~</title>
-    <link>/tags/postman/</link>
+    <link>https://emacle.github.io/tags/postman/</link>
     <description>Recent content in postman on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Wed, 06 May 2020 09:30:00 +0800</lastBuildDate>
     
-	<atom:link href="/tags/postman/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://emacle.github.io/tags/postman/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>postman预览二进制图片</title>
-      <link>/posts/postman-preview-image/</link>
+      <link>https://emacle.github.io/posts/postman-preview-image/</link>
       <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>
       
-      <guid>/posts/postman-preview-image/</guid>
+      <guid>https://emacle.github.io/posts/postman-preview-image/</guid>
       <description>使用 base64 编码二进制图片数据，置入 &amp;lt;img&amp;gt; 标签
 &amp;lt;?phptry {// getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&amp;gt;createProcessInstanceService()-&amp;gt;getDiagram($processInstanceId);$base64 = &amp;#39;data:image/png&amp;#39; . &amp;#39;;base64,&amp;#39; . base64_encode($diagramBinary); // base64加密二进制图片 echo &amp;#39;&amp;lt;img src=&amp;#34;&amp;#39; . $base64 . &amp;#39;&amp;#34; /&amp;gt;&amp;#39;; // binary image to base64 so postman can preview image} catch (ActivitiException\ActivitiException $e) {var_dump($e-&amp;gt;getMessage());}效果图：</description>
     </item>

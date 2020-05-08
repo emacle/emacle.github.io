@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>token on ~振鹭于飞~</title>
-    <link>/tags/token/</link>
+    <link>https://emacle.github.io/tags/token/</link>
     <description>Recent content in token on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Fri, 17 Jan 2020 10:39:00 +0800</lastBuildDate>
     
-	<atom:link href="/tags/token/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://emacle.github.io/tags/token/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vue token过期无缝刷新</title>
-      <link>/posts/vue-token-guo-qi-wu-feng-shua-xin/</link>
+      <link>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</link>
       <pubDate>Fri, 17 Jan 2020 10:39:00 +0800</pubDate>
       
-      <guid>/posts/vue-token-guo-qi-wu-feng-shua-xin/</guid>
+      <guid>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</guid>
       <description>过期刷新流程图: 
 思路:
   登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中

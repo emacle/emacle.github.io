@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>activiti on ~振鹭于飞~</title>
-    <link>/tags/activiti/</link>
+    <link>https://emacle.github.io/tags/activiti/</link>
     <description>Recent content in activiti on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Tue, 05 May 2020 21:55:00 +0800</lastBuildDate>
     
-	<atom:link href="/tags/activiti/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://emacle.github.io/tags/activiti/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>activiti使用mysql部署及中文不显示解决</title>
-      <link>/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</link>
+      <link>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</link>
       <pubDate>Tue, 05 May 2020 21:55:00 +0800</pubDate>
       
-      <guid>/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</guid>
+      <guid>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</guid>
       <description>官网下载 activiti-6.0.0.zip 包解压 将wars/目录下 activiti-app.war, activiti-rest.war 包放入apache-tomcat-9.0.30/webapps目录下  apache-tomcat-9.0.30/bin/catalina.bat start # 启动 tomcat，stop自动解压war包并布署，webapps/ 下生成两个目录 activiti-app/ , activity-rest/
  activiti-app 会创建用户 admin 密码 test activiti-rest 会创建用户 fozzie gonzo kermit 密码同用户名 测试activiti-app http://localhost:8080/activiti-app/ admin:test 测试activiti-rest http://localhost:8080/activiti-rest/docs/ swagger文档 kermit:kermit http://kermit:kermit@localhost:8080/activiti-rest/service/management/engine 必须使用用户名密码进行 basic auth  默认使用H2内存数据库，数据不能持久化，mysql库替换，这里使用的mysql库是v8.0.12
   新建数据库名 activiti6ui

@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="generator" content="Hugo 0.62.2" />
 
-<link rel="canonical" href="/posts/vue-token-guo-qi-wu-feng-shua-xin/">
+<link rel="canonical" href="https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/">
 <link rel="icon" href="https://emacle.github.io/favicon.ico">
 <meta property="og:title" content="vue token过期无缝刷新" />
 <meta property="og:description" content="过期刷新流程图: 
@@ -20,7 +20,7 @@
  判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
  如果正常获得 access_token, 则再次以新 access_token 发送原请求, 即可实现无缝刷新 如果 refresh_token 也过期, 则服务器也返回 401, 但是加上了自定义响应数据 code= 50015, 前端的响应拦截器 再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录  // response interceptorservice." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/vue-token-guo-qi-wu-feng-shua-xin/" />
+<meta property="og:url" content="https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/" />
 <meta property="article:published_time" content="2020-01-17T10:39:00+08:00" />
 <meta property="article:modified_time" content="2020-01-17T10:39:00+08:00" />
 
@@ -75,7 +75,7 @@
 
   <nav>
     <div class="siteTitle">
-      <a href="/">~振鹭于飞~</a>
+      <a href="https://emacle.github.io/">~振鹭于飞~</a>
     </div> 
 
     
@@ -291,7 +291,7 @@
   
 
   <div class="social-link">
-  <a href="/index.xml" target="_blank">RSS</a>
+  <a href="https://emacle.github.io/index.xml" target="_blank">RSS</a>
   </div>
   <span id="busuanzi_container_site_pv" style="display:none">
     <span id="busuanzi_value_site_pv"></span> | <span id="busuanzi_value_page_pv"></span>

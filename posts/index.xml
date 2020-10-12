@@ -1,119 +1,743 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Posts on ~振鹭于飞~</title>
     <link>https://emacle.github.io/posts/</link>
     <description>Recent content in Posts on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en</language>
+    <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
+    <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Wed, 06 May 2020 09:30:00 +0800</lastBuildDate>
     
-	<atom:link href="https://emacle.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://emacle.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>postman预览二进制图片</title>
-      <link>https://emacle.github.io/posts/postman-preview-image/</link>
-      <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>
+    
+
       
-      <guid>https://emacle.github.io/posts/postman-preview-image/</guid>
-      <description>使用 base64 编码二进制图片数据，置入 &amp;lt;img&amp;gt; 标签
-&amp;lt;?phptry {// getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&amp;gt;createProcessInstanceService()-&amp;gt;getDiagram($processInstanceId);$base64 = &amp;#39;data:image/png&amp;#39; . &amp;#39;;base64,&amp;#39; . base64_encode($diagramBinary); // base64加密二进制图片 echo &amp;#39;&amp;lt;img src=&amp;#34;&amp;#39; . $base64 . &amp;#39;&amp;#34; /&amp;gt;&amp;#39;; // binary image to base64 so postman can preview image} catch (ActivitiException\ActivitiException $e) {var_dump($e-&amp;gt;getMessage());}效果图：</description>
-    </item>
-    
-    <item>
-      <title>activiti使用mysql部署及中文不显示解决</title>
-      <link>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</link>
-      <pubDate>Tue, 05 May 2020 21:55:00 +0800</pubDate>
+      <item>
+        <title>postman预览二进制图片</title>
+        <link>https://emacle.github.io/posts/postman-preview-image/</link>
+        <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Wed, 06 May 2020 09:30:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/postman-preview-image/</guid>
+        <description>使用 base64 编码二进制图片数据，置入 &amp;lt;img&amp;gt; 标签 1 2 3 4 5 6 7 8 9 &amp;lt;?php try { // getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&amp;gt;createProcessInstanceService()-&amp;gt;getDiagram($processInstanceId); $base64 = &amp;#39;data:image/png&amp;#39; . &amp;#39;;base64,&amp;#39; . base64_encode($diagramBinary); // base64加密二进制图</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/workflow.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>postman</category>
+            
+          
+        
+        
+        
+      </item>
       
-      <guid>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</guid>
-      <description>官网下载 activiti-6.0.0.zip 包解压 将wars/目录下 activiti-app.war, activiti-rest.war 包放入apache-tomcat-9.0.30/webapps目录下  apache-tomcat-9.0.30/bin/catalina.bat start # 启动 tomcat，stop自动解压war包并布署，webapps/ 下生成两个目录 activiti-app/ , activity-rest/
- activiti-app 会创建用户 admin 密码 test activiti-rest 会创建用户 fozzie gonzo kermit 密码同用户名 测试activiti-app http://localhost:8080/activiti-app/ admin:test 测试activiti-rest http://localhost:8080/activiti-rest/docs/ swagger文档 kermit:kermit http://kermit:kermit@localhost:8080/activiti-rest/service/management/engine 必须使用用户名密码进行 basic auth  默认使用H2内存数据库，数据不能持久化，mysql库替换，这里使用的mysql库是v8.0.12
-  新建数据库名 activiti6ui
-  下载相应mysql-connector-java-8.0.12.jar包放入apache-tomcat-9.0.30/lib/, 重命名mysql-connector-java.jar 可选
-  activiti-app修改mysql连接配置
-cat apache-tomcat-9.0.30\webapps\activiti-app\WEB-INF\classes\META-INF\activiti-app\activiti-app.properties
-datasource.driver=com.mysql.jdbc.Driverdatasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?useUnicode=true&amp;amp;characterEncoding=UTF-8&amp;amp;useSSL=false&amp;amp;autoReconnect=true&amp;amp;failOverReadOnly=false&amp;amp;serverTimezone=GMT%2B8&amp;amp;nullCatalogMeansCurrent=truedatasource.username=rootdatasource.password=roothibernate.dialect=org.hibernate.dialect.MySQLDialect注意: &amp;amp;nullCatalogMeansCurrent=true参数 必须是要带的，否则创建表时会出错 大坑
-  activiti-rest修改mysql连接配置</description>
-    </item>
-    
-    <item>
-      <title>OAuth 2 Authorization Code Grant Flow</title>
-      <link>https://emacle.github.io/posts/oauth-2-authorization-code-grant-flow/</link>
-      <pubDate>Mon, 09 Mar 2020 10:37:00 +0800</pubDate>
+      <item>
+        <title>activiti使用mysql部署及中文不显示解决</title>
+        <link>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</link>
+        <pubDate>Tue, 05 May 2020 21:55:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Tue, 05 May 2020 21:55:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</guid>
+        <description>官网下载 activiti-6.0.0.zip 包解压 将wars/目录下 activiti-app.war, activiti-rest.war 包放入apache-tomcat-9.0.30/webapps目录下 1 apache-tomcat-9.0.30/bin/catalina.bat start # 启动 tomcat，stop</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/workflow.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>activiti</category>
+            
+          
+        
+        
+        
+      </item>
       
-      <guid>https://emacle.github.io/posts/oauth-2-authorization-code-grant-flow/</guid>
-      <description>转自 OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節
-在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去 Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code) 。 在轉址回去之前， Authorization Server 會先認證 Resource Owner 並取得授權。因為 Resource Owner 只跟 Authorization Server 認證，所以 Client 絕對不會拿到 Resource Owner 的帳號密碼。
-    註: (A), (B), (C) 這三步的線拆成兩段，因為會經過 user-agent 其 Client 指自己的应用程序（包括前端及后端api） User-Agent 一般指流览器
- (D) 步 客户端向 authorization server 发送 auth_code 时(手工封装时) 未带有redirect_uri貌似也能成功最好还是按标准带上该参数？  使用 oauth2-client 包时应该是封装好的 authorization_code 与 前面定义的 redirect_uri 一同发向 authorization server</description>
-    </item>
-    
-    <item>
-      <title>Vue Element-ui Github oAuth 三方登录</title>
-      <link>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</link>
-      <pubDate>Fri, 06 Mar 2020 11:42:00 +0800</pubDate>
+      <item>
+        <title>OAuth 2 Authorization Code Grant Flow</title>
+        <link>https://emacle.github.io/posts/oauth-2-authorization-code-grant-flow/</link>
+        <pubDate>Mon, 09 Mar 2020 10:37:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 09 Mar 2020 10:37:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/oauth-2-authorization-code-grant-flow/</guid>
+        <description>转自 OAuth 2.0 筆記 (4.1) Authorization Code Grant Flow 細節 在 Authorization Grant Code Flow 裡，Client 不直接向 Resource Owner 要求許可，而是把 Resource Owner 導去 Authorization Server 要求許可， Authorization Server 再透過轉址來告訴 Client 授權許可的代碼 (code)</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/color-palette.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>oauth</category>
+            
+          
+        
+        
+        
+      </item>
       
-      <guid>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</guid>
-      <description>Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redirect 一定要与此处一致防止提交时校验出错 ip/域名都可，在弹出子窗口进行授权确定时，三方服务器会校验 url里的redirect参数(程序里指定的)与创建三方应用里指定的 callback 地址，如果不一致会出错
-http://host:port/auth-redirect # 必须与创建应用时填入值一致http://localhost:9527/auth-redirecthttp://172.17.1.110:10000/auth-redirecthttp://www.vueauth.org:10000/auth-redirect # 浏览器的主机 hosts/dns 里需要解析 www.vueauth.org    socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
-githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&amp;gt; Settings =&amp;gt; Developer settings =&amp;gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &amp;#39;https://github.</description>
-    </item>
-    
-    <item>
-      <title>vue token过期无缝刷新</title>
-      <link>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</link>
-      <pubDate>Fri, 17 Jan 2020 10:39:00 +0800</pubDate>
+      <item>
+        <title>Vue Element-ui Github oAuth 三方登录</title>
+        <link>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</link>
+        <pubDate>Fri, 06 Mar 2020 11:42:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Fri, 06 Mar 2020 11:42:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</guid>
+        <description>Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redi</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+            
+              <category>element</category>
+            
+          
+            
+              <category>github</category>
+            
+          
+            
+              <category>oauth</category>
+            
+          
+        
+        
+        
+      </item>
       
-      <guid>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</guid>
-      <description>过期刷新流程图: 
-思路:
-  登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中
-  当前端发送正常请求时,请求头字段携带 access_token , 后端提取该 access_token
- 判断是否过期, 不过期则返回 HTTP 200 OK 过期返回 HTTP_UNAUTHORIZED 401, 并且加上自定义响应数据 code = 50014 表示access_token 过期    VUE前端使用 响应拦截器 , 对收到的 HTTP 401 进行拦截, 如果 http 401 且 code =50014 则先以 refresh_token 去获取新 access_token
- 如果正常获得 access_token, 则再次以新 access_token 发送原请求, 即可实现无缝刷新 如果 refresh_token 也过期, 则服务器也返回 401, 但是加上了自定义响应数据 code= 50015, 前端的响应拦截器 再次捕获到 error , 校验code =50015后, 则强制退出需要重新登录  // response interceptorservice.</description>
-    </item>
-    
-    <item>
-      <title>hugo-dusk theme 模板,utterances评论修改</title>
-      <link>https://emacle.github.io/posts/hugo-theme/</link>
-      <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
+      <item>
+        <title>Shortcodes</title>
+        <link>https://emacle.github.io/posts/shortcodes/</link>
+        <pubDate>Sat, 25 Jan 2020 06:40:51 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Sat, 25 Jan 2020 06:40:51 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/shortcodes/</guid>
+        <description>Markdownify box This is boxmd shortcode Simple box This is **box** shortcode Code tabs Make it easy to switch between different code
+javajavascript1  System.out.println(&amp;#39;Hello World!&amp;#39;);  1  console.log(&amp;#39;Hello World!&amp;#39;);  &#39;use strict&#39;;var containerId = JSON.parse(&#34;\&#34;c3a7395d19726e47\&#34;&#34;);var containerElem = document.getElementById(containerId);var codetabLinks = null;var codetabContents = null;var ids = [];if (containerElem) {codetabLinks = containerElem.</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature3/code-file.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>shortcode</category>
+            
+          
+        
+        
+          
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
-      <guid>https://emacle.github.io/posts/hugo-theme/</guid>
-      <description>Hugo 以 theme 中的静态模板文件来生成静态css文件
-  favicon 图标
-[params]# 自定义 favicon 变量 ~/hugo/static/favicon.ico -&amp;gt; /public/favicon.ico# ~/hugo/static/ 目录下的东西会自动发布到时 /public 根目录 i.e. ox-hugo/ orgmode 导出的静态图片# 使用绝对路径 防止 /posts/ 页面404 faviconfavicon = &amp;#34;https://emacle.github.io/favicon.ico&amp;#34;head.html 模板头部加入
-&amp;lt;link rel=&amp;#34;icon&amp;#34; href=&amp;#34;{{ .Site.Params.favicon }}&amp;#34;&amp;gt;  启用 github utterances 评论, 修改.Type 变量, ox-hugo默认导出目录为 &amp;lt;HUGO_BASE_DIR&amp;gt;/content/posts/ 因此 .Type = &amp;ldquo;posts&amp;rdquo;
-cat ~/hugo/themes/hugo-dusk/layouts/partials/postfooter.html&amp;lt;footer class=&amp;#34;post-footer&amp;#34;&amp;gt;&amp;lt;div class=&amp;#34;post-footer-data&amp;#34;&amp;gt;{{ partial &amp;#34;tags.html&amp;#34; . }}&amp;lt;!--修改默认日期显示格式 --&amp;gt;&amp;lt;!--&amp;lt;div class=&amp;#34;date&amp;#34;&amp;gt; {{ .</description>
-    </item>
-    
-    <item>
-      <title>Hugo with OrgMode</title>
-      <link>https://emacle.github.io/posts/hugo-with-orgmode/</link>
-      <pubDate>Wed, 15 Jan 2020 17:04:00 +0800</pubDate>
+      <item>
+        <title>vue token过期无缝刷新</title>
+        <link>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</link>
+        <pubDate>Fri, 17 Jan 2020 10:39:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Fri, 17 Jan 2020 10:39:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</guid>
+        <description>过期刷新流程图: 思路: 登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中 当前端发送正常请求时,请求</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+            
+              <category>jwt</category>
+            
+          
+            
+              <category>token</category>
+            
+          
+        
+        
+        
+      </item>
       
-      <guid>https://emacle.github.io/posts/hugo-with-orgmode/</guid>
-      <description>elpa 安装 ox-hugo
-  优先使用基于子树模式 两个必填 &amp;lt;hugo_base_dir&amp;gt; 与 EXPORT_FILE_NAME
-  org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录
-#+hugo_base_dir: ../hugo  subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名
-:EXPORT_FILE_NAME: hugo-with-orgmode  导出sub-tree到 &amp;lt;HUGO_BASE_DIR&amp;gt;/content/posts/
-C-c e H H 或 C-c e H O子树如果是 DONE 则 会直接发布, 如果是 TODO 则会做为草稿
-    Sub-tree 属性 EXPORT_HUGO_TAGS 与 EXPORT_HUGO_CATEGORIES
-  多个参数以 空格 分隔
-  会覆盖 orgmode 里的 tags 属性, 留空或不设置则会继承 orgmode tags</description>
-    </item>
-    
-    <item>
-      <title>raspberry pi 4</title>
-      <link>https://emacle.github.io/posts/raspberry-pi-4/</link>
-      <pubDate>Mon, 16 Sep 2019 09:34:00 +0800</pubDate>
+      <item>
+        <title>raspberry pi 4</title>
+        <link>https://emacle.github.io/posts/raspberry-pi-4/</link>
+        <pubDate>Thu, 16 Jan 2020 09:34:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Thu, 16 Jan 2020 09:34:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/raspberry-pi-4/</guid>
+        <description>DONE 配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/bam.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>pi</category>
+            
+          
+        
+        
+        
+      </item>
       
-      <guid>https://emacle.github.io/posts/raspberry-pi-4/</guid>
-      <description>DONE配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开退出的情况
-https://blog.csdn.net/yjbaobo/article/details/75146840 这主要是由于版本差异 Debian &amp;lsquo;Jessie&amp;rsquo; in place of Debian &amp;lsquo;Wheezy&amp;rsquo;. 我的是jessie选择修改的是 dhcpcd.conf这个。其中作者也说了如何设置usb无线的配置文件。
-#!/bin/sh# /etc/dhcpcd.exit-hook - runs as last dhcpcd hook# man dhcpcd-run-hooks 查看参数 $if_up $interface $reason etcif [ &amp;#34;$interface&amp;#34; = eth0 ] &amp;amp;&amp;amp; [ &amp;#34;$if_up&amp;#34; = true ] ; then# 测试 dhcpcd 变量变化, grep reason /tmp/variables.txt, if_up interface等 测试完成需要关闭防止文件变巨大# echo &amp;#34;================&amp;#34; &amp;gt;&amp;gt; /tmp/variables.</description>
-    </item>
+      <item>
+        <title>hugo-dusk theme 模板,utterances评论修改</title>
+        <link>https://emacle.github.io/posts/hugo-dusk-theme/</link>
+        <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Thu, 16 Jan 2020 09:30:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/hugo-dusk-theme/</guid>
+        <description>Hugo 以 theme 中的静态模板文件来生成静态css文件 favicon 图标 1 2 3 4 5 [params] # 自定义 favicon 变量 ~/hugo/static/favicon.ico -&amp;gt; /public/favicon.ico # ~/hugo/static/ 目录下的东西会自动发布到时 /public 根目录 i.e. ox-hugo/ orgmode 导出的静态图片 #</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/color-palette.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+            
+              <category>utterances</category>
+            
+          
+            
+              <category>theme</category>
+            
+          
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+            
+              <category>emacs</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>Hugo with OrgMode</title>
+        <link>https://emacle.github.io/posts/hugo-with-orgmode/</link>
+        <pubDate>Wed, 15 Jan 2020 17:04:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Wed, 15 Jan 2020 17:04:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/hugo-with-orgmode/</guid>
+        <description>elpa 安装 ox-hugo 优先使用基于子树模式 两个必填 &amp;lt;hugo_base_dir&amp;gt; 与 EXPORT_FILE_NAME org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录 1 #+hugo_base_dir: ../hugo subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+            
+              <category>emacs</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>Markdown Syntax Guide</title>
+        <link>https://emacle.github.io/posts/markdown-syntax/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Fri, 20 Dec 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/markdown-syntax/</guid>
+        <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+        
+        <dc:creator>Choi</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature1/markdown.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>markdown</category>
+            
+          
+            
+              <category>css</category>
+            
+          
+            
+              <category>html</category>
+            
+          
+            
+              <category>themes</category>
+            
+          
+        
+        
+          
+            
+              <category>themes</category>
+            
+          
+            
+              <category>syntax</category>
+            
+          
+        
+        
+          
+            
+              <category>Themes Guide</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Rich Content</title>
+        <link>https://emacle.github.io/posts/rich-content/</link>
+        <pubDate>Thu, 19 Dec 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Thu, 19 Dec 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/rich-content/</guid>
+        <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
+        
+        <dc:creator>Lee</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/content.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>shortcodes</category>
+            
+          
+            
+              <category>privacy</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Syntax highlighting</title>
+        <link>https://emacle.github.io/posts/syntax-highlight/</link>
+        <pubDate>Wed, 18 Dec 2019 10:33:41 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Wed, 18 Dec 2019 10:33:41 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/syntax-highlight/</guid>
+        <description>Code Syntax Highlighting Verify the following code blocks render as code blocks and highlight properly. More about tuning syntax highlighting is the Hugo documentation. Diff 1 2 3 4 5 6 7 8 9 10 *** /path/to/original &amp;#39;&amp;#39;timestamp&amp;#39;&amp;#39; --- /path/to/new &amp;#39;&amp;#39;timestamp&amp;#39;&amp;#39; *************** *** 1 **** ! This is a line. --- 1 --- ! This is a replacement line. It is important to spell -removed line +new line *** /path/to/original</description>
+        
+        <dc:creator>Jeus</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/color-palette.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Math Typesetting</title>
+        <link>https://emacle.github.io/posts/math-typesetting/</link>
+        <pubDate>Tue, 17 Dec 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Tue, 17 Dec 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/math-typesetting/</guid>
+        <description>&lt;div class=&#34;box&#34;&gt;
+We need goldmark katex entension which is not yet we have: 
+[https://github.com/gohugoio/hugo/issues/6544](https://github.com/gohugoio/hugo/issues/6544)
+&lt;/div&gt;
+&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
+        
+        <dc:creator>Park</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Emoji Support</title>
+        <link>https://emacle.github.io/posts/emoji-support/</link>
+        <pubDate>Mon, 16 Dec 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 16 Dec 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/emoji-support/</guid>
+        <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+        
+        <dc:creator>Kim</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>emoji</category>
+            
+          
+            
+              <category>gamoji</category>
+            
+          
+            
+              <category>namoji</category>
+            
+          
+            
+              <category>bamoji</category>
+            
+          
+            
+              <category>amoji</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Viz support</title>
+        <link>https://emacle.github.io/posts/test-viz/</link>
+        <pubDate>Mon, 18 Nov 2019 21:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 18 Nov 2019 21:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/test-viz/</guid>
+        <description>digraph G {subgraph cluster_0 {style=filled;color=lightgrey;node [style=filled,color=white];a0 -&amp;gt; a1 -&amp;gt; a2 -&amp;gt; a3;label = &amp;quot;process #1&amp;quot;;}subgraph cluster_1 {node [style=filled];b0 -&amp;gt; b1 -&amp;gt; b2 -&amp;gt; b3;label = &amp;quot;process #2&amp;quot;;color=blue}start -&amp;gt; a0;start -&amp;gt; b0;a1 -&amp;gt; b3;b2 -&amp;gt; a3;a3 -&amp;gt; a0;a3 -&amp;gt; end;b3 -&amp;gt; end;start [shape=Mdiamond];end [shape=Msquare];}</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>diagram</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Wavedrom support</title>
+        <link>https://emacle.github.io/posts/test-wavedrom/</link>
+        <pubDate>Mon, 18 Nov 2019 18:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 18 Nov 2019 18:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/test-wavedrom/</guid>
+        <description>{ &amp;quot;signal&amp;quot;: [ {&amp;quot;name&amp;quot;: &amp;quot;CLK&amp;quot;, &amp;quot;wave&amp;quot;: &amp;quot;p.....|...&amp;quot;},{&amp;quot;name&amp;quot;:&amp;quot;DAT&amp;quot;, &amp;quot;wave&amp;quot;:&amp;quot;x.345x|=.x&amp;quot;, &amp;quot;data&amp;quot;:[&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;D&amp;quot;]},{&amp;quot;name&amp;quot;: &amp;quot;REQ&amp;quot;, &amp;quot;wave&amp;quot;: &amp;quot;0.1..0|1.0&amp;quot;},{},{&amp;quot;name&amp;quot;: &amp;quot;ACK&amp;quot;, &amp;quot;wave&amp;quot;: &amp;quot;1.....|01.&amp;quot;}]}</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature1/wave.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>diagram</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Chart support</title>
+        <link>https://emacle.github.io/posts/test-chartjs/</link>
+        <pubDate>Mon, 18 Nov 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 18 Nov 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/test-chartjs/</guid>
+        <description>{&amp;quot;type&amp;quot;: &amp;quot;bar&amp;quot;,&amp;quot;data&amp;quot;: {&amp;quot;labels&amp;quot;: [&amp;quot;One&amp;quot;, &amp;quot;Two&amp;quot;, &amp;quot;Three&amp;quot;, &amp;quot;Four&amp;quot;, &amp;quot;Five&amp;quot;, &amp;quot;Six&amp;quot;],&amp;quot;datasets&amp;quot;: [{&amp;quot;label&amp;quot;: &amp;quot;# of Votes&amp;quot;,&amp;quot;data&amp;quot;: [12, 19, 3, 5, 3, 8]}]}}{&amp;quot;type&amp;quot;: &amp;quot;line&amp;quot;,&amp;quot;data&amp;quot;: {&amp;quot;labels&amp;quot;: [&amp;quot;One&amp;quot;, &amp;quot;Two&amp;quot;, &amp;quot;Three&amp;quot;, &amp;quot;Four&amp;quot;, &amp;quot;Five&amp;quot;, &amp;quot;Six&amp;quot;],&amp;quot;datasets&amp;quot;: [{&amp;quot;label&amp;quot;: &amp;quot;# of Votes&amp;quot;,&amp;quot;data&amp;quot;: [12, 19, 3, 5, 2, 3],&amp;quot;backgroundColor&amp;quot;:&amp;quot;transparent&amp;quot;,&amp;quot;borderColor&amp;quot;:&amp;quot;orange&amp;quot;},{&amp;quot;label&amp;quot;: &amp;quot;Some other set&amp;quot;,&amp;quot;data&amp;quot;: [15, 8, 13, 5, 5, 9],&amp;quot;backgroundColor&amp;quot;:&amp;quot;transparent&amp;quot;,&amp;quot;borderColor&amp;quot;:&amp;quot;#44ccff&amp;quot;}]}}</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature1/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>diagram</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>JS Sequence Diagram support</title>
+        <link>https://emacle.github.io/posts/test-js-sequence-diagrams/</link>
+        <pubDate>Mon, 18 Nov 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 18 Nov 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/test-js-sequence-diagrams/</guid>
+        <description>Alice-&amp;gt;Bob: Hello Bob, how are you?Note right of Bob: Bob thinksBob--&amp;gt;Alice: I am good thanks!Title: Here is a titleA-&amp;gt;B: Normal lineB--&amp;gt;C: Dashed lineC-&amp;gt;&amp;gt;D: Open arrowD--&amp;gt;&amp;gt;A: Dashed open arrow</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/transfer.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>diagram</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Mermaid support</title>
+        <link>https://emacle.github.io/posts/test-mermaid/</link>
+        <pubDate>Sun, 17 Nov 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Sun, 17 Nov 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/test-mermaid/</guid>
+        <description>graph TD;A--&amp;gt;B;A--&amp;gt;C;B--&amp;gt;D;C--&amp;gt;D;sequenceDiagramparticipant Aliceparticipant BobAlice-&amp;gt;John: Hello John, how are you?loop HealthcheckJohn-&amp;gt;John: Fight against hypochondriaendNote right of John: Rational thoughts &amp;lt;br/&amp;gt;prevail...John--&amp;gt;Alice: Great!John-&amp;gt;Bob: How about you?Bob--&amp;gt;John: Jolly good!graph TDA[Hard] --&amp;gt;|Text| B(Round)B --&amp;gt; C{Decision}C --&amp;gt;|One| D[Result 1]C --&amp;gt;|Two| E[Result 2]ganttsection SectionCompleted :done, des1, 2014-01-06,2014-01-08Active :active, des2, 2014-01-07, 3dParallel 1 : des3, after des1, 1dParallel 2 : des4, after des1, 1dParallel 3 : des5, after des3, 1dParallel 4 : des6, after des4, 1dclassDiagramClass01 &amp;lt;|-- AveryLongClass : Cool&amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01Class09 --&amp;gt; C2 : Where am i?</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/workflow.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>diagram</category>
+            
+          
+        
+        
+          
+            
+              <category>diagram</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>MathJax support</title>
+        <link>https://emacle.github.io/posts/test-mathjax/</link>
+        <pubDate>Sat, 16 Nov 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Sat, 16 Nov 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/test-mathjax/</guid>
+        <description>When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature1/infinity.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>math</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Katex support</title>
+        <link>https://emacle.github.io/posts/test-katex/</link>
+        <pubDate>Fri, 15 Nov 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Fri, 15 Nov 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/test-katex/</guid>
+        <description>The following
+$$ \int_{a}^{b} x^2 dx $$
+Is an integral
+$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$
+Enable Katex in the config file by setting the katex param to true. This will import the necessary Katex CSS/JS.
+See the online reference of supported TeX functions.
+Note: For inline math to render correctly, your content file extension must be .mmark. See the official mmark site.
+Inline math: $ \varphi = \dfrac{1+\sqrt5}{2}= 1.</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/mathbook.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>math</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Flowchart support</title>
+        <link>https://emacle.github.io/posts/test-flowchart/</link>
+        <pubDate>Thu, 14 Nov 2019 12:00:06 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Thu, 14 Nov 2019 12:00:06 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/test-flowchart/</guid>
+        <description>st=&amp;gt;start: Start|past:&amp;gt;http://www.google.com[blank]e=&amp;gt;end: End|future:&amp;gt;http://www.google.comop1=&amp;gt;operation: My Operation|pastop2=&amp;gt;operation: Stuff|currentsub1=&amp;gt;subroutine: My Subroutine|invalidcond=&amp;gt;condition: Yesor No?|approved:&amp;gt;http://www.google.comc2=&amp;gt;condition: Good idea|rejectedio=&amp;gt;inputoutput: catch something...|futurest-&amp;gt;op1(right)-&amp;gt;condcond(yes, right)-&amp;gt;c2cond(no)-&amp;gt;sub1(left)-&amp;gt;op1c2(yes)-&amp;gt;io-&amp;gt;ec2(no)-&amp;gt;op2-&amp;gt;e</description>
+        
+        <dc:creator>emacle</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature1/flowchart.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>diagram</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
     
   </channel>
 </rss>

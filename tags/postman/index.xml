@@ -1,25 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>postman on ~振鹭于飞~</title>
     <link>https://emacle.github.io/tags/postman/</link>
     <description>Recent content in postman on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en</language>
+    <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
+    <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Wed, 06 May 2020 09:30:00 +0800</lastBuildDate>
     
-	<atom:link href="https://emacle.github.io/tags/postman/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://emacle.github.io/tags/postman/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>postman预览二进制图片</title>
-      <link>https://emacle.github.io/posts/postman-preview-image/</link>
-      <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>
+    
+
       
-      <guid>https://emacle.github.io/posts/postman-preview-image/</guid>
-      <description>使用 base64 编码二进制图片数据，置入 &amp;lt;img&amp;gt; 标签
-&amp;lt;?phptry {// getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&amp;gt;createProcessInstanceService()-&amp;gt;getDiagram($processInstanceId);$base64 = &amp;#39;data:image/png&amp;#39; . &amp;#39;;base64,&amp;#39; . base64_encode($diagramBinary); // base64加密二进制图片 echo &amp;#39;&amp;lt;img src=&amp;#34;&amp;#39; . $base64 . &amp;#39;&amp;#34; /&amp;gt;&amp;#39;; // binary image to base64 so postman can preview image} catch (ActivitiException\ActivitiException $e) {var_dump($e-&amp;gt;getMessage());}效果图：</description>
-    </item>
+      <item>
+        <title>postman预览二进制图片</title>
+        <link>https://emacle.github.io/posts/postman-preview-image/</link>
+        <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Wed, 06 May 2020 09:30:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/postman-preview-image/</guid>
+        <description>使用 base64 编码二进制图片数据，置入 &amp;lt;img&amp;gt; 标签 1 2 3 4 5 6 7 8 9 &amp;lt;?php try { // getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&amp;gt;createProcessInstanceService()-&amp;gt;getDiagram($processInstanceId); $base64 = &amp;#39;data:image/png&amp;#39; . &amp;#39;;base64,&amp;#39; . base64_encode($diagramBinary); // base64加密二进制图</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/workflow.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>postman</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

@@ -1,26 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>element on ~振鹭于飞~</title>
     <link>https://emacle.github.io/tags/element/</link>
     <description>Recent content in element on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en</language>
+    <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
+    <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Fri, 06 Mar 2020 11:42:00 +0800</lastBuildDate>
     
-	<atom:link href="https://emacle.github.io/tags/element/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://emacle.github.io/tags/element/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Vue Element-ui Github oAuth 三方登录</title>
-      <link>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</link>
-      <pubDate>Fri, 06 Mar 2020 11:42:00 +0800</pubDate>
+    
+
       
-      <guid>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</guid>
-      <description>Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redirect 一定要与此处一致防止提交时校验出错 ip/域名都可，在弹出子窗口进行授权确定时，三方服务器会校验 url里的redirect参数(程序里指定的)与创建三方应用里指定的 callback 地址，如果不一致会出错
-http://host:port/auth-redirect # 必须与创建应用时填入值一致http://localhost:9527/auth-redirecthttp://172.17.1.110:10000/auth-redirecthttp://www.vueauth.org:10000/auth-redirect # 浏览器的主机 hosts/dns 里需要解析 www.vueauth.org    socialsignin.vue 三方登录模块里，构造弹出窗口 github 认证 url
-githubHandleClick(thirdpart) {// 1. 指定授权 client_id 及 redirect_uri 的 URL // 如果不指定 redirect_uri, 则默认使用 gihtub =&amp;gt; Settings =&amp;gt; Developer settings =&amp;gt; OAuth Apps 里 Authorization callback URL 配置的地址 // 为了无歧义尽量在程序代码里指定redirect_uri // const url = &amp;#39;https://github.</description>
-    </item>
+      <item>
+        <title>Vue Element-ui Github oAuth 三方登录</title>
+        <link>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</link>
+        <pubDate>Fri, 06 Mar 2020 11:42:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Fri, 06 Mar 2020 11:42:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</guid>
+        <description>Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redi</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+            
+              <category>element</category>
+            
+          
+            
+              <category>github</category>
+            
+          
+            
+              <category>oauth</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

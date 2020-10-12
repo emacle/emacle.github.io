@@ -1,31 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>activiti on ~振鹭于飞~</title>
     <link>https://emacle.github.io/tags/activiti/</link>
     <description>Recent content in activiti on ~振鹭于飞~</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en</language>
+    <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
+    <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Tue, 05 May 2020 21:55:00 +0800</lastBuildDate>
     
-	<atom:link href="https://emacle.github.io/tags/activiti/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://emacle.github.io/tags/activiti/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>activiti使用mysql部署及中文不显示解决</title>
-      <link>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</link>
-      <pubDate>Tue, 05 May 2020 21:55:00 +0800</pubDate>
+    
+
       
-      <guid>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</guid>
-      <description>官网下载 activiti-6.0.0.zip 包解压 将wars/目录下 activiti-app.war, activiti-rest.war 包放入apache-tomcat-9.0.30/webapps目录下  apache-tomcat-9.0.30/bin/catalina.bat start # 启动 tomcat，stop自动解压war包并布署，webapps/ 下生成两个目录 activiti-app/ , activity-rest/
- activiti-app 会创建用户 admin 密码 test activiti-rest 会创建用户 fozzie gonzo kermit 密码同用户名 测试activiti-app http://localhost:8080/activiti-app/ admin:test 测试activiti-rest http://localhost:8080/activiti-rest/docs/ swagger文档 kermit:kermit http://kermit:kermit@localhost:8080/activiti-rest/service/management/engine 必须使用用户名密码进行 basic auth  默认使用H2内存数据库，数据不能持久化，mysql库替换，这里使用的mysql库是v8.0.12
-  新建数据库名 activiti6ui
-  下载相应mysql-connector-java-8.0.12.jar包放入apache-tomcat-9.0.30/lib/, 重命名mysql-connector-java.jar 可选
-  activiti-app修改mysql连接配置
-cat apache-tomcat-9.0.30\webapps\activiti-app\WEB-INF\classes\META-INF\activiti-app\activiti-app.properties
-datasource.driver=com.mysql.jdbc.Driverdatasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?useUnicode=true&amp;amp;characterEncoding=UTF-8&amp;amp;useSSL=false&amp;amp;autoReconnect=true&amp;amp;failOverReadOnly=false&amp;amp;serverTimezone=GMT%2B8&amp;amp;nullCatalogMeansCurrent=truedatasource.username=rootdatasource.password=roothibernate.dialect=org.hibernate.dialect.MySQLDialect注意: &amp;amp;nullCatalogMeansCurrent=true参数 必须是要带的，否则创建表时会出错 大坑
-  activiti-rest修改mysql连接配置</description>
-    </item>
+      <item>
+        <title>activiti使用mysql部署及中文不显示解决</title>
+        <link>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</link>
+        <pubDate>Tue, 05 May 2020 21:55:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Tue, 05 May 2020 21:55:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</guid>
+        <description>官网下载 activiti-6.0.0.zip 包解压 将wars/目录下 activiti-app.war, activiti-rest.war 包放入apache-tomcat-9.0.30/webapps目录下 1 apache-tomcat-9.0.30/bin/catalina.bat start # 启动 tomcat，stop</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/workflow.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>activiti</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
     
   </channel>
 </rss>

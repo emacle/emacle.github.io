@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>hugo on ~振鹭于飞~</title>
+    <link>https://emacle.github.io/categories/hugo/</link>
+    <description>Recent content in hugo on ~振鹭于飞~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
+    <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 16 Jan 2020 09:30:00 +0800</lastBuildDate>
+    
+        <atom:link href="https://emacle.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>hugo-dusk theme 模板,utterances评论修改</title>
+        <link>https://emacle.github.io/posts/hugo-dusk-theme/</link>
+        <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Thu, 16 Jan 2020 09:30:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/hugo-dusk-theme/</guid>
+        <description>Hugo 以 theme 中的静态模板文件来生成静态css文件 favicon 图标 1 2 3 4 5 [params] # 自定义 favicon 变量 ~/hugo/static/favicon.ico -&amp;gt; /public/favicon.ico # ~/hugo/static/ 目录下的东西会自动发布到时 /public 根目录 i.e. ox-hugo/ orgmode 导出的静态图片 #</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/color-palette.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+            
+              <category>utterances</category>
+            
+          
+            
+              <category>theme</category>
+            
+          
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+            
+              <category>emacs</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>Hugo with OrgMode</title>
+        <link>https://emacle.github.io/posts/hugo-with-orgmode/</link>
+        <pubDate>Wed, 15 Jan 2020 17:04:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Wed, 15 Jan 2020 17:04:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/hugo-with-orgmode/</guid>
+        <description>elpa 安装 ox-hugo 优先使用基于子树模式 两个必填 &amp;lt;hugo_base_dir&amp;gt; 与 EXPORT_FILE_NAME org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录 1 #+hugo_base_dir: ../hugo subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+            
+              <category>emacs</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>Syntax highlighting</title>
+        <link>https://emacle.github.io/posts/syntax-highlight/</link>
+        <pubDate>Wed, 18 Dec 2019 10:33:41 +0900</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Wed, 18 Dec 2019 10:33:41 +0900</atom:modified>
+        <guid>https://emacle.github.io/posts/syntax-highlight/</guid>
+        <description>Code Syntax Highlighting Verify the following code blocks render as code blocks and highlight properly. More about tuning syntax highlighting is the Hugo documentation. Diff 1 2 3 4 5 6 7 8 9 10 *** /path/to/original &amp;#39;&amp;#39;timestamp&amp;#39;&amp;#39; --- /path/to/new &amp;#39;&amp;#39;timestamp&amp;#39;&amp;#39; *************** *** 1 **** ! This is a line. --- 1 --- ! This is a replacement line. It is important to spell -removed line +new line *** /path/to/original</description>
+        
+        <dc:creator>Jeus</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/color-palette.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

@@ -1,140 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://emacle.github.io/tags/postman/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/postman-preview-image/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/activiti/</loc>
-    <lastmod>2020-05-05T21:55:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/activiti-shi-yong-mysql-bu-shu-ji-zhong-wen-bu-xian-shi-jie-jue/</loc>
-    <lastmod>2020-05-05T21:55:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/oauth/</loc>
-    <lastmod>2020-03-09T10:37:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/oauth-2-authorization-code-grant-flow/</loc>
-    <lastmod>2020-03-09T10:37:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/element/</loc>
-    <lastmod>2020-03-06T11:42:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/github/</loc>
-    <lastmod>2020-03-06T11:42:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/vue/</loc>
-    <lastmod>2020-03-06T11:42:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/vue-element-ui-github-oauth-san-fang-deng-lu/</loc>
-    <lastmod>2020-03-06T11:42:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/jwt/</loc>
-    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/token/</loc>
-    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/vue-token-guo-qi-wu-feng-shua-xin/</loc>
-    <lastmod>2020-01-17T10:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/hugo/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/hugo-theme/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/theme/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/utterances/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/categories/</loc>
-    <lastmod>2020-01-15T17:04:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/categories/emacs/</loc>
-    <lastmod>2020-01-15T17:04:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/hugo-with-orgmode/</loc>
-    <lastmod>2020-01-15T17:04:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/orgmode/</loc>
-    <lastmod>2020-01-15T17:04:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/pi/</loc>
-    <lastmod>2019-09-16T09:34:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/raspberry/</loc>
-    <lastmod>2019-09-16T09:34:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/posts/raspberry-pi-4/</loc>
-    <lastmod>2019-09-16T09:34:00+08:00</lastmod>
-  </url>
-  
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	
+	<sitemap>
+	   	<loc>https://emacle.github.io/en/sitemap.xml</loc>
+		
+	   	<lastmod>2020-05-06T09:30:00+08:00</lastmod>
+		
+	</sitemap>
+	
+	<sitemap>
+	   	<loc>https://emacle.github.io/ko/sitemap.xml</loc>
+		
+	   	<lastmod>2019-10-19T11:44:14+09:00</lastmod>
+		
+	</sitemap>
+	
+</sitemapindex>

@@ -14,7 +14,7 @@
     <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
     <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 16 Jan 2020 09:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2020 10:11:00 +0800</lastBuildDate>
     
         <atom:link href="https://emacle.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -25,7 +25,7 @@
       <item>
         <title>emacs</title>
         <link>https://emacle.github.io/categories/emacs/</link>
-        <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
+        <pubDate>Tue, 13 Oct 2020 10:11:00 +0800</pubDate>
         <author>qkbeyond@gmail.com (emacle)</author>
         
         <guid>https://emacle.github.io/categories/emacs/</guid>
@@ -43,7 +43,7 @@
       <item>
         <title>hugo</title>
         <link>https://emacle.github.io/categories/hugo/</link>
-        <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
+        <pubDate>Tue, 13 Oct 2020 10:11:00 +0800</pubDate>
         <author>qkbeyond@gmail.com (emacle)</author>
         
         <guid>https://emacle.github.io/categories/hugo/</guid>

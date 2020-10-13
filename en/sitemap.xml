@@ -13,18 +13,43 @@
   </url>
   
   <url>
-    <loc>https://emacle.github.io/tags/postman/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+    <loc>https://emacle.github.io/categories/</loc>
+    <lastmod>2020-10-13T10:11:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://emacle.github.io/ko/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://emacle.github.io/categories/"
+                />
   </url>
   
   <url>
-    <loc>https://emacle.github.io/posts/postman-preview-image/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+    <loc>https://emacle.github.io/posts/chrome-xian-shi-emoji-zi-ti/</loc>
+    <lastmod>2020-10-13T10:11:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://emacle.github.io/categories/emacs/</loc>
+    <lastmod>2020-10-13T10:11:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://emacle.github.io/tags/hugo/</loc>
+    <lastmod>2020-10-13T10:11:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://emacle.github.io/categories/hugo/</loc>
+    <lastmod>2020-10-13T10:11:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://emacle.github.io/posts/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+    <lastmod>2020-10-13T10:11:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -39,7 +64,7 @@
   
   <url>
     <loc>https://emacle.github.io/tags/</loc>
-    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+    <lastmod>2020-10-13T10:11:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -50,6 +75,16 @@
                 hreflang="en"
                 href="https://emacle.github.io/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://emacle.github.io/tags/postman/</loc>
+    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://emacle.github.io/posts/postman-preview-image/</loc>
+    <lastmod>2020-05-06T09:30:00+08:00</lastmod>
   </url>
   
   <url>
@@ -155,36 +190,6 @@
   <url>
     <loc>https://emacle.github.io/posts/raspberry-pi-4/</loc>
     <lastmod>2020-01-16T09:34:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/categories/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://emacle.github.io/ko/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://emacle.github.io/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/categories/emacs/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/tags/hugo/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacle.github.io/categories/hugo/</loc>
-    <lastmod>2020-01-16T09:30:00+08:00</lastmod>
   </url>
   
   <url>

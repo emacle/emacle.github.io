@@ -44,6 +44,40 @@
 
       
       <item>
+        <title>chrome 显示 emoji 字体</title>
+        <link>https://emacle.github.io/posts/chrome-xian-shi-emoji-zi-ti/</link>
+        <pubDate>Tue, 13 Oct 2020 10:11:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Tue, 13 Oct 2020 10:11:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/chrome-xian-shi-emoji-zi-ti/</guid>
+        <description>hugo-theme-zzo 主题启用了Emoji Support windows 7 下使用chrome浏览器只能通过Segoe UI Symbol字体仅显示部分 黑白色 emoji (firefox 使用自己的字体渲染可显示彩色em</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/images/feature2/gallery.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+        
+        
+          
+            
+              <category>hugo</category>
+            
+          
+            
+              <category>emacs</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
         <title>postman预览二进制图片</title>
         <link>https://emacle.github.io/posts/postman-preview-image/</link>
         <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>

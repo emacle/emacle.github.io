@@ -14,13 +14,31 @@
     <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
     <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 06 May 2020 09:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2020 10:11:00 +0800</lastBuildDate>
     
         <atom:link href="https://emacle.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>hugo</title>
+        <link>https://emacle.github.io/tags/hugo/</link>
+        <pubDate>Tue, 13 Oct 2020 10:11:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        
+        <guid>https://emacle.github.io/tags/hugo/</guid>
+        <description></description>
+        
+        <dc:creator>emacle</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>postman</title>
@@ -191,24 +209,6 @@
         <author>qkbeyond@gmail.com (emacle)</author>
         
         <guid>https://emacle.github.io/tags/pi/</guid>
-        <description></description>
-        
-        <dc:creator>emacle</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>hugo</title>
-        <link>https://emacle.github.io/tags/hugo/</link>
-        <pubDate>Thu, 16 Jan 2020 09:30:00 +0800</pubDate>
-        <author>qkbeyond@gmail.com (emacle)</author>
-        
-        <guid>https://emacle.github.io/tags/hugo/</guid>
         <description></description>
         
         <dc:creator>emacle</dc:creator>

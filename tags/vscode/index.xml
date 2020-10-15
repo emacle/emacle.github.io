@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>vscode on ~振鹭于飞~</title>
+    <link>https://emacle.github.io/tags/vscode/</link>
+    <description>Recent content in vscode on ~振鹭于飞~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
+    <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 17 Aug 2020 08:34:00 +0800</lastBuildDate>
+    
+        <atom:link href="https://emacle.github.io/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>vue vscode 统一代码格式</title>
+        <link>https://emacle.github.io/posts/vue-vscode-tong-yi-dai-ma-ge-shi/</link>
+        <pubDate>Mon, 17 Aug 2020 08:34:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 17 Aug 2020 08:34:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/vue-vscode-tong-yi-dai-ma-ge-shi/</guid>
+        <description>vscode 安装 vetur，eslint 插件 使用 vetur 作为vue文件格式化程序, prettier不用安装 注意 .eslintignore 文件一定不能忽略/src，如果包含则src下</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/https://cn.vuejs.org/images/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+            
+              <category>npm</category>
+            
+          
+            
+              <category>vscode</category>
+            
+          
+            
+              <category>vetur</category>
+            
+          
+            
+              <category>eslint</category>
+            
+          
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

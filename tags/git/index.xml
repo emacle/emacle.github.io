@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>git on ~振鹭于飞~</title>
+    <link>https://emacle.github.io/tags/git/</link>
+    <description>Recent content in git on ~振鹭于飞~</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
+    <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 30 Jun 2020 12:03:00 +0800</lastBuildDate>
+    
+        <atom:link href="https://emacle.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>git忽略已经被提交的文件</title>
+        <link>https://emacle.github.io/posts/git-ignore-file/</link>
+        <pubDate>Tue, 30 Jun 2020 12:03:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Tue, 30 Jun 2020 12:03:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/git-ignore-file/</guid>
+        <description>.gitignore 文件的用途，该文件只能作用于 Untracked Files，也就是那些从来没有被 Git 记录过的文件（自添加以后，从未 add 及 commit 过的文件）。 How to ignore files already managed with Git locally 方法一:</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>git</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

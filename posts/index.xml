@@ -32,7 +32,7 @@
         <description>hugo-theme-zzo 主题启用了Emoji Support windows 7 下使用chrome浏览器只能通过Segoe UI Symbol字体仅显示部分 黑白色 emoji (firefox 使用自己的字体渲染可显示彩色em</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/gallery.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Twemoji2_1f914.svg/1200px-Twemoji2_1f914.svg.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -57,6 +57,122 @@
       </item>
       
       <item>
+        <title>Git Hooks 使用 husky/yorkie lint-staged git 提交前进行校验</title>
+        <link>https://emacle.github.io/posts/git-hooks-husky-4yorkie-lint-staged/</link>
+        <pubDate>Mon, 17 Aug 2020 08:46:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 17 Aug 2020 08:46:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/git-hooks-husky-4yorkie-lint-staged/</guid>
+        <description>新版本的@vue/cli-service 内置了 yorkie, 见package-lock.json 不再需要额外安装husky 在安装之后，@vue/cli-</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/https://cn.eslint.org/img/favicon.512x512.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+            
+              <category>npm</category>
+            
+          
+            
+              <category>husky</category>
+            
+          
+            
+              <category>eslint</category>
+            
+          
+            
+              <category>yorkie</category>
+            
+          
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>vue vscode 统一代码格式</title>
+        <link>https://emacle.github.io/posts/vue-vscode-tong-yi-dai-ma-ge-shi/</link>
+        <pubDate>Mon, 17 Aug 2020 08:34:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 17 Aug 2020 08:34:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/vue-vscode-tong-yi-dai-ma-ge-shi/</guid>
+        <description>vscode 安装 vetur，eslint 插件 使用 vetur 作为vue文件格式化程序, prettier不用安装 注意 .eslintignore 文件一定不能忽略/src，如果包含则src下</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/https://cn.vuejs.org/images/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+            
+              <category>npm</category>
+            
+          
+            
+              <category>vscode</category>
+            
+          
+            
+              <category>vetur</category>
+            
+          
+            
+              <category>eslint</category>
+            
+          
+        
+        
+          
+            
+              <category>vue</category>
+            
+          
+        
+        
+      </item>
+      
+      <item>
+        <title>git忽略已经被提交的文件</title>
+        <link>https://emacle.github.io/posts/git-ignore-file/</link>
+        <pubDate>Tue, 30 Jun 2020 12:03:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Tue, 30 Jun 2020 12:03:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/git-ignore-file/</guid>
+        <description>.gitignore 文件的用途，该文件只能作用于 Untracked Files，也就是那些从来没有被 Git 记录过的文件（自添加以后，从未 add 及 commit 过的文件）。 How to ignore files already managed with Git locally 方法一:</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>git</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
         <title>postman预览二进制图片</title>
         <link>https://emacle.github.io/posts/postman-preview-image/</link>
         <pubDate>Wed, 06 May 2020 09:30:00 +0800</pubDate>
@@ -66,7 +182,7 @@
         <description>使用 base64 编码二进制图片数据，置入 &amp;lt;img&amp;gt; 标签 1 2 3 4 5 6 7 8 9 &amp;lt;?php try { // getDiagram 获得二进制流图片 可显示流程进度 $diagramBinary = $serviceFactory-&amp;gt;createProcessInstanceService()-&amp;gt;getDiagram($processInstanceId); $base64 = &amp;#39;data:image/png&amp;#39; . &amp;#39;;base64,&amp;#39; . base64_encode($diagramBinary); // base64加密二进制图</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/workflow.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://www.postman.com/assets/logos/postman-logo-stacked.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -138,7 +254,7 @@
         <description>Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redi</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://cn.vuejs.org/images/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -160,6 +276,12 @@
             
           
         
+        
+          
+            
+              <category>vue</category>
+            
+          
         
         
       </item>
@@ -207,7 +329,7 @@ javajavascript1  System.out.println(&amp;#39;Hello World!&amp;#39;);  1  c
         <description>过期刷新流程图: 思路: 登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中 当前端发送正常请求时,请求</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://cn.vuejs.org/images/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -226,29 +348,11 @@ javajavascript1  System.out.println(&amp;#39;Hello World!&amp;#39;);  1  c
           
         
         
-        
-      </item>
-      
-      <item>
-        <title>raspberry pi 4</title>
-        <link>https://emacle.github.io/posts/raspberry-pi-4/</link>
-        <pubDate>Thu, 16 Jan 2020 09:34:00 +0800</pubDate>
-        <author>qkbeyond@gmail.com (emacle)</author>
-        <atom:modified>Thu, 16 Jan 2020 09:34:00 +0800</atom:modified>
-        <guid>https://emacle.github.io/posts/raspberry-pi-4/</guid>
-        <description>DONE 配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开</description>
-        
-        <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/bam.png" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
           
             
-              <category>pi</category>
+              <category>vue</category>
             
           
-        
         
         
       </item>
@@ -305,7 +409,7 @@ javajavascript1  System.out.println(&amp;#39;Hello World!&amp;#39;);  1  c
         <description>elpa 安装 ox-hugo 优先使用基于子树模式 两个必填 &amp;lt;hugo_base_dir&amp;gt; 与 EXPORT_FILE_NAME org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录 1 #+hugo_base_dir: ../hugo subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://upload.wikimedia.org/wikipedia/commons/a/a6/Org-mode-unicorn.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -768,6 +872,30 @@ Inline math: $ \varphi = \dfrac{1+\sqrt5}{2}= 1.</description>
           
             
           
+        
+      </item>
+      
+      <item>
+        <title>raspberry pi 4</title>
+        <link>https://emacle.github.io/posts/raspberry-pi-4/</link>
+        <pubDate>Mon, 16 Sep 2019 09:34:00 +0800</pubDate>
+        <author>qkbeyond@gmail.com (emacle)</author>
+        <atom:modified>Mon, 16 Sep 2019 09:34:00 +0800</atom:modified>
+        <guid>https://emacle.github.io/posts/raspberry-pi-4/</guid>
+        <description>DONE 配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开</description>
+        
+        <dc:creator>[emacle]</dc:creator>
+        <media:content url="https://emacle.github.io/https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>pi</category>
+            
+          
+        
+        
         
       </item>
       

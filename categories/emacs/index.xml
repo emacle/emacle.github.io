@@ -32,7 +32,7 @@
         <description>hugo-theme-zzo 主题启用了Emoji Support windows 7 下使用chrome浏览器只能通过Segoe UI Symbol字体仅显示部分 黑白色 emoji (firefox 使用自己的字体渲染可显示彩色em</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/gallery.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Twemoji2_1f914.svg/1200px-Twemoji2_1f914.svg.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -108,7 +108,7 @@
         <description>elpa 安装 ox-hugo 优先使用基于子树模式 两个必填 &amp;lt;hugo_base_dir&amp;gt; 与 EXPORT_FILE_NAME org 文件头 设置配置 #+hugo_base_dir 参数指向 hugo 工程目录 1 #+hugo_base_dir: ../hugo subtree 属性必须要设置 EXPORT_FILE_NAME 即slug 不可重复, 作为导出的 .md 文件名</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://upload.wikimedia.org/wikipedia/commons/a/a6/Org-mode-unicorn.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

@@ -56,7 +56,7 @@
         <description>Github 网站创建 OAuth Apps 记录 Client ID / Client Secret / Authorization Callback URL 3个参数 此处 Authorization Callback URL 为默认回调网址，程序代码里没有明确指定的话，以此为默认值，代码里指定的话 指定的redi</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://cn.vuejs.org/images/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -78,6 +78,12 @@
             
           
         
+        
+          
+            
+              <category>vue</category>
+            
+          
         
         
       </item>

@@ -14,7 +14,7 @@
     <managingEditor>qkbeyond@gmail.com (emacle)</managingEditor>
     <webMaster>qkbeyond@gmail.com (emacle)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 16 Jan 2020 09:34:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Sep 2019 09:34:00 +0800</lastBuildDate>
     
         <atom:link href="https://emacle.github.io/tags/pi/index.xml" rel="self" type="application/rss+xml" />
     
@@ -25,14 +25,14 @@
       <item>
         <title>raspberry pi 4</title>
         <link>https://emacle.github.io/posts/raspberry-pi-4/</link>
-        <pubDate>Thu, 16 Jan 2020 09:34:00 +0800</pubDate>
+        <pubDate>Mon, 16 Sep 2019 09:34:00 +0800</pubDate>
         <author>qkbeyond@gmail.com (emacle)</author>
-        <atom:modified>Thu, 16 Jan 2020 09:34:00 +0800</atom:modified>
+        <atom:modified>Mon, 16 Sep 2019 09:34:00 +0800</atom:modified>
         <guid>https://emacle.github.io/posts/raspberry-pi-4/</guid>
         <description>DONE 配置 dhcpcd-run-hook dhcpcd vs /etc/network/interfaces pi 使用 dhcpcd 作为dhcp client 配置 静态IP也在这里进行配置 必须dhcp获取到ip地址后, 执行 frpc 命令, 否则会出现 frpc不能连接自动断开</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/bam.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

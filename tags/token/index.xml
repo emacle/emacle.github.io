@@ -32,7 +32,7 @@
         <description>过期刷新流程图: 思路: 登录时, 后端生成 access_token, refresh_token 返回前端, 前端保存两个token在 cookie或localstorge中 当前端发送正常请求时,请求</description>
         
         <dc:creator>[emacle]</dc:creator>
-        <media:content url="https://emacle.github.io/images/feature2/graph.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://emacle.github.io/https://cn.vuejs.org/images/logo.png" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -50,6 +50,12 @@
             
           
         
+        
+          
+            
+              <category>vue</category>
+            
+          
         
         
       </item>
